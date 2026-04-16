@@ -1,22 +1,70 @@
 [gd_scene format=3 uid="uid://5h2a4r2dgkac"]
 
-[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="1_e5kic"]
 [ext_resource type="Script" uid="uid://dpk6ia7sr7sh5" path="res://Entities/Player/Player.gd" id="1_ww0jn"]
+[ext_resource type="Texture2D" uid="uid://cqjixei46jscd" path="res://Entities/Character/Designs/Outfits/RuanPlaid.png" id="2_vweq0"]
+[ext_resource type="Texture2D" uid="uid://bxn40jcbl2sk" path="res://Entities/Character/Designs/Eyes/eye_bigshiny.png" id="3_1des2"]
 
-[node name="Player" type="Node3D" unique_id=177974124]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_an6q6"]
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t38ms"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.015
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyy7g"]
+next_pass = SubResource("StandardMaterial3D_t38ms")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.015
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hj1c0"]
+material = SubResource("StandardMaterial3D_cyy7g")
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdqv3"]
+albedo_texture = ExtResource("2_vweq0")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_x44r4"]
+material = SubResource("StandardMaterial3D_bdqv3")
+radius = 0.525
+radial_steps = 20
+cap_top = false
+cap_bottom = false
+
+[node name="Player" type="CharacterBody3D" unique_id=1015862513]
 script = ExtResource("1_ww0jn")
 
-[node name="Character" parent="." unique_id=2103743369 instance=ExtResource("1_e5kic")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1807143883]
+shape = SubResource("CapsuleShape3D_an6q6")
 
-[node name="MeshInstance3D" parent="Character" index="1" unique_id=714721396]
+[node name="CharacterBody" type="MeshInstance3D" parent="." unique_id=501603338]
+mesh = SubResource("CapsuleMesh_hj1c0")
+
+[node name="Outfit" type="MeshInstance3D" parent="CharacterBody" unique_id=2082653503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2799085, 0)
+mesh = SubResource("TubeTrailMesh_x44r4")
+
+[node name="Head" type="Node3D" parent="." unique_id=1512721644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=483743405]
+
+[node name="EyeLeft" type="Sprite3D" parent="Head" unique_id=340614938]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.201, 0, -0.4975176)
 visible = false
+texture = ExtResource("3_1des2")
 
-[node name="Camera3D" type="Camera3D" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=2084385569]
-
-[node name="EyeLeft" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=344771616]
+[node name="EyeRight" type="Sprite3D" parent="Head" unique_id=845095309]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.2, 0, -0.4975176)
 visible = false
-
-[node name="EyeRight" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="2" unique_id=563669890]
-visible = false
-
-[editable path="Character"]
+flip_h = true
+texture = ExtResource("3_1des2")

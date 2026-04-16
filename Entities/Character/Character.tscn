@@ -1,16 +1,42 @@
 [gd_scene format=3 uid="uid://db7abapjxhodt"]
 
 [ext_resource type="Script" uid="uid://cal36ewiiby5u" path="res://Entities/Character/Character.gd" id="1_cyy7g"]
-[ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="2_nn17e"]
+[ext_resource type="Texture2D" uid="uid://bxn40jcbl2sk" path="res://Entities/Character/Designs/Eyes/eye_bigshiny.png" id="3_bdqv3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u36tg"]
 height = 2.5
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nn17e"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.015
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyy7g"]
+next_pass = SubResource("StandardMaterial3D_nn17e")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.015
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e5kic"]
 material = SubResource("StandardMaterial3D_cyy7g")
 height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdqv3"]
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_nn17e"]
+material = SubResource("StandardMaterial3D_bdqv3")
+radius = 0.525
+radial_steps = 20
+cap_top = false
+cap_bottom = false
 
 [node name="Character" type="CharacterBody3D" unique_id=2103743369]
 script = ExtResource("1_cyy7g")
@@ -18,17 +44,21 @@ script = ExtResource("1_cyy7g")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1325157939]
 shape = SubResource("CapsuleShape3D_u36tg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=714721396]
+[node name="CharacterBody" type="MeshInstance3D" parent="." unique_id=714721396]
 mesh = SubResource("CapsuleMesh_e5kic")
+
+[node name="Outfit" type="MeshInstance3D" parent="CharacterBody" unique_id=1986631287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2799085, 0)
+mesh = SubResource("TubeTrailMesh_nn17e")
 
 [node name="Head" type="Node3D" parent="." unique_id=241136624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="EyeLeft" type="Sprite3D" parent="Head" unique_id=344771616]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.201, 0, -0.4975176)
-texture = ExtResource("2_nn17e")
+texture = ExtResource("3_bdqv3")
 
 [node name="EyeRight" type="Sprite3D" parent="Head" unique_id=563669890]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.2, 0, -0.4975176)
 flip_h = true
-texture = ExtResource("2_nn17e")
+texture = ExtResource("3_bdqv3")
