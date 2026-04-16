@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://5h2a4r2dgkac"]
+
+[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="1_e5kic"]
+[ext_resource type="Script" uid="uid://dpk6ia7sr7sh5" path="res://Entities/Player/Player.gd" id="1_ww0jn"]
+
+[node name="Player" type="Node3D" unique_id=177974124]
+script = ExtResource("1_ww0jn")
+
+[node name="Character" parent="." unique_id=2103743369 instance=ExtResource("1_e5kic")]
+
+[node name="MeshInstance3D" parent="Character" index="1" unique_id=714721396]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=2084385569]
+
+[node name="EyeLeft" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=344771616]
+visible = false
+
+[node name="EyeRight" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="2" unique_id=563669890]
+visible = false
+
+[editable path="Character"]
