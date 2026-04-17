@@ -40,6 +40,9 @@ radial_steps = 20
 cap_top = false
 cap_bottom = false
 
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_vweq0"]
+length = 1.2
+
 [node name="Player" type="CharacterBody3D" unique_id=1015862513]
 script = ExtResource("1_ww0jn")
 
@@ -58,6 +61,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=483743405]
 
+[node name="InteractionDetection" type="Area3D" parent="Head/Camera3D" unique_id=1124429415]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, -0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/InteractionDetection" unique_id=915100531]
+shape = SubResource("SeparationRayShape3D_vweq0")
+
 [node name="EyeLeft" type="Sprite3D" parent="Head" unique_id=340614938]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.201, 0, -0.4975176)
 visible = false
@@ -68,3 +77,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.2, 0, -0.4975176)
 visible = false
 flip_h = true
 texture = ExtResource("3_1des2")
+
+[connection signal="body_entered" from="Head/Camera3D/InteractionDetection" to="." method="raycast_entered"]
+[connection signal="body_exited" from="Head/Camera3D/InteractionDetection" to="." method="raycast_exited"]
