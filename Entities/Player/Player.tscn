@@ -60,6 +60,7 @@ mesh = SubResource("TubeTrailMesh_x44r4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=483743405]
+cull_mask = 1048573
 
 [node name="InteractionDetection" type="Area3D" parent="Head/Camera3D" unique_id=1124429415]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, -0.5)
@@ -69,14 +70,24 @@ shape = SubResource("SeparationRayShape3D_vweq0")
 
 [node name="EyeLeft" type="Sprite3D" parent="Head" unique_id=340614938]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.201, 0, -0.4975176)
-visible = false
+layers = 2
 texture = ExtResource("3_1des2")
 
 [node name="EyeRight" type="Sprite3D" parent="Head" unique_id=845095309]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.2, 0, -0.4975176)
-visible = false
+layers = 2
 flip_h = true
 texture = ExtResource("3_1des2")
+
+[node name="Crosshair" type="Label" parent="." unique_id=37449765]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Head/Camera3D/InteractionDetection" to="." method="raycast_entered"]
 [connection signal="body_exited" from="Head/Camera3D/InteractionDetection" to="." method="raycast_exited"]

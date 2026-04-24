@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_force
 	
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
-	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y))
 	if direction:
 		velocity.x = direction.x * movement_speed
 		velocity.z = direction.z * movement_speed
