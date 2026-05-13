@@ -59,6 +59,9 @@ load_path = "res://.godot/imported/painted.jpg-60906e5836712d03be2c64759dae7f35.
 albedo_color = Color(0.92266667, 0.92, 1, 1)
 albedo_texture = SubResource("CompressedTexture2D_s55to")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctefb"]
+size = Vector3(1.9076538, 4.275696, 1.6890259)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27ljs"]
 render_priority = 1
 transparency = 1
@@ -308,9 +311,6 @@ sensitivity = 0.003
 jump_force = 4.5
 metadata/_edit_group_ = true
 
-[node name="Messages" parent="Player" index="4" unique_id=1087480721]
-visible = false
-
 [node name="World" type="Node3D" parent="." unique_id=1719291238]
 
 [node name="Ground" type="CSGBox3D" parent="World" unique_id=1810317977]
@@ -377,21 +377,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0782537, -0.43237305)
 operation = 2
 size = Vector3(1.5166016, 0.927124, 0.72021484)
 
-[node name="Wardrobe" type="CSGBox3D" parent="World" unique_id=2106353244 node_paths=PackedStringArray("plr", "wardrobe_game")]
+[node name="Wardrobe" type="Area3D" parent="World" unique_id=1819631902 node_paths=PackedStringArray("wardrobe_game", "player_reference")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0703002, 2.1064587, -2.106416)
+script = ExtResource("6_27ljs")
+wardrobe_game = NodePath("../../CanvasLayer/OutfitGame")
+interaction_inactive_colour = Color(0, 0, 0, 0)
+player_reference = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Wardrobe" unique_id=1077213256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.010467529)
+shape = SubResource("BoxShape3D_ctefb")
+
+[node name="Mesh" type="CSGBox3D" parent="World/Wardrobe" unique_id=2106353244]
 use_collision = true
 size = Vector3(1.9076538, 4.275696, 1.6680908)
 material = SubResource("StandardMaterial3D_c5i2s")
-script = ExtResource("6_27ljs")
-plr = NodePath("../../Player")
-wardrobe_game = NodePath("../../CanvasLayer/OutfitGame")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="World/Wardrobe" unique_id=2090824409]
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Wardrobe/Mesh" unique_id=2090824409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03753662, -0.2437439, 0.8144686)
 operation = 2
 size = Vector3(1.7374268, 3.2503052, 0.052597046)
 
-[node name="Mirror" parent="World/Wardrobe" unique_id=562119481 instance=ExtResource("2_8ly1u")]
+[node name="Mirror" parent="World/Wardrobe/Mesh" unique_id=562119481 instance=ExtResource("2_8ly1u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25276017, 0.78943086)
 size = Vector2(1.75, 3.25)
 pixels_per_unit = 50
@@ -498,8 +505,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3695555, 2.2787426, 1.0093)
 use_collision = true
 size = Vector3(0.067, 4.602, 8.063)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="World/WallBack" unique_id=355341954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8399048, -2.068914)
+operation = 2
+size = Vector3(0.26660156, 2.812378, 1.7043457)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/WallBack" unique_id=1699311320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04319191, -0.81604004, -2.961061)
+size = Vector3(0.046875, 2.8752441, 0.083862305)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/WallBack" unique_id=489558849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04319191, -0.81604004, -1.1777594)
+size = Vector3(0.046875, 2.8752441, 0.083862305)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/WallBack" unique_id=256027424]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.04319191, 0.5986047, -2.0919366)
+size = Vector3(0.046875, 1.8127441, 0.083862305)
+
+[node name="Door" type="CSGBox3D" parent="World/WallBack" unique_id=1229366189]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, -0.051091194, -0.8399048, -2.1376357)
+size = Vector3(0.048828125, 2.812378, 1.7043457)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/WallBack/Door" unique_id=292771462]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029046059, 0.8349669, -0.3871386)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/WallBack/Door" unique_id=788196014]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022666931, 0.8349669, 0.4423914)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/WallBack/Door" unique_id=604332208]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022667408, -0.69760585, 0.44239128)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/WallBack/Door" unique_id=1012040061]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029378414, -0.69760585, -0.3918718)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
 [node name="OmniLight3D" type="OmniLight3D" parent="World" unique_id=429213109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6967015, 1.9393616, 0)
+omni_range = 16.620691
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="World" unique_id=175052597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6647596, 1.8126662, -0.25833148)
+light_color = Color(0.98716664, 1, 0.89, 1)
 omni_range = 16.620691
 
 [node name="Bedside" type="CSGBox3D" parent="World" unique_id=446901800]
@@ -726,6 +779,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("16_ctefb")
 text = "Finish"
 
+[connection signal="body_entered" from="World/Wardrobe" to="World/Wardrobe" method="_on_body_entered"]
+[connection signal="body_exited" from="World/Wardrobe" to="World/Wardrobe" method="_on_body_exited"]
 [connection signal="item_selected" from="CanvasLayer/OutfitGame/Options/Outfits" to="CanvasLayer/OutfitGame" method="_on_outfits_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/OutfitGame/Options/Eyes" to="CanvasLayer/OutfitGame" method="_on_eyes_item_selected"]
 [connection signal="pressed" from="CanvasLayer/OutfitGame/Options/Control/Finish" to="CanvasLayer/OutfitGame" method="_on_finish_pressed"]

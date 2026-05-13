@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpk6ia7sr7sh5" path="res://Entities/Player/Player.gd" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://kexnlqjjt2xp" path="res://Entities/Character/Designs/Outfits/Pijamas.png" id="2_vweq0"]
+[ext_resource type="Script" uid="uid://6lykp5w8il8u" path="res://Entities/Player/PlayerRaycast.gd" id="3_hj1c0"]
 [ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="3_vweq0"]
 [ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="4_1des2"]
 [ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="5_an6q6"]
@@ -81,6 +82,7 @@ cull_mask = 1048573
 
 [node name="InteractionDetection" type="Area3D" parent="Head/Camera3D" unique_id=1124429415]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, -0.5)
+script = ExtResource("3_hj1c0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/InteractionDetection" unique_id=915100531]
 shape = SubResource("SeparationRayShape3D_vweq0")
@@ -156,5 +158,7 @@ autowrap_mode = 3
 stream = ExtResource("6_t38ms")
 volume_db = -15.0
 
-[connection signal="body_entered" from="Head/Camera3D/InteractionDetection" to="." method="raycast_entered"]
-[connection signal="body_exited" from="Head/Camera3D/InteractionDetection" to="." method="raycast_exited"]
+[connection signal="area_entered" from="Head/Camera3D/InteractionDetection" to="." method="raycast_area_entered"]
+[connection signal="area_exited" from="Head/Camera3D/InteractionDetection" to="." method="raycast_area_exited"]
+[connection signal="body_entered" from="Head/Camera3D/InteractionDetection" to="." method="raycast_body_entered"]
+[connection signal="body_exited" from="Head/Camera3D/InteractionDetection" to="." method="raycast_body_exited"]

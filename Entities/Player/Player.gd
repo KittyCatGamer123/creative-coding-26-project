@@ -15,6 +15,7 @@ class_name Player
 @onready var design_eye_left: Sprite3D = $Head/EyeLeft
 @onready var design_eye_right: Sprite3D = $Head/EyeRight
 
+var message_active = false
 @onready var messagebox: ColorRect = $Messages
 @onready var messagebox_text: Label = $Messages/msg
 @onready var messagebox_name: Label = $Messages/msg_name
@@ -61,25 +62,35 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+func raycast_area_entered(n: Node3D) -> void: raycast_entered(n)
+func raycast_area_exited(n: Node3D) -> void: raycast_exited(n)
+func raycast_body_entered(n: Node3D) -> void: raycast_entered(n)
+func raycast_body_exited(n: Node3D) -> void: raycast_exited(n)
 
 func raycast_entered(n: Node3D) -> void:
-	if (n is Character) or (n is WardrobeInteraction):
+	if n is Interactable:
 		n.interaction_outline = true
 
 func raycast_exited(n: Node3D) -> void:
-	if (n is Character) or (n is WardrobeInteraction):
+	if n is Interactable:
 		n.interaction_outline = false
 
 func raycast_interact():
-	for n in interact_raycast.get_overlapping_bodies():
-		if (n is Character) or (n is WardrobeInteraction):
+	var interacts = interact_raycast.get_overlapping_bodies()
+	interacts.append_array(interact_raycast.get_overlapping_areas())
+	
+	for n in interacts:
+		if n is Interactable:
 			n.player_interaction()
 
 func show_message(_name: String, text: String):
+	if message_active: return
+	
 	messagebox_name.text = _name
 	messagebox_text.text = text
 	messagebox_text.visible_characters = 0
 	messagebox.visible = true
+	message_active = true
 	
 	while true:
 		messagebox_text.visible_characters += 1
@@ -91,3 +102,4 @@ func show_message(_name: String, text: String):
 	
 	await get_tree().create_timer(6).timeout
 	messagebox.visible = false
+	message_active = false
