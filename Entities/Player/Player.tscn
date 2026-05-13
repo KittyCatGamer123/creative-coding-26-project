@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dpk6ia7sr7sh5" path="res://Entities/Player/Player.gd" id="1_ww0jn"]
 [ext_resource type="Texture2D" uid="uid://kexnlqjjt2xp" path="res://Entities/Character/Designs/Outfits/Pijamas.png" id="2_vweq0"]
 [ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="3_vweq0"]
+[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="4_1des2"]
+[ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="5_an6q6"]
+[ext_resource type="AudioStream" uid="uid://bbwbhensnk3jw" path="res://Audio/dialogue.wav" id="6_t38ms"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_an6q6"]
 height = 2.5
@@ -42,6 +45,20 @@ cap_bottom = false
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_vweq0"]
 length = 1.2
+
+[sub_resource type="LabelSettings" id="LabelSettings_an6q6"]
+font = ExtResource("4_1des2")
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.12156863)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t38ms"]
+font = ExtResource("5_an6q6")
+font_size = 25
+font_color = Color(0.63, 0.8458334, 1, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.12156863)
 
 [node name="Player" type="CharacterBody3D" unique_id=1015862513]
 script = ExtResource("1_ww0jn")
@@ -88,6 +105,56 @@ grow_vertical = 2
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Messages" type="ColorRect" parent="." unique_id=1087480721]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 294.0
+offset_top = 423.0
+offset_right = -294.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17, 0.17, 0.17, 0.58431375)
+
+[node name="msg" type="Label" parent="Messages" unique_id=986201299]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello!"
+label_settings = SubResource("LabelSettings_an6q6")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="msg_name" type="Label" parent="Messages" unique_id=1190403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -10.0
+offset_right = -362.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.034906585
+text = "You"
+label_settings = SubResource("LabelSettings_t38ms")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Messages" unique_id=188979174]
+stream = ExtResource("6_t38ms")
+volume_db = -15.0
 
 [connection signal="body_entered" from="Head/Camera3D/InteractionDetection" to="." method="raycast_entered"]
 [connection signal="body_exited" from="Head/Camera3D/InteractionDetection" to="." method="raycast_exited"]

@@ -7,15 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b1e56fajg55rj" path="res://Scenes/Bedroom/Materials/mattress.jpg" id="3_7jyid"]
 [ext_resource type="Texture2D" uid="uid://byvyqjjgyd8nu" path="res://Scenes/Bedroom/Materials/bed.jpg" id="4_gbv8p"]
 [ext_resource type="Texture2D" uid="uid://c86x1reltt6kw" path="res://Scenes/Bedroom/Materials/painted.jpg" id="4_s55to"]
-[ext_resource type="Script" uid="uid://bih81lg154spv" path="res://Scenes/Bedroom/Wardrobe.gd" id="6_27ljs"]
 [ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="7_xhn55"]
 [ext_resource type="Texture2D" uid="uid://cvj5xvxlbeebg" path="res://Scenes/Bedroom/eyeopen.png" id="8_j5n7y"]
 [ext_resource type="AudioStream" uid="uid://0jhoananobb0" path="res://Scenes/Bedroom/alarm.wav" id="9_836jf"]
-[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="12_c5i2s"]
-[ext_resource type="Texture2D" uid="uid://kexnlqjjt2xp" path="res://Entities/Character/Designs/Outfits/Pijamas.png" id="13_crd66"]
-[ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="14_sat6f"]
-[ext_resource type="Script" uid="uid://bl47nwvcu6a5q" path="res://Scenes/Bedroom/OutfitGame.gd" id="15_ctefb"]
-[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="16_ctefb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ly1u"]
 sky_top_color = Color(0.030800017, 0.5359201, 0.77, 1)
@@ -38,7 +32,7 @@ albedo_texture = ExtResource("2_gg5kx")
 uv1_scale = Vector3(4, 4, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhn55"]
-albedo_color = Color(0.90166664, 1, 0.9, 1)
+albedo_color = Color(0.8236667, 1, 0.77, 1)
 albedo_texture = ExtResource("3_7jyid")
 uv1_scale = Vector3(1, 1, 2)
 
@@ -58,25 +52,6 @@ load_path = "res://.godot/imported/painted.jpg-60906e5836712d03be2c64759dae7f35.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbv8p"]
 albedo_color = Color(0.92266667, 0.92, 1, 1)
 albedo_texture = SubResource("CompressedTexture2D_s55to")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27ljs"]
-render_priority = 1
-transparency = 1
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 0)
-grow = true
-grow_amount = 0.05
-stencil_mode = 3
-stencil_flags = 1
-stencil_compare = 5
-metadata/_stencil_owned = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5i2s"]
-next_pass = SubResource("StandardMaterial3D_27ljs")
-stencil_mode = 1
-stencil_flags = 2
-stencil_color = Color(0, 0, 0, 0)
-stencil_outline_thickness = 0.05
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jyid"]
 albedo_color = Color(0.8901961, 0.85882354, 1, 1)
@@ -227,73 +202,9 @@ _data = {
 &"RESET": SubResource("Animation_i5tp7")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crd66"]
-render_priority = 1
-transparency = 1
-shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-grow = true
-grow_amount = 0.015
-stencil_mode = 3
-stencil_flags = 1
-stencil_compare = 5
-metadata/_stencil_owned = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sat6f"]
-next_pass = SubResource("StandardMaterial3D_crd66")
-emission_enabled = true
-emission = Color(0.70380783, 0.70380783, 0.70380783, 1)
-stencil_mode = 1
-stencil_flags = 2
-stencil_outline_thickness = 0.015
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_xg4sl"]
-material = SubResource("StandardMaterial3D_sat6f")
-height = 2.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg4sl"]
-albedo_texture = ExtResource("13_crd66")
-emission = Color(0.7708395, 0.77083945, 0.77083945, 1)
-uv1_scale = Vector3(1, 2, 1)
-
-[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_ctefb"]
-material = SubResource("StandardMaterial3D_xg4sl")
-radius = 0.525
-radial_steps = 20
-cap_top = false
-cap_bottom = false
-
-[sub_resource type="LabelSettings" id="LabelSettings_27ljs"]
-font = ExtResource("7_xhn55")
-font_size = 40
-outline_size = 6
-outline_color = Color(0.21562508, 0.1725, 0.69, 1)
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 0.85882354)
-
-[sub_resource type="LabelSettings" id="LabelSettings_sat6f"]
-font = ExtResource("7_xhn55")
-font_size = 30
-outline_size = 6
-outline_color = Color(0.69, 0.1725, 0.35362494, 1)
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 0.85882354)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xg4sl"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_xg4sl"]
-font = ExtResource("7_xhn55")
-font_size = 30
-outline_size = 6
-outline_color = Color(0.560625, 0.69, 0.1725, 1)
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 0.85882354)
-
-[node name="BedroomScene" type="Node3D" unique_id=1350736337 node_paths=PackedStringArray("player", "scene_animator", "outfit_select_preview")]
+[node name="BedroomScene" type="Node3D" unique_id=1350736337 node_paths=PackedStringArray("scene_animator")]
 script = ExtResource("1_i5tp7")
-player = NodePath("Player")
 scene_animator = NodePath("AnimationPlayer")
-outfit_select_preview = NodePath("PlayerCopyGame")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1578125680]
 environment = SubResource("Environment_s55to")
@@ -307,9 +218,6 @@ transform = Transform3D(-0.0068590436, 0.9999766, -4.361559e-08, -0.9728661, -0.
 sensitivity = 0.003
 jump_force = 4.5
 metadata/_edit_group_ = true
-
-[node name="Messages" parent="Player" index="4" unique_id=1087480721]
-visible = false
 
 [node name="World" type="Node3D" parent="." unique_id=1719291238]
 
@@ -377,14 +285,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0782537, -0.43237305)
 operation = 2
 size = Vector3(1.5166016, 0.927124, 0.72021484)
 
-[node name="Wardrobe" type="CSGBox3D" parent="World" unique_id=2106353244 node_paths=PackedStringArray("plr", "wardrobe_game")]
+[node name="Wardrobe" type="CSGBox3D" parent="World" unique_id=2106353244]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0703002, 2.1064587, -2.106416)
 use_collision = true
 size = Vector3(1.9076538, 4.275696, 1.6680908)
-material = SubResource("StandardMaterial3D_c5i2s")
-script = ExtResource("6_27ljs")
-plr = NodePath("../../Player")
-wardrobe_game = NodePath("../../CanvasLayer/OutfitGame")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Wardrobe" unique_id=2090824409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03753662, -0.2437439, 0.8144686)
@@ -560,21 +464,6 @@ autoplay = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1009033803]
 libraries/ = SubResource("AnimationLibrary_i5tp7")
 
-[node name="PlayerCopyGame" parent="." unique_id=2103743369 instance=ExtResource("12_c5i2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1875398, 15.920534)
-
-[node name="CharacterBody" parent="PlayerCopyGame" index="1" unique_id=714721396]
-mesh = SubResource("CapsuleMesh_xg4sl")
-
-[node name="Outfit" parent="PlayerCopyGame/CharacterBody" index="0" unique_id=1986631287]
-mesh = SubResource("TubeTrailMesh_ctefb")
-
-[node name="EyeLeft" parent="PlayerCopyGame/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=344771616]
-texture = ExtResource("14_sat6f")
-
-[node name="EyeRight" parent="PlayerCopyGame/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=563669890]
-texture = ExtResource("14_sat6f")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=166422185]
 
 [node name="Awaking" type="Control" parent="CanvasLayer" unique_id=63794411]
@@ -610,125 +499,4 @@ rotation = 3.1415927
 pivot_offset = Vector2(576, 324)
 texture = ExtResource("8_j5n7y")
 
-[node name="OutfitGame" type="Control" parent="CanvasLayer" unique_id=1468968763 node_paths=PackedStringArray("player", "editable_character_mesh", "editable_character_eyeleft", "editable_character_eyeright", "outfits_container", "eyes_container")]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("15_ctefb")
-player = NodePath("../../Player")
-editable_character_mesh = NodePath("../../PlayerCopyGame/CharacterBody/Outfit")
-editable_character_eyeleft = NodePath("../../PlayerCopyGame/Head/EyeLeft")
-editable_character_eyeright = NodePath("../../PlayerCopyGame/Head/EyeRight")
-outfits_container = NodePath("Options/Outfits")
-eyes_container = NodePath("Options/Eyes")
-
-[node name="Bg" type="ColorRect" parent="CanvasLayer/OutfitGame" unique_id=1940503694]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.6039216)
-
-[node name="Title" type="Label" parent="CanvasLayer/OutfitGame" unique_id=1071869004]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 31.0
-offset_bottom = -554.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Dress Yourself for Class"
-label_settings = SubResource("LabelSettings_27ljs")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/OutfitGame" unique_id=2144040658]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 200.00002
-offset_right = 273.0
-offset_bottom = 450.0
-scale = Vector2(1.25, 1.25)
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/OutfitGame/SubViewportContainer" unique_id=2113730080]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(250, 250)
-render_target_update_mode = 0
-
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/OutfitGame/SubViewportContainer/SubViewport" unique_id=180378603]
-transform = Transform3D(-0.9077775, -0.09435619, 0.40870157, 0, 0.97437006, 0.22495106, -0.4194521, 0.2042055, -0.88451123, 0.6690529, 3.8120034, 14.169666)
-
-[node name="Options" type="VBoxContainer" parent="CanvasLayer/OutfitGame" unique_id=1082055886]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 306.0
-offset_top = 129.0
-offset_right = -159.0
-offset_bottom = -45.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TitleOutfit" type="Label" parent="CanvasLayer/OutfitGame/Options" unique_id=447486963]
-layout_mode = 2
-text = "Outfit"
-label_settings = SubResource("LabelSettings_sat6f")
-vertical_alignment = 1
-
-[node name="Outfits" type="ItemList" parent="CanvasLayer/OutfitGame/Options" unique_id=1822652048]
-custom_minimum_size = Vector2(0, 140)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_xg4sl")
-allow_search = false
-max_columns = 0
-fixed_icon_size = Vector2i(130, 40)
-
-[node name="TitleOutfit2" type="Label" parent="CanvasLayer/OutfitGame/Options" unique_id=469950354]
-layout_mode = 2
-text = "Eyes"
-label_settings = SubResource("LabelSettings_xg4sl")
-vertical_alignment = 1
-
-[node name="Eyes" type="ItemList" parent="CanvasLayer/OutfitGame/Options" unique_id=934950853]
-custom_minimum_size = Vector2(0, 140)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_xg4sl")
-allow_search = false
-max_columns = 0
-fixed_icon_size = Vector2i(40, 40)
-
-[node name="Control" type="Control" parent="CanvasLayer/OutfitGame/Options" unique_id=642600310]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-
-[node name="Finish" type="Button" parent="CanvasLayer/OutfitGame/Options/Control" unique_id=718011633]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = -23.0
-offset_right = 45.5
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("16_ctefb")
-text = "Finish"
-
-[connection signal="item_selected" from="CanvasLayer/OutfitGame/Options/Outfits" to="CanvasLayer/OutfitGame" method="_on_outfits_item_selected"]
-[connection signal="item_selected" from="CanvasLayer/OutfitGame/Options/Eyes" to="CanvasLayer/OutfitGame" method="_on_eyes_item_selected"]
-[connection signal="pressed" from="CanvasLayer/OutfitGame/Options/Control/Finish" to="CanvasLayer/OutfitGame" method="_on_finish_pressed"]
-
 [editable path="Player"]
-[editable path="PlayerCopyGame"]

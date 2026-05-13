@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqtahekqpcwe3"
-path.s3tc="res://.godot/imported/Candycane.jpg-fc0c5d48b7bbd8edcc15baf8b685c288.s3tc.ctex"
+uid="uid://byvyqjjgyd8nu"
+path.s3tc="res://.godot/imported/bed.jpg-32b23ef640b42a8eb07cd02b83a47384.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Entities/Character/Designs/Outfits/Candycane.jpg"
-dest_files=["res://.godot/imported/Candycane.jpg-fc0c5d48b7bbd8edcc15baf8b685c288.s3tc.ctex"]
+source_file="res://Scenes/Bedroom/Materials/bed.jpg"
+dest_files=["res://.godot/imported/bed.jpg-32b23ef640b42a8eb07cd02b83a47384.s3tc.ctex"]
 
 [params]
 

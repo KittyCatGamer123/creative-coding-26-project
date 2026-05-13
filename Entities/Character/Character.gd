@@ -12,4 +12,5 @@ var interaction_outline: bool = false:
 	get: return interaction_outline
 
 func player_interaction():
-	print("Interaction")
+	pass
+	#print("Interaction")
