@@ -3,6 +3,7 @@ class_name Player
 
 @export_category("Controls")
 @export var can_control: bool = true
+@export var can_interact: bool = true
 @export var sensitivity: float = 0.005
 @export var movement_speed: float = 4.0
 @export var jump_force: float = 3.5
@@ -33,17 +34,19 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	elif can_control:
-		if event.is_action_pressed("Interact"):
-			raycast_interact()
-		
-		elif event is InputEventMouseMotion:
+	if can_control:
+		if event is InputEventMouseMotion:
 			rotate_y(-event.relative.x * sensitivity)
 			player_camera.rotate_x(-event.relative.y * sensitivity)
 			player_camera.rotation.x = clamp(player_camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+	
+	if can_interact:
+		if event.is_action_pressed("Interact"):
+			raycast_interact()
+			
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
+	if (not is_on_floor()) and (motion_mode != MOTION_MODE_FLOATING):
 		velocity += get_gravity() * delta
 	
 	if can_control:

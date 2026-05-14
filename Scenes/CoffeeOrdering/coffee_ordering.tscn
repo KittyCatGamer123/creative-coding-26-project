@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://4i14i4v55w7y"]
+
+[ext_resource type="PackedScene" uid="uid://5h2a4r2dgkac" path="res://Entities/Player/Player.tscn" id="1_l0g4e"]
+[ext_resource type="Script" uid="uid://dlcj03ikhgkha" path="res://Scenes/CoffeeOrdering/CoffeeOrdering.gd" id="1_u3xta"]
+[ext_resource type="Texture2D" uid="uid://byn6wwoqavpgb" path="res://Scenes/CoffeeOrdering/pointing.png" id="2_8qaxy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0g4e"]
+sky_top_color = Color(0.030800017, 0.5359201, 0.77, 1)
+sky_horizon_color = Color(0.552, 0.6049, 0.69, 1)
+ground_bottom_color = Color(0.533, 0.5915, 0.65, 1)
+ground_horizon_color = Color(0.6216, 0.70531994, 0.84, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_gg5kx"]
+sky_material = SubResource("ProceduralSkyMaterial_l0g4e")
+
+[sub_resource type="Environment" id="Environment_8qaxy"]
+background_mode = 2
+sky = SubResource("Sky_gg5kx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53q7p"]
+atlas = ExtResource("2_8qaxy")
+region = Rect2(0, 110, 200, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edbvm"]
+atlas = ExtResource("2_8qaxy")
+region = Rect2(0, 220, 200, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll7ei"]
+atlas = ExtResource("2_8qaxy")
+region = Rect2(0, 330, 200, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8yy7"]
+atlas = ExtResource("2_8qaxy")
+region = Rect2(0, 440, 200, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8142"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53q7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edbvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll7ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8yy7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="CoffeeOrdering" type="Node3D" unique_id=224079871]
+script = ExtResource("1_u3xta")
+
+[node name="Player" parent="." unique_id=1015862513 instance=ExtResource("1_l0g4e")]
+motion_mode = 1
+
+[node name="Messages" parent="Player" index="4" unique_id=1087480721]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1402115849]
+environment = SubResource("Environment_8qaxy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1517996892]
+transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, -0.34925765, 0.881684, 0.31725767, -0.3577976, 0.1874388, -0.9147937, -10.271363, 11.777811, -11.496918)
+sky_mode = 2
+
+[node name="World" type="Node3D" parent="." unique_id=2062394518]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1467346592]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1698857465]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HandPointer" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1994030508]
+position = Vector2(790.9966, 369.6304)
+rotation = 1.5707964
+scale = Vector2(2.800478, 2.8004782)
+sprite_frames = SubResource("SpriteFrames_k8142")
+
+[editable path="Player"]

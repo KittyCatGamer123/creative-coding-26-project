@@ -1,0 +1,1086 @@
+[gd_scene format=3 uid="uid://c4xph0bbs8l7b"]
+
+[ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="1_n1dbm"]
+[ext_resource type="Script" uid="uid://b021yocd8qjdf" path="res://Scenes/BusScene/BusScene.gd" id="1_p3f3u"]
+[ext_resource type="PackedScene" uid="uid://5h2a4r2dgkac" path="res://Entities/Player/Player.tscn" id="1_umytt"]
+[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="2_hxbi2"]
+[ext_resource type="Texture2D" uid="uid://b4manuceggxdq" path="res://Entities/Character/Designs/Outfits/BusOutfit.jpg" id="3_ovec4"]
+[ext_resource type="Texture2D" uid="uid://dautnstn1kof8" path="res://Entities/Character/Designs/Eyes/eye_sagging.png" id="4_rbx2y"]
+[ext_resource type="Texture2D" uid="uid://dyc4tu6pa4vb7" path="res://Entities/creature.webp" id="5_u1km7"]
+[ext_resource type="Texture2D" uid="uid://ckno6bbo0qir8" path="res://Entities/Hornet_Idle.webp" id="6_2tloo"]
+[ext_resource type="Texture2D" uid="uid://cqtahekqpcwe3" path="res://Entities/Character/Designs/Outfits/Candycane.jpg" id="7_8yl07"]
+[ext_resource type="Texture2D" uid="uid://clmt8ladoi5y7" path="res://Entities/Character/Designs/Outfits/GreenJacket.jpg" id="7_dy42u"]
+[ext_resource type="Texture2D" uid="uid://dchv0utoml0ov" path="res://Entities/Character/Designs/Eyes/eye_happy.png" id="8_6bgx3"]
+[ext_resource type="Texture2D" uid="uid://co7scwkqvilep" path="res://Entities/Character/Designs/Outfits/Honeysquare.jpg" id="8_flkoj"]
+[ext_resource type="Texture2D" uid="uid://8fjx2nvok72p" path="res://Entities/Character/Designs/Eyes/eye_wince.png" id="9_dy42u"]
+[ext_resource type="Texture2D" uid="uid://clsyjqceqvkyc" path="res://Entities/Character/Designs/Outfits/Dungarees.jpg" id="9_sou33"]
+[ext_resource type="Texture2D" uid="uid://chigyf5dapajw" path="res://Entities/Character/Designs/Eyes/eye_nerd.png" id="9_x83tu"]
+[ext_resource type="Texture2D" uid="uid://bjsi6r884e7a4" path="res://Entities/Character/Designs/Eyes/eye_alien.png" id="10_yevgb"]
+[ext_resource type="Texture2D" uid="uid://bo1ptmvl6lsuc" path="res://Entities/Character/Designs/Eyes/eye_cute.png" id="13_y8tmv"]
+[ext_resource type="Texture2D" uid="uid://250fp5alnlbw" path="res://Scenes/BusScene/roadtexture.jpg" id="17_rskn4"]
+[ext_resource type="Texture2D" uid="uid://xorg3xk308v2" path="res://Scenes/BusScene/pathtexture.jpg" id="18_j2ppg"]
+[ext_resource type="Texture2D" uid="uid://dutd42b00u7ls" path="res://Scenes/BusScene/timingback.png" id="19_8dcag"]
+[ext_resource type="Texture2D" uid="uid://37k7uitrt7i5" path="res://Scenes/BusScene/timingbar.png" id="20_p3f3u"]
+[ext_resource type="Texture2D" uid="uid://tc1jb7ieq56t" path="res://Scenes/BusScene/hand_ready.png" id="20_sjjjh"]
+[ext_resource type="Texture2D" uid="uid://bi50p8e5uq3x5" path="res://Scenes/BusScene/hand_using.png" id="21_gl8gg"]
+[ext_resource type="Texture2D" uid="uid://cf10o5l6r3ajn" path="res://Scenes/BusScene/timingfill.png" id="21_sjjjh"]
+[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="22_8wqku"]
+[ext_resource type="Texture2D" uid="uid://cfaf7my3xbewq" path="res://Scenes/BusScene/hand_thanks.png" id="22_wwtix"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1dbm"]
+sky_top_color = Color(0.030800017, 0.5359201, 0.77, 1)
+sky_horizon_color = Color(0.552, 0.6049, 0.69, 1)
+ground_bottom_color = Color(0.533, 0.5915, 0.65, 1)
+ground_horizon_color = Color(0.6216, 0.70531994, 0.84, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_gg5kx"]
+sky_material = SubResource("ProceduralSkyMaterial_n1dbm")
+
+[sub_resource type="Environment" id="Environment_hxbi2"]
+background_mode = 2
+sky = SubResource("Sky_gg5kx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1dbm"]
+albedo_color = Color(0.252, 0.4610667, 0.7, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umytt"]
+albedo_color = Color(0.27, 0.24786, 0.23760001, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxbi2"]
+albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovec4"]
+transparency = 1
+albedo_color = Color(0.39, 0.65433335, 1, 0.44705883)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1km7"]
+albedo_color = Color(0.46200004, 0.55, 0.55, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tloo"]
+albedo_texture = ExtResource("3_ovec4")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rbx2y"]
+albedo_color = Color(1, 0.92800003, 0.27999997, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8tmv"]
+albedo_texture = ExtResource("7_dy42u")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2ppg"]
+albedo_texture = ExtResource("8_flkoj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqrbh"]
+albedo_texture = ExtResource("7_8yl07")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flkoj"]
+albedo_texture = ExtResource("9_sou33")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yevgb"]
+load_path = "res://.godot/imported/BlossomTee.jpg-d007d6cc449feffe69e43835a27afb2c.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rskn4"]
+albedo_texture = SubResource("CompressedTexture2D_yevgb")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yevgb"]
+albedo_texture = ExtResource("7_8yl07")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0cm0"]
+albedo_color = Color(0.22540002, 0.33488002, 0.46, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hniaw"]
+albedo_texture = ExtResource("17_rskn4")
+emission_enabled = true
+emission = Color(0.060530394, 0.060530335, 0.060530372, 1)
+emission_texture = ExtResource("17_rskn4")
+uv1_scale = Vector3(15, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dcag"]
+albedo_texture = ExtResource("18_j2ppg")
+emission_enabled = true
+emission_texture = ExtResource("18_j2ppg")
+uv1_scale = Vector3(25, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2ppg"]
+font = ExtResource("1_n1dbm")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.9888335, 0.32999998, 1, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.654902)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwtix"]
+font = ExtResource("22_8wqku")
+font_size = 20
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.6901961)
+shadow_offset = Vector2(3, 2)
+
+[node name="BusScene" type="Node3D" unique_id=1500278321 node_paths=PackedStringArray("player_ref", "bus_model", "gametitle", "timing_progress", "hand_ready_sprite", "hand_out_sprite", "hand_thanks_sprite")]
+script = ExtResource("1_p3f3u")
+player_ref = NodePath("Player")
+bus_model = NodePath("Bus")
+gametitle = NodePath("CanvasLayer/Control/Title")
+timing_progress = NodePath("CanvasLayer/Control/TimingProgress")
+hand_ready_sprite = NodePath("CanvasLayer/Control/HandReady")
+hand_out_sprite = NodePath("CanvasLayer/Control/HandOut")
+hand_thanks_sprite = NodePath("CanvasLayer/Control/HandThanks")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=777323345]
+environment = SubResource("Environment_hxbi2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=267238137]
+transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, -0.34925765, 0.881684, 0.31725767, -0.3577976, 0.1874388, -0.9147937, -10.271363, 11.777811, -11.496918)
+sky_mode = 2
+
+[node name="Bus" type="CSGBox3D" parent="." unique_id=5050724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.453, 1.8, -220)
+use_collision = true
+size = Vector3(5.9906006, 1.2637329, 19.584717)
+material = SubResource("StandardMaterial3D_n1dbm")
+
+[node name="Hole" type="CSGCylinder3D" parent="Bus" unique_id=1651945778]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.39490896, 4.12955)
+operation = 2
+radius = 0.9511719
+height = 6.2158203
+sides = 12
+
+[node name="Wheel" type="CSGCylinder3D" parent="Bus" unique_id=1710726665]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.88411576, 4.12955)
+radius = 1.0
+height = 6.0546875
+sides = 13
+material = SubResource("StandardMaterial3D_umytt")
+
+[node name="Hole2" type="CSGCylinder3D" parent="Bus" unique_id=536761937]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.39490896, -4.832574)
+operation = 2
+radius = 0.9511719
+height = 6.2158203
+sides = 12
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Bus" unique_id=447949077]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.88411576, -4.832574)
+radius = 1.0
+height = 6.0546875
+sides = 13
+material = SubResource("StandardMaterial3D_umytt")
+
+[node name="Hole3" type="CSGCylinder3D" parent="Bus" unique_id=1625504909]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.39490896, -7.2595882)
+operation = 2
+radius = 0.9511719
+height = 6.2158203
+sides = 12
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Bus" unique_id=1662266644]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.88411576, -7.2595882)
+radius = 1.0
+height = 6.0546875
+sides = 13
+material = SubResource("StandardMaterial3D_umytt")
+
+[node name="DoorEntry" type="CSGBox3D" parent="Bus" unique_id=144183686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12850952, 0.38613892, 7.752676)
+operation = 2
+size = Vector3(5.864319, 1.3231812, 2.300354)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus" unique_id=78871184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9505239, 1.6018007, 8.319748)
+size = Vector3(0.089, 3.8, 1.222)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/CSGBox3D" unique_id=842143981]
+operation = 2
+size = Vector3(0.13647461, 3.6135254, 1.0556641)
+
+[node name="Glass" type="CSGBox3D" parent="Bus/CSGBox3D" unique_id=856523787]
+size = Vector3(0.01171875, 3.7028809, 1.0556641)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bus" unique_id=443756236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7315007, 1.490942, 7.7745385)
+size = Vector3(0.089, 3.2551148, 1.8144531)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/CSGBox3D4" unique_id=807445817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008758545, 0)
+operation = 2
+size = Vector3(0.13647461, 3.0860596, 1.7148438)
+
+[node name="Glass" type="CSGBox3D" parent="Bus/CSGBox3D4" unique_id=1725178900]
+size = Vector3(0.01171875, 3.1975098, 1.7890625)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bus" unique_id=204746226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.951, 1.6016331, 7.17)
+size = Vector3(0.089, 3.8, 1.222)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/CSGBox3D2" unique_id=1189777820]
+operation = 2
+size = Vector3(0.13647461, 3.625, 1.0556641)
+
+[node name="Glass" type="CSGBox3D" parent="Bus/CSGBox3D2" unique_id=38274685]
+size = Vector3(0.01171875, 3.7089844, 1.0556641)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bus" unique_id=1445735862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.839378, 1.5479076, 7.803713)
+size = Vector3(0.21777344, 3.668396, 2.4366455)
+material = SubResource("StandardMaterial3D_u1km7")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Bus" unique_id=2017310743]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8521379, 1.5479076, 6.7095733)
+size = Vector3(0.21777344, 3.668396, 2.2207642)
+material = SubResource("StandardMaterial3D_u1km7")
+
+[node name="Character" parent="Bus" unique_id=2103743369 instance=ExtResource("2_hxbi2")]
+transform = Transform3D(-0.97187895, 0, -0.23548147, 0, 1, 0, 0.23548147, 0, -0.97187895, -1.8069129, 0.83177876, 7.6089964)
+
+[node name="Outfit" parent="Bus/Character/CharacterBody" parent_id_path=PackedInt32Array(2103743369, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_2tloo")
+
+[node name="EyeLeft" parent="Bus/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("4_rbx2y")
+
+[node name="EyeRight" parent="Bus/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("4_rbx2y")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bus" unique_id=606407011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.130884, -9.357)
+size = Vector3(5.97, 7.014831, 0.89)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Bus" unique_id=1717090977]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.9990482, -0.9726069, 9.870078)
+operation = 2
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 0)
+depth = 6.0
+
+[node name="doodle" type="Sprite3D" parent="Bus" unique_id=1668731935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3470209, 1.801466, -0.30916953)
+pixel_size = 0.012
+texture = ExtResource("5_u1km7")
+
+[node name="skong" type="Sprite3D" parent="Bus" unique_id=1222047439]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9820223, 1.801466, 5.7349987)
+pixel_size = 0.005
+texture = ExtResource("6_2tloo")
+
+[node name="Character2" parent="Bus" unique_id=611283606 instance=ExtResource("2_hxbi2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8344935, 2.2607427, 2.459481)
+
+[node name="Outfit" parent="Bus/Character2/CharacterBody" parent_id_path=PackedInt32Array(611283606, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_y8tmv")
+
+[node name="EyeLeft" parent="Bus/Character2/Head" parent_id_path=PackedInt32Array(611283606, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("8_6bgx3")
+
+[node name="EyeRight" parent="Bus/Character2/Head" parent_id_path=PackedInt32Array(611283606, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("8_6bgx3")
+
+[node name="Character6" parent="Bus" unique_id=187470644 instance=ExtResource("2_hxbi2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8344935, 5.923614, 7.299761)
+
+[node name="Outfit" parent="Bus/Character6/CharacterBody" parent_id_path=PackedInt32Array(187470644, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_j2ppg")
+
+[node name="EyeLeft" parent="Bus/Character6/Head" parent_id_path=PackedInt32Array(187470644, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("8_6bgx3")
+
+[node name="EyeRight" parent="Bus/Character6/Head" parent_id_path=PackedInt32Array(187470644, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("8_6bgx3")
+
+[node name="Character7" parent="Bus" unique_id=1782070912 instance=ExtResource("2_hxbi2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2167616, 5.923614, -0.2042141)
+
+[node name="Outfit" parent="Bus/Character7/CharacterBody" parent_id_path=PackedInt32Array(1782070912, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_jqrbh")
+
+[node name="EyeLeft" parent="Bus/Character7/Head" parent_id_path=PackedInt32Array(1782070912, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("10_yevgb")
+
+[node name="EyeRight" parent="Bus/Character7/Head" parent_id_path=PackedInt32Array(1782070912, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("10_yevgb")
+
+[node name="Character4" parent="Bus" unique_id=468953276 instance=ExtResource("2_hxbi2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8344935, 2.2607427, -7.2575073)
+
+[node name="Outfit" parent="Bus/Character4/CharacterBody" parent_id_path=PackedInt32Array(468953276, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_flkoj")
+
+[node name="EyeLeft" parent="Bus/Character4/Head" parent_id_path=PackedInt32Array(468953276, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("9_dy42u")
+
+[node name="EyeRight" parent="Bus/Character4/Head" parent_id_path=PackedInt32Array(468953276, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("9_dy42u")
+
+[node name="Character3" parent="Bus" unique_id=295380632 instance=ExtResource("2_hxbi2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5831347, 2.2607427, -2.9791965)
+
+[node name="Outfit" parent="Bus/Character3/CharacterBody" parent_id_path=PackedInt32Array(295380632, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_rskn4")
+
+[node name="EyeLeft" parent="Bus/Character3/Head" parent_id_path=PackedInt32Array(295380632, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("9_x83tu")
+
+[node name="EyeRight" parent="Bus/Character3/Head" parent_id_path=PackedInt32Array(295380632, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("9_x83tu")
+
+[node name="Character5" parent="Bus" unique_id=1688355442 instance=ExtResource("2_hxbi2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5831347, 2.2607427, -5.0047054)
+
+[node name="Outfit" parent="Bus/Character5/CharacterBody" parent_id_path=PackedInt32Array(1688355442, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_yevgb")
+
+[node name="EyeLeft" parent="Bus/Character5/Head" parent_id_path=PackedInt32Array(1688355442, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("13_y8tmv")
+
+[node name="EyeRight" parent="Bus/Character5/Head" parent_id_path=PackedInt32Array(1688355442, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("13_y8tmv")
+
+[node name="Floor" type="Node3D" parent="Bus" unique_id=1438673712]
+
+[node name="Chair" type="CSGBox3D" parent="Bus/Floor" unique_id=1877612750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, 4.3398705)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair" unique_id=1176659882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair2" type="CSGBox3D" parent="Bus/Floor" unique_id=1700106879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, 4.3398705)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair2" unique_id=418000954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair3" type="CSGBox3D" parent="Bus/Floor" unique_id=1779048873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, 2.0849197)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair3" unique_id=861165779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair4" type="CSGBox3D" parent="Bus/Floor" unique_id=1982771614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, 2.0849197)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair4" unique_id=386547845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair5" type="CSGBox3D" parent="Bus/Floor" unique_id=730266115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -0.15145206)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair5" unique_id=81589468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair6" type="CSGBox3D" parent="Bus/Floor" unique_id=92080772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -0.15145206)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair6" unique_id=1957010083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair7" type="CSGBox3D" parent="Bus/Floor" unique_id=195916172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -2.6777015)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair7" unique_id=20791188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair8" type="CSGBox3D" parent="Bus/Floor" unique_id=1295624504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -2.6777015)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair8" unique_id=1306432405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair9" type="CSGBox3D" parent="Bus/Floor" unique_id=218883438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -5.029498)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair9" unique_id=548776056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair10" type="CSGBox3D" parent="Bus/Floor" unique_id=1651489023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -5.029498)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair10" unique_id=1293811904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair11" type="CSGBox3D" parent="Bus/Floor" unique_id=1924259349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -7.326639)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair11" unique_id=611961886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair12" type="CSGBox3D" parent="Bus/Floor" unique_id=512991675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -7.326639)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Chair12" unique_id=1347149661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="FrontWall" type="CSGBox3D" parent="Bus/Floor" unique_id=1157445242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014648438, 2.1892362, 9.354031)
+size = Vector3(5.97, 3.6427608, 0.89)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/FrontWall" unique_id=1818482759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04248047, 0)
+operation = 2
+size = Vector3(5.640625, 2.5507813, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bus/Floor/FrontWall" unique_id=1395675090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3129057, 0.054009438)
+size = Vector3(5.7072754, 0.022460938, 0.76538086)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bus/Floor/FrontWall" unique_id=238925252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2301309, 0.05918598)
+size = Vector3(5.7072754, 0.022460938, 0.76538086)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bus/Floor/FrontWall" unique_id=1835897676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8298798, -0.036714792, 0)
+size = Vector3(0.04751587, 2.5561523, 0.87597656)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bus/Floor/FrontWall" unique_id=2111221304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8184214, -0.036714792, 0)
+size = Vector3(0.04751587, 2.5561523, 0.87597656)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="Glass" type="CSGBox3D" parent="Bus/Floor/FrontWall" unique_id=152755726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018562317, -0.044670105, 0.29448557)
+size = Vector3(5.5634613, 2.5065765, 0.07421875)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Bus/Floor/FrontWall" unique_id=144732426]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.4422855, 0.8928819, 0.35159874)
+size = Vector3(0.08105469, 0.7045288, 2.4023438)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="Label3D" type="Label3D" parent="Bus/Floor/FrontWall/CSGBox3D10" unique_id=265304683]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05370617, 0.26497316, 1.0597885)
+pixel_size = 0.012
+modulate = Color(1, 0.5, 0, 1)
+outline_modulate = Color(0.4, 0.07333334, 0, 1)
+text = "123
+Shaw Street"
+font = ExtResource("1_n1dbm")
+font_size = 20
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Wall" type="CSGBox3D" parent="Bus/Floor" unique_id=719746871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9474916, 2.3278198, -1.619812)
+size = Vector3(0.096016645, 3.401001, 16.344849)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=498283185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5064485, 1.2331867)
+operation = 2
+size = Vector3(0.252, 1.3512207, 13.779574)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=949400973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16787481, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=132012967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1715252, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=1719670613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5072937, 8.116675)
+size = Vector3(0.08105469, 1.3352661, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=1655737535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50997925, -5.647814)
+size = Vector3(0.08105469, 1.329895, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=363661234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5041199, -2.6926017)
+size = Vector3(0.08105469, 1.3416138, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=1394001993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5036316, 1.1283517)
+size = Vector3(0.08105469, 1.3425903, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=1125982892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48703003, 4.8750267)
+size = Vector3(0.08105469, 1.3757935, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=1878569916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502655, 1.2306519)
+operation = 2
+size = Vector3(0.013427734, 1.3582153, 13.771851)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=882012199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82266235, 6.4871387)
+size = Vector3(0.08105469, 0.7045288, 2.4023438)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="Label3D" type="Label3D" parent="Bus/Floor/Wall/CSGBox3D10" unique_id=1753182757]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05370617, 0.26497316, 1.0597885)
+pixel_size = 0.012
+modulate = Color(1, 0.5, 0, 1)
+outline_modulate = Color(0.4, 0.07333334, 0, 1)
+text = "123
+Shaw Street"
+font = ExtResource("1_n1dbm")
+font_size = 20
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Bus/Floor/Wall" unique_id=378442568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4125385, 9.376496)
+size = Vector3(0.096, 0.5635376, 2.5200195)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="Wall2" type="CSGBox3D" parent="Bus/Floor" unique_id=2037842806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.947, 2.311381, 0.00049877167)
+size = Vector3(0.096, 3.401, 19.586)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=968804134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5064485, 0.2621355)
+operation = 2
+size = Vector3(0.252, 1.3512207, 11.837472)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=561604597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16787481, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=278275784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1715252, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=1699391976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5072937, 8.116675)
+size = Vector3(0.08105469, 1.3352661, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=1221684738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50997925, -5.647814)
+size = Vector3(0.08105469, 1.329895, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=242164911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5041199, -2.6926017)
+size = Vector3(0.08105469, 1.3416138, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=1675327103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5036316, 1.1283517)
+size = Vector3(0.08105469, 1.3425903, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=436376210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23956299, 1.2306519)
+operation = 2
+size = Vector3(0.04272461, 1.8843994, 13.771851)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Bus/Floor/Wall2" unique_id=547862291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82266235, 4.7509947)
+size = Vector3(0.08105469, 0.7045288, 2.4023438)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="Label3D" type="Label3D" parent="Bus/Floor/Wall2/CSGBox3D10" unique_id=789010854]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.0539999, 0.2650001, -1.0106673)
+pixel_size = 0.012
+modulate = Color(1, 0.5, 0, 1)
+outline_modulate = Color(0.4, 0.07333334, 0, 1)
+text = "123
+Shaw Street"
+font = ExtResource("1_n1dbm")
+font_size = 20
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Floor2" type="Node3D" parent="Bus" unique_id=1513356686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6009111, 0)
+
+[node name="Chair" type="CSGBox3D" parent="Bus/Floor2" unique_id=648234358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, 4.3398705)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair" unique_id=90905486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair2" type="CSGBox3D" parent="Bus/Floor2" unique_id=1059126682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, 4.3398705)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair2" unique_id=694188374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair13" type="CSGBox3D" parent="Bus/Floor2" unique_id=2067098024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164582, 7.0261965)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair13" unique_id=1246668995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair14" type="CSGBox3D" parent="Bus/Floor2" unique_id=518557031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164582, 7.0261965)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair14" unique_id=289194762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair3" type="CSGBox3D" parent="Bus/Floor2" unique_id=1895135022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, 2.0849197)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair3" unique_id=1033044190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair4" type="CSGBox3D" parent="Bus/Floor2" unique_id=1093247157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, 2.0849197)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair4" unique_id=579485932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair5" type="CSGBox3D" parent="Bus/Floor2" unique_id=1753112356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -0.15145206)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair5" unique_id=1170395177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair6" type="CSGBox3D" parent="Bus/Floor2" unique_id=1659982580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -0.15145206)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair6" unique_id=1145247527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair7" type="CSGBox3D" parent="Bus/Floor2" unique_id=565126976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -2.6777015)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair7" unique_id=1863794121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair8" type="CSGBox3D" parent="Bus/Floor2" unique_id=1454722727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -2.6777015)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair8" unique_id=239040111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair9" type="CSGBox3D" parent="Bus/Floor2" unique_id=1516270060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -5.029498)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair9" unique_id=2022270496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair10" type="CSGBox3D" parent="Bus/Floor2" unique_id=1580044072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -5.029498)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair10" unique_id=1658591289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair11" type="CSGBox3D" parent="Bus/Floor2" unique_id=606946096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.858073, 1.3164585, -7.326639)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair11" unique_id=1805179600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="Chair12" type="CSGBox3D" parent="Bus/Floor2" unique_id=684350276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7668204, 1.3164585, -7.326639)
+size = Vector3(1.8242188, 1.4390106, 1.5735474)
+material = SubResource("StandardMaterial3D_e0cm0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Chair12" unique_id=250963370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3351078, 0.20483577)
+operation = 2
+size = Vector3(1.8427734, 0.78578126, 1.2685547)
+
+[node name="FrontWall" type="CSGBox3D" parent="Bus/Floor2" unique_id=647383320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014648438, 2.1892362, 9.354031)
+size = Vector3(5.97, 3.6427608, 0.89)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/FrontWall" unique_id=733620266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04248047, 0)
+operation = 2
+size = Vector3(5.640625, 2.5507813, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bus/Floor2/FrontWall" unique_id=1652195872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3129057, 0.054009438)
+size = Vector3(5.7072754, 0.022460938, 0.76538086)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bus/Floor2/FrontWall" unique_id=1251805436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2301309, 0.05918598)
+size = Vector3(5.7072754, 0.022460938, 0.76538086)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bus/Floor2/FrontWall" unique_id=1541014924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8298798, -0.036714792, 0)
+size = Vector3(0.04751587, 2.5561523, 0.87597656)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bus/Floor2/FrontWall" unique_id=231522519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8184214, -0.036714792, 0)
+size = Vector3(0.04751587, 2.5561523, 0.87597656)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="Glass" type="CSGBox3D" parent="Bus/Floor2/FrontWall" unique_id=292305876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018562317, -0.044670105, 0.29448557)
+size = Vector3(5.5634613, 2.5065765, 0.07421875)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="Wall" type="CSGBox3D" parent="Bus/Floor2" unique_id=33442425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9474916, 2.3278198, -0.36087036)
+size = Vector3(0.096016645, 3.401001, 18.862732)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=646841996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5064485, 1.2331867)
+operation = 2
+size = Vector3(0.252, 1.3512207, 13.779574)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=288231523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16787481, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=1817437630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1715252, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=971884066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5072937, 8.116675)
+size = Vector3(0.08105469, 1.3352661, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=228871870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50997925, -5.647814)
+size = Vector3(0.08105469, 1.329895, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=1651767259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5041199, -2.6926017)
+size = Vector3(0.08105469, 1.3416138, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=2009372383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5036316, 1.1283517)
+size = Vector3(0.08105469, 1.3425903, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=1690229383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48703003, 4.8750267)
+size = Vector3(0.08105469, 1.3757935, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Bus/Floor2/Wall" unique_id=1511813141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502655, 1.2306519)
+operation = 2
+size = Vector3(0.013427734, 1.3582153, 13.771851)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="Wall2" type="CSGBox3D" parent="Bus/Floor2" unique_id=1459343786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.947, 2.311381, 0.00049877167)
+size = Vector3(0.096, 3.401, 19.586)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=1637258912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5064485, 0.2621355)
+operation = 2
+size = Vector3(0.252, 1.3512207, 11.837472)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=1946631147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16787481, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=1165774433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1715252, 1.237915)
+size = Vector3(0.092041016, 0.030639648, 13.800049)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=1770431772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5072937, 8.116675)
+size = Vector3(0.08105469, 1.3352661, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=129037783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50997925, -5.647814)
+size = Vector3(0.08105469, 1.329895, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=108300092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5041199, -2.6926017)
+size = Vector3(0.08105469, 1.3416138, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=39373310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5036316, 1.1283517)
+size = Vector3(0.08105469, 1.3425903, 0.020996094)
+material = SubResource("StandardMaterial3D_hxbi2")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Bus/Floor2/Wall2" unique_id=362021812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23956299, 1.2306519)
+operation = 2
+size = Vector3(0.04272461, 1.8843994, 13.771851)
+material = SubResource("StandardMaterial3D_ovec4")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Bus" unique_id=392938363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0903625, 0)
+size = Vector3(5.9906006, 0.5493469, 19.584717)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Bus" unique_id=1531071004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.7797456, 0)
+size = Vector3(5.9906006, 0.5493469, 19.584717)
+material = SubResource("StandardMaterial3D_rbx2y")
+
+[node name="Player" parent="." unique_id=1015862513 instance=ExtResource("1_umytt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.363328, 2.8491826, 1.5285759)
+can_control = false
+
+[node name="Messages" parent="Player" index="4" unique_id=1087480721]
+visible = false
+
+[node name="World" type="Node3D" parent="." unique_id=368821825]
+
+[node name="Road" type="CSGBox3D" parent="World" unique_id=898763325]
+use_collision = true
+size = Vector3(32.888916, 0.107177734, 269.2815)
+material = SubResource("StandardMaterial3D_hniaw")
+
+[node name="Path" type="CSGBox3D" parent="World" unique_id=261876495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.786239, 0.47332764, 0)
+material_override = SubResource("StandardMaterial3D_8dcag")
+use_collision = true
+size = Vector3(14.468811, 1.9466553, 270.30566)
+
+[node name="Path2" type="CSGBox3D" parent="World" unique_id=285754361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.011414, 0.47332764, 0)
+material_override = SubResource("StandardMaterial3D_8dcag")
+use_collision = true
+size = Vector3(14.468811, 1.9466553, 270.30566)
+
+[node name="Road2" type="CSGBox3D" parent="World" unique_id=770748916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 269.4625)
+use_collision = true
+size = Vector3(32.888916, 0.107177734, 269.2815)
+material = SubResource("StandardMaterial3D_hniaw")
+
+[node name="Path3" type="CSGBox3D" parent="World" unique_id=1375790462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.786239, 0.47332764, 269.4625)
+material_override = SubResource("StandardMaterial3D_8dcag")
+use_collision = true
+size = Vector3(14.468811, 1.9466553, 270.30566)
+
+[node name="Path4" type="CSGBox3D" parent="World" unique_id=2130796888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.011414, 0.47332764, 269.4625)
+material_override = SubResource("StandardMaterial3D_8dcag")
+use_collision = true
+size = Vector3(14.468811, 1.9466553, 270.30566)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=315987174]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1084626997]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HandReady" type="TextureRect" parent="CanvasLayer/Control" unique_id=2072128978]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 236.0
+offset_top = 318.60565
+offset_right = 493.0
+offset_bottom = 648.0
+texture = ExtResource("20_sjjjh")
+
+[node name="HandOut" type="TextureRect" parent="CanvasLayer/Control" unique_id=141778513]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 60.0
+offset_top = 293.07043
+offset_right = 338.0
+offset_bottom = 649.38025
+texture = ExtResource("21_gl8gg")
+
+[node name="HandThanks" type="TextureRect" parent="CanvasLayer/Control" unique_id=1497743998]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 165.0
+offset_top = 165.85666
+offset_right = 499.0
+offset_bottom = 650.32764
+texture = ExtResource("22_wwtix")
+
+[node name="Title" type="Label" parent="CanvasLayer/Control" unique_id=1707516889]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 41.0
+offset_bottom = -521.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FLAG DOWN THE BUS!"
+label_settings = SubResource("LabelSettings_j2ppg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowTo" type="Label" parent="CanvasLayer/Control" unique_id=1815469325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 117.0
+offset_bottom = -505.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press E to hold out hand"
+label_settings = SubResource("LabelSettings_wwtix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimingProgress" type="TextureProgressBar" parent="CanvasLayer/Control" unique_id=1396434985]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -445.5
+offset_top = -86.0
+offset_right = -146.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 1)
+max_value = 220.0
+texture_under = ExtResource("19_8dcag")
+texture_over = ExtResource("20_p3f3u")
+texture_progress = ExtResource("21_sjjjh")
+
+[editable path="Bus/Character"]
+[editable path="Bus/Character2"]
+[editable path="Bus/Character6"]
+[editable path="Bus/Character7"]
+[editable path="Bus/Character4"]
+[editable path="Bus/Character3"]
+[editable path="Bus/Character5"]
+[editable path="Player"]

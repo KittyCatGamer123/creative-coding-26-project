@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="7_xhn55"]
 [ext_resource type="Texture2D" uid="uid://cvj5xvxlbeebg" path="res://Scenes/Bedroom/eyeopen.png" id="8_j5n7y"]
 [ext_resource type="AudioStream" uid="uid://0jhoananobb0" path="res://Scenes/Bedroom/alarm.wav" id="9_836jf"]
+[ext_resource type="Script" uid="uid://cr0kjrc8ncbqb" path="res://Scenes/Bedroom/DoorInteraction.gd" id="9_u4td1"]
 [ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="12_c5i2s"]
 [ext_resource type="Texture2D" uid="uid://kexnlqjjt2xp" path="res://Entities/Character/Designs/Outfits/Pijamas.png" id="13_crd66"]
 [ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="14_sat6f"]
@@ -24,12 +25,12 @@ ground_bottom_color = Color(0.533, 0.5915, 0.65, 1)
 ground_horizon_color = Color(0.6216, 0.70531994, 0.84, 1)
 energy_multiplier = 0.5
 
-[sub_resource type="Sky" id="Sky_gg5kx"]
+[sub_resource type="Sky" id="Sky_u4td1"]
 sky_material = SubResource("ProceduralSkyMaterial_8ly1u")
 
 [sub_resource type="Environment" id="Environment_s55to"]
 background_mode = 2
-sky = SubResource("Sky_gg5kx")
+sky = SubResource("Sky_u4td1")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -85,9 +86,37 @@ stencil_outline_thickness = 0.05
 albedo_color = Color(0.8901961, 0.85882354, 1, 1)
 albedo_texture = ExtResource("4_s55to")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctefb"]
+albedo_color = Color(0.8566667, 0.8, 1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ly1u"]
 transparency = 1
 albedo_color = Color(0.7705, 0.73, 1, 0.29803923)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u4td1"]
+size = Vector3(0.2878952, 2.812378, 1.7868652)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuyx5"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub5o2"]
+next_pass = SubResource("StandardMaterial3D_nuyx5")
+albedo_color = Color(0.84119993, 0.837, 0.9, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4td1"]
+albedo_color = Color(0.62, 0.44205996, 0.111600004, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_836jf"]
 albedo_color = Color(0.064399995, 0.10028, 0.23, 1)
@@ -479,6 +508,7 @@ depth = 1.54
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.440785, 2.2787426, 1.0093)
 use_collision = true
 size = Vector3(0.60614777, 4.6018677, 8.0625)
+material = SubResource("StandardMaterial3D_ctefb")
 
 [node name="Opening" type="CSGBox3D" parent="World/WallWindow" unique_id=28574037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15700531, 0.4932418, 0.4169922)
@@ -494,16 +524,63 @@ material = SubResource("StandardMaterial3D_8ly1u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0181823, 2.2787426, -3.0582952)
 use_collision = true
 size = Vector3(8.855408, 4.602, 0.067)
+material = SubResource("StandardMaterial3D_ctefb")
 
 [node name="Wall2" type="CSGBox3D" parent="World" unique_id=1965884402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0181823, 2.2787426, 5.0548964)
 use_collision = true
 size = Vector3(8.855408, 4.602, 0.067)
+material = SubResource("StandardMaterial3D_ctefb")
+
+[node name="DoorInteract" type="Area3D" parent="World" unique_id=1148268418 node_paths=PackedStringArray("OutfitScene", "player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3184643, 1.4388378, -1.1283357)
+script = ExtResource("9_u4td1")
+OutfitScene = NodePath("../../CanvasLayer/OutfitGame")
+interaction_inactive_colour = Color(0, 0, 0, 0)
+player_reference = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/DoorInteract" unique_id=577102768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034030914, 0, 0.041259766)
+shape = SubResource("BoxShape3D_u4td1")
+
+[node name="Door" type="CSGBox3D" parent="World/DoorInteract" unique_id=1229366189]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0, 0, 0)
+use_collision = true
+size = Vector3(0.048828125, 2.812378, 1.7043457)
+material = SubResource("StandardMaterial3D_ub5o2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=292771462]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029046059, 0.8349669, -0.3871386)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=788196014]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022666931, 0.8349669, 0.4423914)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=604332208]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022667408, -0.69760585, 0.44239128)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=1012040061]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029378414, -0.69760585, -0.3918718)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/DoorInteract/Door" unique_id=1233379782]
+transform = Transform3D(-4.3709456e-08, -0.9999769, -3.2782555e-07, 0.9999933, -4.371139e-08, 0, 1.44329e-14, -1.0952353e-06, 0.9999877, 0.0026874542, 0.08732879, 0.69082654)
+radius = 0.099121094
+height = 0.095962524
+sides = 13
+material = SubResource("StandardMaterial3D_u4td1")
 
 [node name="WallBack" type="CSGBox3D" parent="World" unique_id=1541478402]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3695555, 2.2787426, 1.0093)
 use_collision = true
 size = Vector3(0.067, 4.602, 8.063)
+material = SubResource("StandardMaterial3D_ctefb")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/WallBack" unique_id=355341954]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8399048, -2.068914)
@@ -521,30 +598,6 @@ size = Vector3(0.046875, 2.8752441, 0.083862305)
 [node name="CSGBox3D4" type="CSGBox3D" parent="World/WallBack" unique_id=256027424]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.04319191, 0.5986047, -2.0919366)
 size = Vector3(0.046875, 1.8127441, 0.083862305)
-
-[node name="Door" type="CSGBox3D" parent="World/WallBack" unique_id=1229366189]
-transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, -0.051091194, -0.8399048, -2.1376357)
-size = Vector3(0.048828125, 2.812378, 1.7043457)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="World/WallBack/Door" unique_id=292771462]
-transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029046059, 0.8349669, -0.3871386)
-operation = 2
-size = Vector3(0.048583984, 1, 0.52648926)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="World/WallBack/Door" unique_id=788196014]
-transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022666931, 0.8349669, 0.4423914)
-operation = 2
-size = Vector3(0.048583984, 1, 0.52648926)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="World/WallBack/Door" unique_id=604332208]
-transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022667408, -0.69760585, 0.44239128)
-operation = 2
-size = Vector3(0.048583984, 1, 0.52648926)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="World/WallBack/Door" unique_id=1012040061]
-transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029378414, -0.69760585, -0.3918718)
-operation = 2
-size = Vector3(0.048583984, 1, 0.52648926)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World" unique_id=429213109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6967015, 1.9393616, 0)
@@ -781,6 +834,8 @@ text = "Finish"
 
 [connection signal="body_entered" from="World/Wardrobe" to="World/Wardrobe" method="_on_body_entered"]
 [connection signal="body_exited" from="World/Wardrobe" to="World/Wardrobe" method="_on_body_exited"]
+[connection signal="body_entered" from="World/DoorInteract" to="World/DoorInteract" method="_on_body_entered"]
+[connection signal="body_exited" from="World/DoorInteract" to="World/DoorInteract" method="_on_body_exited"]
 [connection signal="item_selected" from="CanvasLayer/OutfitGame/Options/Outfits" to="CanvasLayer/OutfitGame" method="_on_outfits_item_selected"]
 [connection signal="item_selected" from="CanvasLayer/OutfitGame/Options/Eyes" to="CanvasLayer/OutfitGame" method="_on_eyes_item_selected"]
 [connection signal="pressed" from="CanvasLayer/OutfitGame/Options/Control/Finish" to="CanvasLayer/OutfitGame" method="_on_finish_pressed"]
