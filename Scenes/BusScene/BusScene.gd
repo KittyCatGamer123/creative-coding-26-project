@@ -15,7 +15,8 @@ var thanking = false
 var game_over = false
 
 func _ready() -> void:
-	player_ref.can_control = false
+	player_ref.can_move = false
+	player_ref.can_rotate = false
 	hand_ready_sprite.visible = true
 	hand_out_sprite.visible = false
 	blink_loop()

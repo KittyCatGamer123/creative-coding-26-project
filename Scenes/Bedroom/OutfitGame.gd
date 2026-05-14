@@ -67,5 +67,6 @@ func _on_finish_pressed() -> void:
 	player.design_eye_left.texture = editable_character_eyeleft.texture
 	player.design_eye_right.texture = editable_character_eyeright.texture
 	
-	player.can_control = true
+	player.can_move = true
+	player.can_rotate = true
 	visible = false

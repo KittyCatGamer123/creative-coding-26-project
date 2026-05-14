@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://2yje1k6fvgq" path="res://Scenes/CoffeeOrdering/pipe.png" id="9_s1fdb"]
 [ext_resource type="Texture2D" uid="uid://dghi0nrk4vo1u" path="res://Scenes/CoffeeOrdering/coffeemachinetext.png" id="9_sx7uq"]
 [ext_resource type="Texture2D" uid="uid://c86x1reltt6kw" path="res://Scenes/Bedroom/Materials/painted.jpg" id="13_0wrc1"]
+[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="14_001lw"]
 [ext_resource type="Texture2D" uid="uid://bfv25nfv4uucf" path="res://Scenes/CoffeeOrdering/cardpayment.png" id="14_jtq8l"]
+[ext_resource type="Script" uid="uid://di7cfhfghxlpg" path="res://Scenes/CoffeeOrdering/CoffeeOption.gd" id="14_lklem"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u3xta"]
 sky_top_color = Color(0.7, 0.86, 1, 1)
@@ -81,6 +83,190 @@ uv1_scale = Vector3(2, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_001lw"]
 albedo_color = Color(0.96, 0.884, 0.7776, 1)
 albedo_texture = ExtResource("13_0wrc1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lklem"]
+albedo_texture = ExtResource("4_kqtbr")
+uv1_scale = Vector3(2, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd22u"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieowg"]
+next_pass = SubResource("StandardMaterial3D_nd22u")
+albedo_color = Color(0.9673333, 1, 0.72, 1)
+albedo_texture = ExtResource("4_kqtbr")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lklem"]
+size = Vector3(4.48584, 0.07055664, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lklem"]
+load_path = "res://.godot/imported/woodfloorlol.jpg-b6ae272d1853256fd81d098f1610e67f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_655ud"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0cvv"]
+next_pass = SubResource("StandardMaterial3D_655ud")
+albedo_color = Color(0.9673333, 1, 0.72, 1)
+albedo_texture = SubResource("CompressedTexture2D_lklem")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ieowg"]
+load_path = "res://.godot/imported/woodfloorlol.jpg-b6ae272d1853256fd81d098f1610e67f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbxw8"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0bmw"]
+next_pass = SubResource("StandardMaterial3D_fbxw8")
+albedo_color = Color(0.9673333, 1, 0.72, 1)
+albedo_texture = SubResource("CompressedTexture2D_ieowg")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nd22u"]
+load_path = "res://.godot/imported/woodfloorlol.jpg-b6ae272d1853256fd81d098f1610e67f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6fjh"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdlgo"]
+next_pass = SubResource("StandardMaterial3D_t6fjh")
+albedo_color = Color(0.9673333, 1, 0.72, 1)
+albedo_texture = SubResource("CompressedTexture2D_nd22u")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_as281"]
+load_path = "res://.godot/imported/woodfloorlol.jpg-b6ae272d1853256fd81d098f1610e67f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfyob"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlgfe"]
+next_pass = SubResource("StandardMaterial3D_qfyob")
+albedo_color = Color(0.9673333, 1, 0.72, 1)
+albedo_texture = SubResource("CompressedTexture2D_as281")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p70as"]
+load_path = "res://.godot/imported/woodfloorlol.jpg-b6ae272d1853256fd81d098f1610e67f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twtar"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4bky"]
+next_pass = SubResource("StandardMaterial3D_twtar")
+albedo_color = Color(0.9673333, 1, 0.72, 1)
+albedo_texture = SubResource("CompressedTexture2D_p70as")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jwjmx"]
+load_path = "res://.godot/imported/woodfloorlol.jpg-b6ae272d1853256fd81d098f1610e67f.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psto7"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcm11"]
+next_pass = SubResource("StandardMaterial3D_psto7")
+albedo_color = Color(0.9673333, 1, 0.72, 1)
+albedo_texture = SubResource("CompressedTexture2D_jwjmx")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_as281"]
+albedo_texture = ExtResource("4_kqtbr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2ppg"]
+font = ExtResource("5_ll7ei")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.9888335, 0.32999998, 1, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.654902)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwtix"]
+font = ExtResource("14_001lw")
+font_size = 20
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.6901961)
+shadow_offset = Vector2(3, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_001lw"]
 atlas = ExtResource("14_jtq8l")
@@ -165,7 +351,7 @@ script = ExtResource("1_u3xta")
 environment = SubResource("Environment_edbvm")
 
 [node name="Player" parent="." unique_id=1015862513 instance=ExtResource("1_l0g4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0550995, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7995195, 1.0550995, -2.624502)
 
 [node name="Messages" parent="Player" index="4" unique_id=1087480721]
 visible = false
@@ -238,7 +424,7 @@ font = ExtResource("5_ll7ei")
 font_size = 28
 
 [node name="Character" parent="World" unique_id=2103743369 instance=ExtResource("6_l8yy7")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.518, 1.251, -6.7267413)
+transform = Transform3D(-0.8040745, 0, -0.59452784, 0, 1, 0, 0.59452784, 0, -0.8040745, 0.5991175, 1.251, -5.8078074)
 interaction_colour = Color(0, 0, 0, 1)
 
 [node name="Outfit" parent="World/Character/CharacterBody" parent_id_path=PackedInt32Array(2103743369, 714721396) index="0" unique_id=1986631287]
@@ -306,9 +492,214 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9022217, 4.905959, -7.58382
 material_override = SubResource("StandardMaterial3D_001lw")
 size = Vector3(18.41211, 9.798889, 0.07519531)
 
+[node name="Panel" type="CSGBox3D" parent="World" unique_id=881381279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.091405, 4.1900783, -7.5501842)
+material_override = SubResource("StandardMaterial3D_lklem")
+size = Vector3(4.592041, 4.0075684, 0.095947266)
+
+[node name="Coffee" type="Area3D" parent="World/Panel" unique_id=537992796 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4721923, 0)
+script = ExtResource("14_lklem")
+player_reference = NodePath("../../../Player")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Panel/Coffee" unique_id=2092007839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09777832, 0.13503933)
+size = Vector3(4.0722656, 0.3395996, 0.064697266)
+material = SubResource("StandardMaterial3D_ieowg")
+
+[node name="Coffee" type="Label3D" parent="World/Panel/Coffee" unique_id=2099676404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9086598, 0.10584068, 0.1958909)
+modulate = Color(0.958, 1, 0.86, 1)
+text = "Espresso"
+font = ExtResource("14_001lw")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Panel/Coffee" unique_id=1153291149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025634766, 0.1321106, 0)
+shape = SubResource("BoxShape3D_lklem")
+
+[node name="Coffee2" type="Area3D" parent="World/Panel" unique_id=690509837 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9721923, 0)
+script = ExtResource("14_lklem")
+player_reference = NodePath("../../../Player")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Panel/Coffee2" unique_id=1732941103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09777832, 0.13503933)
+size = Vector3(4.0722656, 0.3395996, 0.064697266)
+material = SubResource("StandardMaterial3D_r0cvv")
+
+[node name="Coffee" type="Label3D" parent="World/Panel/Coffee2" unique_id=1501737328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9086598, 0.10584068, 0.1958909)
+modulate = Color(0.958, 1, 0.86, 1)
+text = "Americano"
+font = ExtResource("14_001lw")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Panel/Coffee2" unique_id=2065000174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025634766, 0.11074829, 0)
+shape = SubResource("BoxShape3D_lklem")
+
+[node name="Coffee3" type="Area3D" parent="World/Panel" unique_id=643592953 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4721923, 0)
+script = ExtResource("14_lklem")
+player_reference = NodePath("../../../Player")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Panel/Coffee3" unique_id=1675048919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09777832, 0.13503933)
+size = Vector3(4.0722656, 0.3395996, 0.064697266)
+material = SubResource("StandardMaterial3D_p0bmw")
+
+[node name="Coffee" type="Label3D" parent="World/Panel/Coffee3" unique_id=1928586334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9086598, 0.10584068, 0.1958909)
+modulate = Color(0.958, 1, 0.86, 1)
+text = "Cappuccino"
+font = ExtResource("14_001lw")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Panel/Coffee3" unique_id=778217022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025634766, 0.11074829, 0)
+shape = SubResource("BoxShape3D_lklem")
+
+[node name="Coffee4" type="Area3D" parent="World/Panel" unique_id=608699093 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.027807713, 0)
+script = ExtResource("14_lklem")
+player_reference = NodePath("../../../Player")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Panel/Coffee4" unique_id=1552680933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09777832, 0.13503933)
+size = Vector3(4.0722656, 0.3395996, 0.064697266)
+material = SubResource("StandardMaterial3D_cdlgo")
+
+[node name="Coffee" type="Label3D" parent="World/Panel/Coffee4" unique_id=447031150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9086598, 0.10584068, 0.1958909)
+modulate = Color(0.958, 1, 0.86, 1)
+text = "Latte"
+font = ExtResource("14_001lw")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Panel/Coffee4" unique_id=612852743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025634766, 0.11074829, 0)
+shape = SubResource("BoxShape3D_lklem")
+
+[node name="Coffee5" type="Area3D" parent="World/Panel" unique_id=1444809469 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5278077, 0)
+script = ExtResource("14_lklem")
+player_reference = NodePath("../../../Player")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Panel/Coffee5" unique_id=1430300955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09777832, 0.13503933)
+size = Vector3(4.0722656, 0.3395996, 0.064697266)
+material = SubResource("StandardMaterial3D_dlgfe")
+
+[node name="Coffee" type="Label3D" parent="World/Panel/Coffee5" unique_id=178821385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9086598, 0.10584068, 0.1958909)
+modulate = Color(0.958, 1, 0.86, 1)
+text = "Mocha"
+font = ExtResource("14_001lw")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Panel/Coffee5" unique_id=685369594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025634766, 0.11074829, 0)
+shape = SubResource("BoxShape3D_lklem")
+
+[node name="Coffee6" type="Area3D" parent="World/Panel" unique_id=683507665 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0278077, 0)
+script = ExtResource("14_lklem")
+player_reference = NodePath("../../../Player")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Panel/Coffee6" unique_id=852796696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09777832, 0.13503933)
+size = Vector3(4.0722656, 0.3395996, 0.064697266)
+material = SubResource("StandardMaterial3D_s4bky")
+
+[node name="Coffee" type="Label3D" parent="World/Panel/Coffee6" unique_id=816003385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9086598, 0.10584068, 0.1958909)
+modulate = Color(0.958, 1, 0.86, 1)
+text = "Flat White"
+font = ExtResource("14_001lw")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Panel/Coffee6" unique_id=1283697084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025634766, 0.11074829, 0)
+shape = SubResource("BoxShape3D_lklem")
+
+[node name="Coffee7" type="Area3D" parent="World/Panel" unique_id=1025203633 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5278077, 0)
+script = ExtResource("14_lklem")
+player_reference = NodePath("../../../Player")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Panel/Coffee7" unique_id=464046342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09777832, 0.13503933)
+size = Vector3(4.0722656, 0.3395996, 0.064697266)
+material = SubResource("StandardMaterial3D_pcm11")
+
+[node name="Coffee" type="Label3D" parent="World/Panel/Coffee7" unique_id=1282216140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9086598, 0.10584068, 0.1958909)
+modulate = Color(0.958, 1, 0.86, 1)
+text = "Hot Chocolate"
+font = ExtResource("14_001lw")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Panel/Coffee7" unique_id=238637556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025634766, 0.11074829, 0)
+shape = SubResource("BoxShape3D_lklem")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World" unique_id=1208392377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 5.857788, -6.8081927)
+material_override = SubResource("StandardMaterial3D_as281")
+size = Vector3(1, 6.244049, 0.18139648)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World" unique_id=1430805997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 5.857788, -5.684415)
+material_override = SubResource("StandardMaterial3D_as281")
+size = Vector3(1, 6.244049, 0.18139648)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World" unique_id=1676346655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 5.857788, -4.5474157)
+material_override = SubResource("StandardMaterial3D_as281")
+size = Vector3(1, 6.244049, 0.18139648)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="World" unique_id=1943844704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 5.857788, -3.637864)
+material_override = SubResource("StandardMaterial3D_as281")
+size = Vector3(1, 6.244049, 0.18139648)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="World" unique_id=1881274552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 5.857788, -2.6096692)
+material_override = SubResource("StandardMaterial3D_as281")
+size = Vector3(1, 6.244049, 0.18139648)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="World" unique_id=57084288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 5.857788, -1.6290956)
+material_override = SubResource("StandardMaterial3D_as281")
+size = Vector3(1, 6.244049, 0.18139648)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="World" unique_id=653467632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 5.857788, -0.49120426)
+material_override = SubResource("StandardMaterial3D_as281")
+size = Vector3(1, 6.244049, 0.18139648)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World" unique_id=337362371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.363136, 4.6649017, -3.3717165)
+material_override = SubResource("StandardMaterial3D_001lw")
+size = Vector3(2.9555664, 10.329803, 9.276611)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/CSGBox3D" unique_id=640532671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3272705, 0)
+operation = 2
+size = Vector3(3.7128906, 5.647217, 10.830322)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1467346592]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1698857465]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -316,8 +707,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Title" type="Label" parent="CanvasLayer/Control" unique_id=1228144674]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 41.0
+offset_bottom = -521.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PICK A DRINK!"
+label_settings = SubResource("LabelSettings_j2ppg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowTo" type="Label" parent="CanvasLayer/Control" unique_id=1683751511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 117.0
+offset_bottom = -505.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Point at a drink on the menu and hold E to select it"
+label_settings = SubResource("LabelSettings_wwtix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Hand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1994030508]
-position = Vector2(774.00006, 403.99997)
+position = Vector2(926, 403.99994)
 rotation = 1.3962634
 scale = Vector2(2.800478, 2.8004782)
 sprite_frames = SubResource("SpriteFrames_k8142")

@@ -1,0 +1,49 @@
+[
+	{
+		"type": 0,
+		"text": [
+			"Important Lecture"
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Overview",
+			"The lecture today will cover a lot of very\nimportant need-to-know content for\nthe rest of your game design career."
+		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"What will be covered",
+			"Lots of important details, primarily in the\nfield of Game Design",
+			"Industry-standard practices that are a\nmust-know.",
+			"Additional comments that are noteworthy."
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Field of Game Design",
+			"The field of game design has many factions\nto it. We will cover some of them."
+		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"Fields",
+			"Lead Programmer: Who makes all the\nexecutive programming decisions.",
+			"Artist: Who can draw pretty neat\nstuff.",
+			"Level Designer: They can put silly\npieces together."
+		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"Fields",
+			"Music Production: People who make\nthe funny bleepy bloops.",
+			"Marketing: Stupid ad blah blah blah blah.\nBoring.",
+			"Systems Programming: The\njob Kat should probably do."
+		]
+	}
+]

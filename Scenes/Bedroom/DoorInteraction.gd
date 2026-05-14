@@ -9,7 +9,8 @@ func _ready() -> void:
 
 func player_interaction():
 	if (OutfitScene.outfit_selected and OutfitScene.eyes_selected):
-		player_reference.can_control = false
+		player_reference.can_move = false
+		player_reference.can_rotate = false
 		player_reference.velocity = Vector3.ZERO
 		print("done")
 	else:

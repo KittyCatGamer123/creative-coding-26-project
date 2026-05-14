@@ -2,7 +2,8 @@ extends CharacterBody3D
 class_name Player
 
 @export_category("Controls")
-@export var can_control: bool = true
+@export var can_move: bool = true
+@export var can_rotate: bool = true
 @export var can_interact: bool = true
 @export var sensitivity: float = 0.005
 @export var movement_speed: float = 4.0
@@ -34,7 +35,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	if can_control:
+	if can_rotate:
 		if event is InputEventMouseMotion:
 			rotate_y(-event.relative.x * sensitivity)
 			player_camera.rotate_x(-event.relative.y * sensitivity)
@@ -49,7 +50,7 @@ func _physics_process(delta: float) -> void:
 	if (not is_on_floor()) and (motion_mode != MOTION_MODE_FLOATING):
 		velocity += get_gravity() * delta
 	
-	if can_control:
+	if can_move:
 		if Input.is_action_just_pressed("Jump"):
 			if is_on_floor():
 				velocity.y = jump_force
@@ -86,7 +87,7 @@ func raycast_interact():
 		if n is Interactable:
 			n.player_interaction()
 
-func show_message(_name: String, text: String):
+func show_message(_name: String, text: String, readtime: float = 5.0):
 	if message_active: return
 	
 	messagebox_name.text = _name
@@ -103,6 +104,6 @@ func show_message(_name: String, text: String):
 		if messagebox_text.visible_ratio == 1:
 			break
 	
-	await get_tree().create_timer(6).timeout
+	await get_tree().create_timer(readtime).timeout
 	messagebox.visible = false
 	message_active = false

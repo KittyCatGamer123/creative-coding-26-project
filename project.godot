@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Game="*uid://cj0klxaifhq8v"
 
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=650
+
 [input]
 
 Jump={
@@ -64,3 +69,5 @@ Interact={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

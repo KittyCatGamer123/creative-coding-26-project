@@ -102,7 +102,7 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 grow = true
-grow_amount = 0.05
+grow_amount = 0.06
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -113,7 +113,7 @@ next_pass = SubResource("StandardMaterial3D_nuyx5")
 albedo_color = Color(0.84119993, 0.837, 0.9, 1)
 stencil_mode = 1
 stencil_flags = 2
-stencil_outline_thickness = 0.05
+stencil_outline_thickness = 0.06
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4td1"]
 albedo_color = Color(0.62, 0.44205996, 0.111600004, 1)

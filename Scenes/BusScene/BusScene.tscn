@@ -947,7 +947,6 @@ material = SubResource("StandardMaterial3D_rbx2y")
 
 [node name="Player" parent="." unique_id=1015862513 instance=ExtResource("1_umytt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.363328, 2.8491826, 1.5285759)
-can_control = false
 
 [node name="Messages" parent="Player" index="4" unique_id=1087480721]
 visible = false

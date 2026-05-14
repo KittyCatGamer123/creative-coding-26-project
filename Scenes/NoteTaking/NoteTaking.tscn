@@ -1,0 +1,748 @@
+[gd_scene format=3 uid="uid://dwvg8jeave6tk"]
+
+[ext_resource type="PackedScene" uid="uid://5h2a4r2dgkac" path="res://Entities/Player/Player.tscn" id="1_3i2ds"]
+[ext_resource type="Script" uid="uid://dg8uyhhje2ras" path="res://Scenes/NoteTaking/NoteTaking.gd" id="1_q2iya"]
+[ext_resource type="Texture2D" uid="uid://bqusv5j2k86sm" path="res://Scenes/NoteTaking/pen.png" id="2_iaccw"]
+[ext_resource type="Texture2D" uid="uid://vs8bcxl5bvt" path="res://Scenes/NoteTaking/paper.png" id="3_2yaqo"]
+[ext_resource type="Texture2D" uid="uid://dnv0coil0dcim" path="res://Scenes/Bedroom/Materials/carpet.png" id="3_wr2d7"]
+[ext_resource type="Texture2D" uid="uid://c86x1reltt6kw" path="res://Scenes/Bedroom/Materials/painted.jpg" id="4_imrsh"]
+[ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="5_35vef"]
+[ext_resource type="Texture2D" uid="uid://cowud16yd62yi" path="res://Scenes/NoteTaking/chair.jpg" id="5_r2mnw"]
+[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="6_tra7s"]
+[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="6_wr2d7"]
+[ext_resource type="Texture2D" uid="uid://y04v4sa7qpf1" path="res://Entities/Character/Designs/Outfits/CoolGrey.jpg" id="7_atcip"]
+[ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="7_qfoxs"]
+[ext_resource type="Texture2D" uid="uid://cqjixei46jscd" path="res://Entities/Character/Designs/Outfits/RuanPlaid.png" id="9_iq4m6"]
+[ext_resource type="Texture2D" uid="uid://b52jkpgv5wakn" path="res://Entities/Character/Designs/Outfits/StarryTop.jpg" id="10_6sqpu"]
+[ext_resource type="Texture2D" uid="uid://cqtahekqpcwe3" path="res://Entities/Character/Designs/Outfits/Candycane.jpg" id="10_n7ptg"]
+[ext_resource type="Texture2D" uid="uid://cegaypqnyyomj" path="res://Entities/Character/Designs/Eyes/eye_smallpupil.png" id="10_nk0gy"]
+[ext_resource type="Texture2D" uid="uid://b8wfmqbx3vjn3" path="res://Entities/Character/Designs/Eyes/eye_eyebrows.png" id="11_nk0gy"]
+[ext_resource type="AudioStream" uid="uid://cqddofpbpixqt" path="res://Scenes/NoteTaking/Presenation/presentation_click.wav" id="15_8rb3r"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_stk5s"]
+sky_top_color = Color(0.7, 0.86, 1, 1)
+sky_horizon_color = Color(0.345, 0.47724995, 0.69, 1)
+ground_bottom_color = Color(0.4144974, 0.5010387, 0.5834323, 1)
+ground_horizon_color = Color(0.5395, 0.6508583, 0.83, 1)
+
+[sub_resource type="Sky" id="Sky_53q7p"]
+sky_material = SubResource("ProceduralSkyMaterial_stk5s")
+
+[sub_resource type="Environment" id="Environment_3i2ds"]
+background_mode = 2
+sky = SubResource("Sky_53q7p")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imrsh"]
+albedo_color = Color(0.61, 0.6945, 1, 1)
+albedo_texture = ExtResource("3_wr2d7")
+uv1_scale = Vector3(5, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atcip"]
+albedo_texture = ExtResource("4_imrsh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2mnw"]
+albedo_color = Color(0.88, 0.91800004, 1, 1)
+albedo_texture = ExtResource("4_imrsh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tra7s"]
+albedo_color = Color(0.32549998, 0.42, 0.3066, 1)
+albedo_texture = ExtResource("5_r2mnw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iq4m6"]
+albedo_texture = ExtResource("7_atcip")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1uob"]
+albedo_texture = ExtResource("9_iq4m6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rb3r"]
+albedo_texture = ExtResource("10_6sqpu")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sqpu"]
+albedo_texture = ExtResource("10_n7ptg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xubon"]
+emission_enabled = true
+emission = Color(0.9019608, 0.9019608, 0.9019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_imrsh"]
+font = ExtResource("5_35vef")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.9888335, 0.32999998, 1, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.654902)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r2mnw"]
+font = ExtResource("6_wr2d7")
+font_size = 20
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.6901961)
+shadow_offset = Vector2(3, 2)
+
+[node name="NoteTaking" type="Node3D" unique_id=207981324 node_paths=PackedStringArray("lines", "player", "player_crosshair")]
+script = ExtResource("1_q2iya")
+lines = NodePath("CanvasLayer/Interface/Line2D")
+player = NodePath("Player")
+player_crosshair = NodePath("Player/Crosshair")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=572059501]
+environment = SubResource("Environment_3i2ds")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1170000861]
+transform = Transform3D(-0.8660254, -0.43301275, 0.24999997, 0.1781977, 0.19987094, 0.9634817, -0.46716762, 0.8789491, -0.09593141, -10.271363, 11.777811, -11.496918)
+sky_mode = 2
+
+[node name="Player" parent="." unique_id=1015862513 instance=ExtResource("1_3i2ds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4599979, -0.9644527)
+can_move = false
+can_rotate = false
+can_interact = false
+
+[node name="Crosshair" parent="Player" index="3" unique_id=37449765]
+visible = false
+
+[node name="Messages" parent="Player" index="4" unique_id=1087480721]
+visible = false
+
+[node name="World" type="Node3D" parent="." unique_id=496256132]
+
+[node name="Carpet" type="CSGBox3D" parent="World" unique_id=1231026619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4995, -7.0158234)
+use_collision = true
+size = Vector3(52.23242, 0.001, 20.135895)
+material = SubResource("StandardMaterial3D_imrsh")
+
+[node name="Carpet2" type="CSGBox3D" parent="World" unique_id=74432739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4720745, -7.0158234)
+material_override = SubResource("StandardMaterial3D_atcip")
+use_collision = true
+size = Vector3(52.23242, 0.001, 20.135895)
+material = SubResource("StandardMaterial3D_imrsh")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="World" unique_id=1322370776]
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 5.821081, -2.3029706)
+light_color = Color(0.71000004, 0.86950004, 1, 1)
+light_energy = 8.39
+spot_range = 9.515341
+spot_angle = 66.37634
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="World" unique_id=543460559]
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 9.087616, 5.821081, -2.3029706)
+light_color = Color(0.71000004, 0.86950004, 1, 1)
+light_energy = 8.39
+spot_range = 9.515341
+spot_angle = 66.37634
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="World" unique_id=1129584893]
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, -7.858124, 5.821081, -2.3029706)
+light_color = Color(0.71000004, 0.86950004, 1, 1)
+light_energy = 8.39
+spot_range = 9.515341
+spot_angle = 66.37634
+
+[node name="Wall" type="CSGBox3D" parent="World" unique_id=613820224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.085617, -16.942497)
+size = Vector3(53.121094, 11.171234, 1)
+material = SubResource("StandardMaterial3D_r2mnw")
+
+[node name="Chair" type="CSGBox3D" parent="World" unique_id=457296090]
+transform = Transform3D(0.99254614, 0, -0.12186935, 0, 1, 0, 0.12186935, 0, 0.99254614, -3.848594, 0, -3.0733497)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair" unique_id=1569078697]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair" unique_id=2050714368]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair" unique_id=1245510880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair" unique_id=1198849733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair" unique_id=1544194849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair2" type="CSGBox3D" parent="World" unique_id=1752214839]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 3.3345823, 0, -3.2117527)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair2" unique_id=1518002632]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair2" unique_id=1616662972]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair2" unique_id=29151411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair2" unique_id=1625990515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair2" unique_id=591208549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair3" type="CSGBox3D" parent="World" unique_id=5622420]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.173538, 0, -5.332485)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair3" unique_id=1596626486]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair3" unique_id=1512019221]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair3" unique_id=2005662943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair3" unique_id=689031181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair3" unique_id=1312922403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair4" type="CSGBox3D" parent="World" unique_id=1393441760]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -2.148707, 0, -5.055123)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair4" unique_id=57726267]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair4" unique_id=1662124883]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair4" unique_id=1925105294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair4" unique_id=1787852039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair4" unique_id=2071758887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair5" type="CSGBox3D" parent="World" unique_id=676830007]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.2078705, 0, -5.055123)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair5" unique_id=747634081]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair5" unique_id=1659855776]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair5" unique_id=581319336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair5" unique_id=1361606580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair5" unique_id=1003299926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair6" type="CSGBox3D" parent="World" unique_id=847348590]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -6.2078705, 0, -5.055123)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair6" unique_id=1126237647]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair6" unique_id=1562409740]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair6" unique_id=1144603564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair6" unique_id=980882575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair6" unique_id=592858791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair13" type="CSGBox3D" parent="World" unique_id=2098270482]
+transform = Transform3D(0.82969075, 0, -0.55822295, 0, 1, 0, 0.55822295, 0, 0.82969075, -10.089571, 0, -5.055123)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair13" unique_id=1566201960]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair13" unique_id=170505866]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair13" unique_id=814336154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair13" unique_id=1026614269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair13" unique_id=406435288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair8" type="CSGBox3D" parent="World" unique_id=1509682185]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -9.151909, 0, -8.577192)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair8" unique_id=1494266586]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair8" unique_id=1057046340]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair8" unique_id=2103513311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair8" unique_id=199414231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair8" unique_id=207903023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair9" type="CSGBox3D" parent="World" unique_id=1103271967]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.3492293, 0, -8.577192)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair9" unique_id=1744713153]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair9" unique_id=869900490]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair9" unique_id=474905931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair9" unique_id=187756755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair9" unique_id=224201134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair10" type="CSGBox3D" parent="World" unique_id=715504011]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 2.1928759, 0, -6.4279566)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair10" unique_id=432116366]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair10" unique_id=732167104]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair10" unique_id=536161584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair10" unique_id=336574069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair10" unique_id=1268547853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair12" type="CSGBox3D" parent="World" unique_id=55154010]
+transform = Transform3D(0.99452186, 0, 0.10452846, 0, 1, 0, -0.10452846, 0, 0.99452186, 5.1700077, 0, -6.916416)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair12" unique_id=1368958855]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair12" unique_id=747925803]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair12" unique_id=1570475632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair12" unique_id=794708680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair12" unique_id=1546205609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair11" type="CSGBox3D" parent="World" unique_id=30432323]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 8.370015, 0, -8.577192)
+material_override = SubResource("StandardMaterial3D_tra7s")
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair11" unique_id=1229858148]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair11" unique_id=951926292]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair11" unique_id=532463201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair11" unique_id=2098230040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair11" unique_id=1767846470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="Chair7" type="CSGBox3D" parent="World" unique_id=554147386]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.11785126, 0, -0.72987956)
+material_override = SubResource("StandardMaterial3D_tra7s")
+use_collision = true
+size = Vector3(1.6123047, 1, 1.0180664)
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Chair7" unique_id=1258635904]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.22334546, 0)
+operation = 2
+sides = 10
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Chair7" unique_id=784329214]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.22334546, 0)
+operation = 2
+radius = 0.38232422
+sides = 10
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="World/Chair7" unique_id=1460112735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8017223, 0.476313, 0.5463064)
+polygon = PackedVector2Array(0, 0, 0.2, 1, 0.3, 1.1, 0.5, 1.2, 0.8, 1.3, 1.1, 1.2, 1.3, 1.1, 1.4, 1, 1.6, 0)
+depth = 0.1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Chair7" unique_id=1256381285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6455897, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Chair7" unique_id=310191927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74198985, 0.7405613, -0.033555508)
+size = Vector3(0.24316406, 0.110839844, 1.1923828)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World" unique_id=181324303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0672617, 0.75772095, -13.168443)
+size = Vector3(2.784546, 2.515442, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/CSGBox3D" unique_id=1852735249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40112305, -0.14221191)
+operation = 2
+size = Vector3(2.399414, 1.8022461, 0.96069336)
+
+[node name="Character" parent="World" unique_id=2103743369 instance=ExtResource("6_tra7s")]
+transform = Transform3D(-0.9517552, 0, 0.30685827, 0, 1, 0, -0.30685827, 0, -0.9517552, 5.0039725, 2.0535314, -13.796179)
+
+[node name="Outfit" parent="World/Character/CharacterBody" parent_id_path=PackedInt32Array(2103743369, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_iq4m6")
+
+[node name="EyeLeft" parent="World/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("7_qfoxs")
+
+[node name="EyeRight" parent="World/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("7_qfoxs")
+
+[node name="Character2" parent="World" unique_id=770904132 instance=ExtResource("6_tra7s")]
+transform = Transform3D(0.67827505, 0, -0.7348081, 0, 1, 0, 0.7348081, 0, 0.67827505, -6.1801887, 1.6634943, -4.973379)
+
+[node name="Outfit" parent="World/Character2/CharacterBody" parent_id_path=PackedInt32Array(770904132, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_l1uob")
+
+[node name="Character4" parent="World" unique_id=1845379199 instance=ExtResource("6_tra7s")]
+transform = Transform3D(0.21710408, 0, -0.97614837, 0, 1, 0, 0.97614837, 0, 0.21710408, -5.3157816, 1.6634943, -8.795619)
+
+[node name="Outfit" parent="World/Character4/CharacterBody" parent_id_path=PackedInt32Array(1845379199, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_8rb3r")
+
+[node name="EyeLeft" parent="World/Character4/Head" parent_id_path=PackedInt32Array(1845379199, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("10_nk0gy")
+
+[node name="EyeRight" parent="World/Character4/Head" parent_id_path=PackedInt32Array(1845379199, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("10_nk0gy")
+
+[node name="Character3" parent="World" unique_id=149580316 instance=ExtResource("6_tra7s")]
+transform = Transform3D(0.9270727, 0, 0.3748816, 0, 1, 0, -0.3748816, 0, 0.9270727, 5.1787586, 1.6634943, -7.0690246)
+
+[node name="Outfit" parent="World/Character3/CharacterBody" parent_id_path=PackedInt32Array(149580316, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_6sqpu")
+
+[node name="EyeLeft" parent="World/Character3/Head" parent_id_path=PackedInt32Array(149580316, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("11_nk0gy")
+
+[node name="EyeRight" parent="World/Character3/Head" parent_id_path=PackedInt32Array(149580316, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("11_nk0gy")
+
+[node name="Presenation" type="CSGBox3D" parent="World" unique_id=181304988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4803412, 5.164633, -16.395699)
+size = Vector3(12, 8, 0.075)
+material = SubResource("StandardMaterial3D_xubon")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Presenation" unique_id=1067806401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.7744436)
+omni_range = 10.878629
+
+[node name="TitlePiece" type="Node3D" parent="World/Presenation" unique_id=142785357]
+
+[node name="Title" type="Label3D" parent="World/Presenation/TitlePiece" unique_id=581687612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.037677765)
+pixel_size = 0.01
+text = "Important Lecture"
+font = ExtResource("6_wr2d7")
+font_size = 90
+outline_size = 25
+
+[node name="Description" type="Node3D" parent="World/Presenation" unique_id=1129571402]
+visible = false
+
+[node name="Title" type="Label3D" parent="World/Presenation/Description" unique_id=896180259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999424, 1.6920404, 0.037677765)
+pixel_size = 0.01
+text = "But what is a description?"
+font = ExtResource("6_wr2d7")
+font_size = 65
+outline_size = 20
+horizontal_alignment = 0
+
+[node name="Desc" type="Label3D" parent="World/Presenation/Description" unique_id=1034033459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.321199, 0.7716198, 0.037677765)
+pixel_size = 0.01
+text = "Usually it has a lot of body text that isn't
+always fully read but is explained."
+font = ExtResource("6_wr2d7")
+font_size = 50
+outline_size = 15
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Bulletpoint" type="Node3D" parent="World/Presenation" unique_id=876425947]
+visible = false
+
+[node name="Title" type="Label3D" parent="World/Presenation/Bulletpoint" unique_id=1828465538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999424, 3.2004795, 0.037677765)
+pixel_size = 0.01
+text = "Bullet Point"
+font = ExtResource("6_wr2d7")
+font_size = 65
+outline_size = 20
+horizontal_alignment = 0
+
+[node name="Point 1" type="Label3D" parent="World/Presenation/Bulletpoint" unique_id=1473602339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.321199, 2.3564577, 0.037677765)
+pixel_size = 0.01
+text = "Point 1"
+font = ExtResource("6_wr2d7")
+font_size = 50
+outline_size = 15
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Point 2" type="Label3D" parent="World/Presenation/Bulletpoint" unique_id=1836766536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.321199, 0.14018345, 0.037677765)
+pixel_size = 0.01
+text = "Point 2"
+font = ExtResource("6_wr2d7")
+font_size = 50
+outline_size = 15
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Point 3" type="Label3D" parent="World/Presenation/Bulletpoint" unique_id=1094349146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.321199, -2.1186886, 0.037677765)
+pixel_size = 0.01
+text = "Point 3"
+font = ExtResource("6_wr2d7")
+font_size = 50
+outline_size = 15
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="World/Presenation" unique_id=983305190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.23327065)
+stream = ExtResource("15_8rb3r")
+volume_db = -5.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1745819560]
+
+[node name="Interface" type="Control" parent="CanvasLayer" unique_id=178856162]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HandPaper" type="TextureRect" parent="CanvasLayer/Interface" unique_id=644521007]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 294.0
+offset_right = 560.0
+offset_bottom = 816.0
+texture = ExtResource("3_2yaqo")
+expand_mode = 1
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer/Interface" unique_id=1981964648]
+points = PackedVector2Array(1378, 432)
+default_color = Color(0.096, 0.108399995, 0.12, 1)
+
+[node name="HandPen" type="TextureRect" parent="CanvasLayer/Interface" unique_id=1387806207]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 353.0
+offset_right = 766.0
+offset_bottom = 778.3039
+texture = ExtResource("2_iaccw")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=1542203852]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_bottom = -553.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TAKE NOTES!"
+label_settings = SubResource("LabelSettings_imrsh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowTo" type="Label" parent="CanvasLayer" unique_id=2028258023]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_bottom = -537.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hold down the left mouse button to write notes on your page."
+label_settings = SubResource("LabelSettings_r2mnw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[editable path="Player"]
+[editable path="World/Character"]
+[editable path="World/Character2"]
+[editable path="World/Character4"]
+[editable path="World/Character3"]

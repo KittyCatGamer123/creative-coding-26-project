@@ -10,7 +10,8 @@ func _ready() -> void:
 	outfit_init_pos = outfit_select_preview.position
 	floating_loop()
 	
-	player.can_control = false
+	player.can_move = false
+	player.can_rotate = false
 	
 	await get_tree().create_timer(2.5).timeout
 	scene_animator.play("EyeOpening")
@@ -19,7 +20,8 @@ func _ready() -> void:
 	scene_animator.play("GetUp")
 	await scene_animator.animation_finished
 	
-	player.can_control = true
+	player.can_move = true
+	player.can_rotate = true
 	await get_tree().create_timer(0.5).timeout
 	player.show_message(
 		"You",
