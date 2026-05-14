@@ -45,5 +45,144 @@
 			"Marketing: Stupid ad blah blah blah blah.\nBoring.",
 			"Systems Programming: The\njob Kat should probably do."
 		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"Fields",
+			"Ideas Guy: People who can't be\nbothered to learn game dev.",
+			"Backend: For the people who hate\nthemselves a lot.",
+			"Balancer: For messing around\nwith numbers without a care."
+		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"Fields",
+			"Storytelling: People with\ncrazy lore on DeviantArt.",
+			"Modeller: For making large\nbutty characters in the hero\nshooter game.",
+			"Food Eater: For people who\njust show up for the parties."
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Industry Standards",
+			"Learn all the ways to truely show\nlove to your players."
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Delete the Fun",
+			"Fun is what bothers people the\nmost. You really need to\ntrim the fat."
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Add Microtransactions",
+			"This is actually what people\nplay your games for. Something\nwith minimal effort!"
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Add Microtransactions",
+			"Oh and also you get loads\nof money!!!!!!!"
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Add a Skins Economy",
+			"If Counter-Strike can\ndo it, why can't you?"
+		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"How it works:",
+			"Creates a supply and demand chain\nwith major FOMO aspects.",
+			"Makes people care about\nuseless textures",
+			"GOLD GOLD GOLD!!!"
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Add a Skins Economy",
+			"Bonus: Fortnite Battlepassssssss"
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Add lots of RNG",
+			"Make your game complete\nbullshit and luck based. It'll\nincrease payments!!"
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Bonus: Pay to Win",
+			"With the increase in RNG concepts, making\npay to win content will mega sell!!"
+		]
+	},
+	{
+		"type": 0,
+		"text": [
+			"Engines to Use",
+		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"Engines to Use:",
+			"RPG Maker VX Ace",
+			"Unreal Engine 7 for Arch Linux",
+			"Geometry Dash Level Editor"
+		]
+	},
+	{
+		"type": 2,
+		"text": [
+			"Engines to Use:",
+			"Unity 6000.1.67",
+			"ClaudeEngine",
+			"Alternative: Write your own!"
+		]
+	},
+	{
+		"type": 0,
+		"text": [
+			"Additional Content",
+		]
+	},
+	{
+		"type": 0,
+		"text": [
+			"Additional Commentary",
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Additional Commentary",
+			"AI has become exceedingly popular\nnowadays and is worrying a lot of artists.\nPop the AI bubble now."
+		]
+	},
+	{
+		"type": 1,
+		"text": [
+			"Additional Commentary",
+			"Trans lives Matter"
+		]
+	},
+	{
+		"type": 0,
+		"text": [
+			"The End",
+		]
 	}
 ]

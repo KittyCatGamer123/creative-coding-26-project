@@ -1,6 +1,7 @@
 extends Node3D
 
 var note_taking_active = false
+var game_complete = false
 
 ## Slide Stuff
 var slide_data = []
@@ -16,6 +17,9 @@ var slide_data = []
 @export var lines: Line2D
 @export var player: Player
 @export var player_crosshair: Label
+
+@onready var achievement_time: Timer = $Timer
+
 var current_line: Line2D = null
 var mouse_down = false
 var offset := Vector2(2, 3)
@@ -56,6 +60,7 @@ func _ready() -> void:
 	$CanvasLayer/Title.visible = true
 	$CanvasLayer/HowTo.visible = true
 	note_taking_active = true
+	achievement_time.start()
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	
 	await get_tree().create_timer(1).timeout
@@ -109,15 +114,16 @@ func presentation_loop():
 	presentation_light.visible = true
 	
 	await get_tree().create_timer(slide_time).timeout
-	slide_time /= 1.25
+	slide_time /= 1.55
 	slide_idx += 1
-	if slide_time > 0.009:
+	if slide_time > 0.0002:
 		print(slide_idx, ":  ", slide_time)
 		presentation_loop()
 	else:
 		presentation_end()
 
 func presentation_end():
+	achievement_time.paused = true
 	await get_tree().create_timer(2).timeout
 	
 	note_taking_active = false
@@ -145,6 +151,17 @@ func presentation_end():
 	note_taking_active = true
 	hand_pen.visible = true
 	hand_paper.visible = true
+	achievement_time.paused = false
 	$CanvasLayer/HowTo.text = "Press E to stop taking notes."
 	$CanvasLayer/HowTo.visible = true
 	$CanvasLayer/Interface/Line2D.visible = true
+	game_complete = true
+
+func achievement_get() -> void:
+	game_complete = false
+	$CanvasLayer/Popup/AudioStreamPlayer.play()
+	await get_tree().create_tween().tween_property($CanvasLayer/Popup, "position", Vector2(711, 30), 1).finished
+	await get_tree().create_tween().tween_property($CanvasLayer/Popup, "position", Vector2(711, 24), 0.2).finished
+	await get_tree().create_timer(4).timeout
+	get_tree().create_tween().tween_property($CanvasLayer/Popup, "position", Vector2(711, -216), 1)
+	game_complete = true
