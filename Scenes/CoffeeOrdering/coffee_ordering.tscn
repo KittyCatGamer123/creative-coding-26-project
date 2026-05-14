@@ -3,22 +3,104 @@
 [ext_resource type="PackedScene" uid="uid://5h2a4r2dgkac" path="res://Entities/Player/Player.tscn" id="1_l0g4e"]
 [ext_resource type="Script" uid="uid://dlcj03ikhgkha" path="res://Scenes/CoffeeOrdering/CoffeeOrdering.gd" id="1_u3xta"]
 [ext_resource type="Texture2D" uid="uid://byn6wwoqavpgb" path="res://Scenes/CoffeeOrdering/pointing.png" id="2_8qaxy"]
+[ext_resource type="Texture2D" uid="uid://bpqo87t47ykk3" path="res://Scenes/CoffeeOrdering/tabletexture.png" id="3_53q7p"]
+[ext_resource type="Texture2D" uid="uid://b45xsx6mv0k3r" path="res://Scenes/CoffeeOrdering/brickfloor.jpg" id="3_ro860"]
+[ext_resource type="Texture2D" uid="uid://fu4wwamfirfo" path="res://Scenes/CoffeeOrdering/tabletop.png" id="4_edbvm"]
+[ext_resource type="Texture2D" uid="uid://sm467n8gat8c" path="res://Scenes/CoffeeOrdering/woodfloorlol.jpg" id="4_kqtbr"]
+[ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="5_ll7ei"]
+[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="6_l8yy7"]
+[ext_resource type="Texture2D" uid="uid://gudtcfyfsqu" path="res://Entities/Character/Designs/Outfits/CafeOutfit.jpg" id="7_k8142"]
+[ext_resource type="Texture2D" uid="uid://dchv0utoml0ov" path="res://Entities/Character/Designs/Eyes/eye_happy.png" id="8_qvtd4"]
+[ext_resource type="Texture2D" uid="uid://2yje1k6fvgq" path="res://Scenes/CoffeeOrdering/pipe.png" id="9_s1fdb"]
+[ext_resource type="Texture2D" uid="uid://dghi0nrk4vo1u" path="res://Scenes/CoffeeOrdering/coffeemachinetext.png" id="9_sx7uq"]
+[ext_resource type="Texture2D" uid="uid://c86x1reltt6kw" path="res://Scenes/Bedroom/Materials/painted.jpg" id="13_0wrc1"]
+[ext_resource type="Texture2D" uid="uid://bfv25nfv4uucf" path="res://Scenes/CoffeeOrdering/cardpayment.png" id="14_jtq8l"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l0g4e"]
-sky_top_color = Color(0.030800017, 0.5359201, 0.77, 1)
-sky_horizon_color = Color(0.552, 0.6049, 0.69, 1)
-ground_bottom_color = Color(0.533, 0.5915, 0.65, 1)
-ground_horizon_color = Color(0.6216, 0.70531994, 0.84, 1)
-energy_multiplier = 0.5
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u3xta"]
+sky_top_color = Color(0.7, 0.86, 1, 1)
+sky_horizon_color = Color(0.345, 0.47724995, 0.69, 1)
+ground_bottom_color = Color(0.4144974, 0.5010387, 0.5834323, 1)
+ground_horizon_color = Color(0.5395, 0.6508583, 0.83, 1)
 
-[sub_resource type="Sky" id="Sky_gg5kx"]
-sky_material = SubResource("ProceduralSkyMaterial_l0g4e")
+[sub_resource type="Sky" id="Sky_53q7p"]
+sky_material = SubResource("ProceduralSkyMaterial_u3xta")
 
-[sub_resource type="Environment" id="Environment_8qaxy"]
+[sub_resource type="Environment" id="Environment_edbvm"]
 background_mode = 2
-sky = SubResource("Sky_gg5kx")
+sky = SubResource("Sky_53q7p")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wrc1"]
+albedo_texture = ExtResource("3_ro860")
+uv1_scale = Vector3(5, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtq8l"]
+albedo_texture = ExtResource("4_kqtbr")
+uv1_scale = Vector3(5, 5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edbvm"]
+albedo_texture = ExtResource("3_53q7p")
+uv1_scale = Vector3(20, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ll7ei"]
+albedo_texture = ExtResource("4_edbvm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8yy7"]
+emission_enabled = true
+emission = Color(0.641934, 0.641934, 0.641934, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvtd4"]
+albedo_texture = ExtResource("7_k8142")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1fdb"]
+albedo_color = Color(0.83, 0.7724533, 0.72209996, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.07683582, 0.07683582, 0.07683582, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqtbr"]
+albedo_color = Color(0.9564727, 0.9398733, 0.92563814, 1)
+albedo_texture = ExtResource("9_sx7uq")
+metallic = 1.0
+emission_enabled = true
+emission = Color(0.07683582, 0.07683582, 0.07683582, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sx7uq"]
+albedo_color = Color(0.7330615, 0.6196771, 3.3884047e-05, 1)
+albedo_texture = ExtResource("9_sx7uq")
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro860"]
+albedo_texture = ExtResource("9_s1fdb")
+metallic = 1.0
+uv1_scale = Vector3(2, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_001lw"]
+albedo_color = Color(0.96, 0.884, 0.7776, 1)
+albedo_texture = ExtResource("13_0wrc1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_001lw"]
+atlas = ExtResource("14_jtq8l")
+region = Rect2(0, 0, 250, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lklem"]
+atlas = ExtResource("14_jtq8l")
+region = Rect2(0, 137, 250, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieowg"]
+atlas = ExtResource("14_jtq8l")
+region = Rect2(0, 274, 250, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd22u"]
+atlas = ExtResource("14_jtq8l")
+region = Rect2(0, 411, 250, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wrc1"]
+atlas = ExtResource("2_8qaxy")
+region = Rect2(0, 0, 200, 110)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53q7p"]
 atlas = ExtResource("2_8qaxy")
@@ -40,6 +122,26 @@ region = Rect2(0, 440, 200, 110)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_001lw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lklem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieowg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd22u")
+}],
+"loop": false,
+"name": &"payment_draw",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wrc1")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_53q7p")
 }, {
 "duration": 1.0,
@@ -52,27 +154,157 @@ animations = [{
 "texture": SubResource("AtlasTexture_l8yy7")
 }],
 "loop": false,
-"name": &"default",
+"name": &"point",
 "speed": 15.0
 }]
 
 [node name="CoffeeOrdering" type="Node3D" unique_id=224079871]
 script = ExtResource("1_u3xta")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2147273876]
+environment = SubResource("Environment_edbvm")
+
 [node name="Player" parent="." unique_id=1015862513 instance=ExtResource("1_l0g4e")]
-motion_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0550995, 0)
 
 [node name="Messages" parent="Player" index="4" unique_id=1087480721]
 visible = false
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1402115849]
-environment = SubResource("Environment_8qaxy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1517996892]
 transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, -0.34925765, 0.881684, 0.31725767, -0.3577976, 0.1874388, -0.9147937, -10.271363, 11.777811, -11.496918)
 sky_mode = 2
 
 [node name="World" type="Node3D" parent="." unique_id=2062394518]
+
+[node name="Floor" type="CSGBox3D" parent="World" unique_id=1545087911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9017944, 0, 3.868225)
+material_override = SubResource("StandardMaterial3D_0wrc1")
+use_collision = true
+size = Vector3(18.300781, 0.001, 7.718628)
+
+[node name="Floor2" type="CSGBox3D" parent="World" unique_id=350416552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9017944, 0, -3.7945046)
+material_override = SubResource("StandardMaterial3D_jtq8l")
+use_collision = true
+size = Vector3(18.342773, 0.001, 7.5859985)
+
+[node name="Table" type="CSGBox3D" parent="World" unique_id=499284942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6914978, 0.7299662, -4.187462)
+material_override = SubResource("StandardMaterial3D_edbvm")
+use_collision = true
+size = Vector3(5.7335815, 1.5384064, 1.7768555)
+
+[node name="Tabletop" type="CSGBox3D" parent="World" unique_id=1052469319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63191223, 1.5067136, -4.1818466)
+material_override = SubResource("StandardMaterial3D_ll7ei")
+size = Vector3(5.789337, 0.061523438, 1.8642578)
+
+[node name="Table2" type="CSGBox3D" parent="World" unique_id=79833862]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.884861, 0.7299662, -2.626993)
+material_override = SubResource("StandardMaterial3D_edbvm")
+use_collision = true
+size = Vector3(4.889038, 1.5384064, 2.7764893)
+
+[node name="Tabletop2" type="CSGBox3D" parent="World" unique_id=112441321]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.9183636, 1.5067136, -2.6232805)
+material_override = SubResource("StandardMaterial3D_ll7ei")
+size = Vector3(4.9732056, 0.061523438, 2.8656006)
+
+[node name="Stand" type="CSGCylinder3D" parent="World" unique_id=1798043724]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.1082172, 1.755796, -4.6056695)
+radius = 0.1
+height = 0.5
+sides = 12
+
+[node name="screen" type="CSGBox3D" parent="World/Stand" unique_id=2040714171]
+transform = Transform3D(1, 0, 0, 0, 0.23096684, -0.97296154, 0, 0.97296154, 0.23096684, 0.018344164, 0.23365879, 0.08694601)
+size = Vector3(0.6501465, 0.05871582, 0.35498047)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Stand/screen" unique_id=1128052059]
+transform = Transform3D(1, -2.0747848e-12, -9.379164e-13, 0, 1.0000042, -2.8312206e-07, 1.7763568e-14, 2.8312206e-07, 1.0000042, 0, 0.02898264, -0.0041378736)
+operation = 2
+size = Vector3(0.5703125, 0.011907715, 0.26733398)
+
+[node name="screenpage" type="CSGBox3D" parent="World/Stand/screen" unique_id=276678717]
+transform = Transform3D(1, -2.195577e-12, -9.983125e-13, 0, 1.0000042, -2.8312206e-07, 1.7763568e-14, 2.8312206e-07, 1.0000042, 0, 0.023700714, -0.005391717)
+size = Vector3(0.5703125, 0.001, 0.26733398)
+material = SubResource("StandardMaterial3D_l8yy7")
+
+[node name="Label3D" type="Label3D" parent="World/Stand/screen/screenpage" unique_id=1491160321]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0.0012202263, 0.00028955936)
+modulate = Color(0.45999998, 0.73, 1, 1)
+text = "€1,000"
+font = ExtResource("5_ll7ei")
+font_size = 28
+
+[node name="Character" parent="World" unique_id=2103743369 instance=ExtResource("6_l8yy7")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.518, 1.251, -6.7267413)
+interaction_colour = Color(0, 0, 0, 1)
+
+[node name="Outfit" parent="World/Character/CharacterBody" parent_id_path=PackedInt32Array(2103743369, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_qvtd4")
+
+[node name="EyeLeft" parent="World/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("8_qvtd4")
+
+[node name="EyeRight" parent="World/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("8_qvtd4")
+
+[node name="Machine" type="CSGBox3D" parent="World" unique_id=120912384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64941406, 1.631852, -4.4667654)
+size = Vector3(2.2988281, 0.099121094, 1)
+material = SubResource("StandardMaterial3D_s1fdb")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Machine" unique_id=1497037191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99594784, -0.06883359, -0.33820963)
+radius = 0.072265625
+height = 0.059132814
+material = SubResource("StandardMaterial3D_s1fdb")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Machine" unique_id=481583568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0040482, -0.075399995, -0.33820963)
+radius = 0.072265625
+height = 0.059
+material = SubResource("StandardMaterial3D_s1fdb")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="World/Machine" unique_id=1769608941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99594784, -0.075399995, 0.37950754)
+radius = 0.072265625
+height = 0.059
+material = SubResource("StandardMaterial3D_s1fdb")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="World/Machine" unique_id=1015478947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0040482, -0.075399995, 0.37950754)
+radius = 0.072265625
+height = 0.059
+material = SubResource("StandardMaterial3D_s1fdb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Machine" unique_id=132672938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38714612, 0.29730225)
+size = Vector3(2.296875, 0.78063965, 0.4053955)
+material = SubResource("StandardMaterial3D_kqtbr")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Machine" unique_id=196048066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0108122, 0.1239624)
+size = Vector3(2.305664, 0.49813843, 0.7381592)
+material = SubResource("StandardMaterial3D_sx7uq")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="World/Machine" unique_id=1610603690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8853624, 0.6767527, -0.1761713)
+radius = 0.045410156
+height = 0.26965332
+material = SubResource("StandardMaterial3D_ro860")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="World/Machine" unique_id=417979152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94305325, 0.6767527, -0.1761713)
+radius = 0.045410156
+height = 0.26965332
+material = SubResource("StandardMaterial3D_ro860")
+
+[node name="Wall" type="CSGBox3D" parent="World" unique_id=308464111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9022217, 4.905959, -7.583822)
+material_override = SubResource("StandardMaterial3D_001lw")
+size = Vector3(18.41211, 9.798889, 0.07519531)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1467346592]
 
@@ -84,10 +316,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HandPointer" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1994030508]
-position = Vector2(790.9966, 369.6304)
-rotation = 1.5707964
+[node name="Hand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1994030508]
+position = Vector2(774.00006, 403.99997)
+rotation = 1.3962634
 scale = Vector2(2.800478, 2.8004782)
 sprite_frames = SubResource("SpriteFrames_k8142")
+animation = &"point"
 
 [editable path="Player"]
+[editable path="World/Character"]
