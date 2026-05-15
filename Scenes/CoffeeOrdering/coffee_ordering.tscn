@@ -350,15 +350,15 @@ script = ExtResource("1_u3xta")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2147273876]
 environment = SubResource("Environment_edbvm")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1517996892]
+transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, -0.34925765, 0.881684, 0.31725767, -0.3577976, 0.1874388, -0.9147937, -10.271363, 11.777811, -11.496918)
+sky_mode = 2
+
 [node name="Player" parent="." unique_id=1015862513 instance=ExtResource("1_l0g4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7995195, 1.0550995, -2.624502)
 
 [node name="Messages" parent="Player" index="4" unique_id=1087480721]
 visible = false
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1517996892]
-transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, -0.34925765, 0.881684, 0.31725767, -0.3577976, 0.1874388, -0.9147937, -10.271363, 11.777811, -11.496918)
-sky_mode = 2
 
 [node name="World" type="Node3D" parent="." unique_id=2062394518]
 

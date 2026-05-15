@@ -117,7 +117,6 @@ func presentation_loop():
 	slide_time /= 1.55
 	slide_idx += 1
 	if slide_time > 0.0002:
-		print(slide_idx, ":  ", slide_time)
 		presentation_loop()
 	else:
 		presentation_end()

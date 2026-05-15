@@ -1,0 +1,2202 @@
+[gd_scene format=3 uid="uid://fmhxku74ytew"]
+
+[ext_resource type="Texture2D" uid="uid://oiqspmv7ewfx" path="res://Scenes/KeyboardSpamGame/WoodFloor.png" id="1_48g7a"]
+[ext_resource type="Script" uid="uid://3lr16to6sexd" path="res://Scenes/KeyboardSpamGame/KeyboardSpam.gd" id="1_unldn"]
+[ext_resource type="Texture2D" uid="uid://c86x1reltt6kw" path="res://Scenes/Bedroom/Materials/painted.jpg" id="2_78vs3"]
+[ext_resource type="Texture2D" uid="uid://bys7867saynd4" path="res://Scenes/Bedroom/Materials/walltexture.png" id="2_g03po"]
+[ext_resource type="PackedScene" uid="uid://5h2a4r2dgkac" path="res://Entities/Player/Player.tscn" id="2_qdgac"]
+[ext_resource type="Texture2D" uid="uid://djtgwxjirrtxk" path="res://Scenes/KeyboardSpamGame/Document/page2.PNG" id="3_v8puv"]
+[ext_resource type="Texture2D" uid="uid://7rpju35rcvaa" path="res://Scenes/KeyboardSpamGame/kb.jpg" id="3_yaxjg"]
+[ext_resource type="Script" uid="uid://do611ls1qm1ce" path="res://Scenes/KeyboardSpamGame/CorrectChair.gd" id="4_ibg6i"]
+[ext_resource type="Texture2D" uid="uid://dr5lgs1xxfaqn" path="res://Scenes/KeyboardSpamGame/Document/page3.PNG" id="4_qea65"]
+[ext_resource type="Texture2D" uid="uid://dbmve5paiwjl4" path="res://Scenes/KeyboardSpamGame/hand_right_ready.png" id="7_fx72g"]
+[ext_resource type="Texture2D" uid="uid://n0o8jxwcwe1c" path="res://Scenes/KeyboardSpamGame/hand_left_ready.png" id="7_npgjx"]
+[ext_resource type="Texture2D" uid="uid://bnx77srupm45v" path="res://Scenes/KeyboardSpamGame/hand_right_down.png" id="8_lq7b3"]
+[ext_resource type="Texture2D" uid="uid://bpohs4heccqqf" path="res://Scenes/KeyboardSpamGame/hand_left_down.png" id="8_nseq6"]
+[ext_resource type="Texture2D" uid="uid://c6tr8khv54aij" path="res://Scenes/KeyboardSpamGame/Document/Header.png" id="12_141s7"]
+[ext_resource type="Texture2D" uid="uid://dvrao0fhbxtjf" path="res://Scenes/KeyboardSpamGame/Document/page1.PNG" id="12_vonlc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uol6i"]
+sky_top_color = Color(0.7, 0.86, 1, 1)
+sky_horizon_color = Color(0.345, 0.47724995, 0.69, 1)
+ground_bottom_color = Color(0.4144974, 0.5010387, 0.5834323, 1)
+ground_horizon_color = Color(0.5395, 0.6508583, 0.83, 1)
+
+[sub_resource type="Sky" id="Sky_53q7p"]
+sky_material = SubResource("ProceduralSkyMaterial_uol6i")
+
+[sub_resource type="Environment" id="Environment_48g7a"]
+background_mode = 2
+sky = SubResource("Sky_53q7p")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdgac"]
+albedo_color = Color(1, 0.902, 0.58000004, 1)
+albedo_texture = ExtResource("1_48g7a")
+uv1_scale = Vector3(6, 6, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_141s7"]
+albedo_texture = ExtResource("2_78vs3")
+uv1_scale = Vector3(3, 3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yaxjg"]
+albedo_texture = ExtResource("2_g03po")
+uv1_scale = Vector3(1, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g03po"]
+transparency = 1
+albedo_color = Color(0.48000002, 0.75733334, 1, 0.41960785)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibg6i"]
+albedo_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fx72g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78vs3"]
+albedo_color = Color(0.18000486, 0.1800049, 0.1800048, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lq7b3"]
+albedo_texture = ExtResource("3_yaxjg")
+uv1_scale = Vector3(-1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npgjx"]
+emission_enabled = true
+emission = Color(0.39308554, 0.3930855, 0.39308548, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unldn"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nseq6"]
+next_pass = SubResource("StandardMaterial3D_unldn")
+albedo_color = Color(0.16758002, 0.055800002, 0.18, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yaxjg"]
+height = 3.1430664
+radius = 0.98046875
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a1f1h"]
+viewport_path = NodePath("CanvasLayer/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vonlc"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_a1f1h")
+
+[sub_resource type="BoxMesh" id="BoxMesh_unldn"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_vonlc")
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78vs3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_npgjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nseq6")
+}],
+"loop": false,
+"name": &"left_hand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fx72g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lq7b3")
+}],
+"loop": false,
+"name": &"right_hand",
+"speed": 5.0
+}]
+
+[node name="KeyboardSpam" type="Node3D" unique_id=2135728304 node_paths=PackedStringArray("page_texture", "page_cover")]
+script = ExtResource("1_unldn")
+page_textures = Array[Texture2D]([ExtResource("12_vonlc"), ExtResource("3_v8puv"), ExtResource("4_qea65")])
+page_texture = NodePath("CanvasLayer/SubViewport/Control/PageContent")
+page_cover = NodePath("CanvasLayer/SubViewport/Control/ContentCover")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1394070988]
+environment = SubResource("Environment_48g7a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1896162402]
+transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, -0.34925765, 0.881684, 0.31725767, -0.3577976, 0.1874388, -0.9147937, -10.271363, 11.777811, -11.496918)
+sky_mode = 2
+
+[node name="World" type="Node3D" parent="." unique_id=1215507913]
+
+[node name="Floor" type="CSGBox3D" parent="World" unique_id=1298854899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0285645, 0, -8.486816)
+material_override = SubResource("StandardMaterial3D_qdgac")
+use_collision = true
+size = Vector3(20.464355, 0.001, 32.333008)
+
+[node name="Ceil" type="CSGBox3D" parent="World" unique_id=315190955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0285645, 5.4713445, -8.486816)
+material_override = SubResource("StandardMaterial3D_141s7")
+use_collision = true
+size = Vector3(20.464355, 0.001, 32.333008)
+
+[node name="Wall" type="CSGBox3D" parent="World" unique_id=1083138136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.703345, 2.900484, -8.420166)
+material_override = SubResource("StandardMaterial3D_yaxjg")
+use_collision = true
+size = Vector3(1, 5.6784973, 32.811035)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Wall" unique_id=2037555907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6260986, 13.3348)
+operation = 2
+size = Vector3(1, 3.2565918, 1.8757324)
+
+[node name="Door" type="Node3D" parent="World" unique_id=683887535]
+
+[node name="DoorWindow" type="CSGBox3D" parent="World/Door" unique_id=703255567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0469894, 1.4145103, 4.8308363)
+use_collision = true
+size = Vector3(0.041992188, 3.0638428, 2.0427246)
+material = SubResource("StandardMaterial3D_g03po")
+
+[node name="DoorFrame" type="CSGBox3D" parent="World/Door" unique_id=1882127885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0469894, 1.5049949, 5.8643446)
+size = Vector3(0.083984375, 3.0180054, 0.06286621)
+material = SubResource("StandardMaterial3D_ibg6i")
+
+[node name="DoorFrame2" type="CSGBox3D" parent="World/Door" unique_id=1915545418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0469894, 1.5049949, 3.9461646)
+size = Vector3(0.083984375, 3.0180054, 0.06286621)
+material = SubResource("StandardMaterial3D_ibg6i")
+
+[node name="DoorFrame3" type="CSGBox3D" parent="World/Door" unique_id=1729088542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0469894, 2.9242077, 4.909696)
+size = Vector3(0.083984375, 0.0801239, 1.9899292)
+material = SubResource("StandardMaterial3D_ibg6i")
+
+[node name="DoorHandle" type="CSGBox3D" parent="World/Door" unique_id=346203989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0469894, 1.3712881, 4.315515)
+size = Vector3(0.083984375, 0.66213226, 0.17281342)
+material = SubResource("StandardMaterial3D_ibg6i")
+
+[node name="DoorFrame5" type="CSGBox3D" parent="World/Door" unique_id=962384470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0469894, 0.0099157095, 4.909696)
+size = Vector3(0.083984375, 0.0801239, 1.9899292)
+material = SubResource("StandardMaterial3D_ibg6i")
+
+[node name="Wall2" type="CSGBox3D" parent="World" unique_id=1830342290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.548979, 2.900484, -8.420166)
+material_override = SubResource("StandardMaterial3D_yaxjg")
+use_collision = true
+size = Vector3(1, 5.6784973, 32.811035)
+
+[node name="Wall3" type="CSGBox3D" parent="World" unique_id=41464240]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.491054, 2.900484, 7.5195713)
+material_override = SubResource("StandardMaterial3D_yaxjg")
+use_collision = true
+size = Vector3(1, 5.6784973, 19.634521)
+
+[node name="Wall4" type="CSGBox3D" parent="World" unique_id=1126593422]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.491054, 2.900484, -24.123121)
+material_override = SubResource("StandardMaterial3D_yaxjg")
+use_collision = true
+size = Vector3(1, 5.6784973, 19.634521)
+
+[node name="Table" type="CSGBox3D" parent="World" unique_id=266119758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79813, 0.61183107, 2.6666136)
+use_collision = true
+size = Vector3(10.85627, 1.4141846, 4.114258)
+material = SubResource("StandardMaterial3D_fx72g")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Table" unique_id=1579183668]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.31176758, -0.10953325, 1.8903179)
+operation = 2
+radius = 0.61083984
+height = 12.130371
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Table" unique_id=1275813866]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.35473633, -0.110000014, -1.9452386)
+operation = 2
+radius = 0.61083984
+height = 12.044434
+
+[node name="ChairMonKbRow" type="Node3D" parent="World" unique_id=691819750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.102154, 0, 3.446531)
+
+[node name="Chair" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=1129473808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair" unique_id=273597619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair" unique_id=2077322533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow/Chair" unique_id=1998797734]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair/CSGBox3D2" unique_id=1991529464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair/CSGBox3D2" unique_id=646703715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Chair" unique_id=22364538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow/Chair" unique_id=975207837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow/Chair" unique_id=835915898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow/Chair" unique_id=613404984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=887053221]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.102154, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=1386085078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Monitor" unique_id=1817645305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor" unique_id=238709303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor/Screen" unique_id=1313633364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor" unique_id=198048628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair2" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=2032793357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair2" unique_id=484758746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair2" unique_id=1619028518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow/Chair2" unique_id=2022288281]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair2/CSGBox3D2" unique_id=167602387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair2/CSGBox3D2" unique_id=1187239242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Chair2" unique_id=933533207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow/Chair2" unique_id=2003096644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow/Chair2" unique_id=1002295544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow/Chair2" unique_id=123882239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard2" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=870456213]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4395704, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor2" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=1856835759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Monitor2" unique_id=1043489374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor2" unique_id=557435714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor2/Screen" unique_id=36785802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor2" unique_id=754835626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair3" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=260003170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair3" unique_id=855989241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair3" unique_id=84758879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow/Chair3" unique_id=1447089174]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair3/CSGBox3D2" unique_id=681299673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair3/CSGBox3D2" unique_id=1556236148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Chair3" unique_id=1332940100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow/Chair3" unique_id=1755831318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow/Chair3" unique_id=326423918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow/Chair3" unique_id=1262396618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard3" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=1168873106]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3856974, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor3" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=666449430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Monitor3" unique_id=149570889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor3" unique_id=1148777076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor3/Screen" unique_id=1879451214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor3" unique_id=1628564776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair4" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=1967827204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair4" unique_id=1530371284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair4" unique_id=1204113281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow/Chair4" unique_id=1505895329]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair4/CSGBox3D2" unique_id=712762245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow/Chair4/CSGBox3D2" unique_id=562739914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Chair4" unique_id=603524309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow/Chair4" unique_id=81440021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow/Chair4" unique_id=1590606932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow/Chair4" unique_id=1244299705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard4" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=305719335]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9447308, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor4" type="CSGBox3D" parent="World/ChairMonKbRow" unique_id=414098517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow/Monitor4" unique_id=1996510722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor4" unique_id=539547267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor4/Screen" unique_id=2070235152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow/Monitor4" unique_id=726872551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="ChairMonKbRow2" type="Node3D" parent="World" unique_id=1319415309]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.102154, 0, 2.146499)
+
+[node name="Chair" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=1343799220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair" unique_id=372033956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair" unique_id=1079070808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair" unique_id=576021798]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair/CSGBox3D2" unique_id=965016770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair/CSGBox3D2" unique_id=88177637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Chair" unique_id=412574193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair" unique_id=1625825432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair" unique_id=54771951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair" unique_id=1611742294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=154991776]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.102154, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=605278481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Monitor" unique_id=241468368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor" unique_id=395033382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor/Screen" unique_id=1283008705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor" unique_id=710349014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair2" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=1553958615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair2" unique_id=783639224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair2" unique_id=557857775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair2" unique_id=644190193]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair2/CSGBox3D2" unique_id=2082984829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair2/CSGBox3D2" unique_id=987844899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Chair2" unique_id=1934567336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair2" unique_id=66066871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair2" unique_id=1185371643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair2" unique_id=987532639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard2" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=1817291516]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4395704, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor2" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=1358177035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Monitor2" unique_id=84933181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor2" unique_id=344253866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor2/Screen" unique_id=1393172193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor2" unique_id=595954757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair3" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=14491389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair3" unique_id=1053782618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair3" unique_id=1757221577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair3" unique_id=1813697966]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair3/CSGBox3D2" unique_id=403542166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair3/CSGBox3D2" unique_id=1464186227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Chair3" unique_id=546225335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair3" unique_id=2129288836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair3" unique_id=1613450791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair3" unique_id=1846568752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard3" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=73159373]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3856974, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor3" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=1797611217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Monitor3" unique_id=1570268119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor3" unique_id=1031136524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor3/Screen" unique_id=510832782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor3" unique_id=677511695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair4" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=301191960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair4" unique_id=1460614626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair4" unique_id=2093107478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair4" unique_id=1377022406]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair4/CSGBox3D2" unique_id=878843892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow2/Chair4/CSGBox3D2" unique_id=768310692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Chair4" unique_id=1941574175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair4" unique_id=1032451636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair4" unique_id=1942225278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow2/Chair4" unique_id=816202446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard4" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=993778163]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9447308, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor4" type="CSGBox3D" parent="World/ChairMonKbRow2" unique_id=2044918633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow2/Monitor4" unique_id=1159119292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor4" unique_id=1364188734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor4/Screen" unique_id=201215936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow2/Monitor4" unique_id=1048677427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Table2" type="CSGBox3D" parent="World" unique_id=1054129526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79813, 0.61183107, -5.975157)
+use_collision = true
+size = Vector3(10.85627, 1.4141846, 4.114258)
+material = SubResource("StandardMaterial3D_fx72g")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Table2" unique_id=1911536058]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.31176758, -0.10953325, 1.8903179)
+operation = 2
+radius = 0.61083984
+height = 12.130371
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Table2" unique_id=994871275]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.35473633, -0.110000014, -1.9452386)
+operation = 2
+radius = 0.61083984
+height = 12.044434
+
+[node name="ChairMonKbRow3" type="Node3D" parent="World" unique_id=348997799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.102154, 0, -5.195239)
+
+[node name="Chair" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=42615824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair" unique_id=956304209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair" unique_id=1011887999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair" unique_id=1086870277]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair/CSGBox3D2" unique_id=2118855579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair/CSGBox3D2" unique_id=603560455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Chair" unique_id=645038379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair" unique_id=951937794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair" unique_id=516372415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair" unique_id=406426883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=1047774208]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.102154, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=813342034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Monitor" unique_id=1421782649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor" unique_id=1927372571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor/Screen" unique_id=91116236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor" unique_id=1208708429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair2" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=1120688849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair2" unique_id=1590329522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair2" unique_id=1021039773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair2" unique_id=1974496929]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair2/CSGBox3D2" unique_id=1169263449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair2/CSGBox3D2" unique_id=2084718775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Chair2" unique_id=576006495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair2" unique_id=2043403382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair2" unique_id=162513202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair2" unique_id=665361520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard2" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=954355900]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4395704, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor2" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=920566658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Monitor2" unique_id=1133989390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor2" unique_id=1942403661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor2/Screen" unique_id=1639598151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor2" unique_id=372494198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair3" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=1070745801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair3" unique_id=1024279977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair3" unique_id=2139642580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair3" unique_id=747625774]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair3/CSGBox3D2" unique_id=1154301918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair3/CSGBox3D2" unique_id=2080647434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Chair3" unique_id=1737688256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair3" unique_id=303588737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair3" unique_id=15583279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair3" unique_id=995873150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard3" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=1323805514]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3856974, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor3" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=1039303451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Monitor3" unique_id=1361764487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor3" unique_id=1347856651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor3/Screen" unique_id=319387797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor3" unique_id=1446856241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair4" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=1505865718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair4" unique_id=655710266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair4" unique_id=2073003211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair4" unique_id=506344352]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair4/CSGBox3D2" unique_id=1904263728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow3/Chair4/CSGBox3D2" unique_id=1122277106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Chair4" unique_id=469838051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair4" unique_id=1864287132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair4" unique_id=1346486953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow3/Chair4" unique_id=1636815370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard4" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=428068529]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9447308, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor4" type="CSGBox3D" parent="World/ChairMonKbRow3" unique_id=605873623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow3/Monitor4" unique_id=711545558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor4" unique_id=1395171051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor4/Screen" unique_id=199363412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow3/Monitor4" unique_id=595480005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="ChairMonKbRow4" type="Node3D" parent="World" unique_id=927113774]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.102154, 0, -6.4952717)
+
+[node name="Chair" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=1016870925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair" unique_id=1376629784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair" unique_id=253603510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair" unique_id=1220476786]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair/CSGBox3D2" unique_id=1373544308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair/CSGBox3D2" unique_id=1980304989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Chair" unique_id=1298334444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair" unique_id=1055495839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair" unique_id=1876576161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair" unique_id=1151986236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=636922500]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.102154, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=961244640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Monitor" unique_id=1611366121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor" unique_id=1090760272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor/Screen" unique_id=2043248629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor" unique_id=1410912820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair2" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=1906279321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair2" unique_id=733242764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair2" unique_id=1530441368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair2" unique_id=877645825]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair2/CSGBox3D2" unique_id=853351394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair2/CSGBox3D2" unique_id=1595983080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Chair2" unique_id=671362853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair2" unique_id=282126993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair2" unique_id=792524281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair2" unique_id=1023824649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard2" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=1107685640]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4395704, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor2" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=1144564704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Monitor2" unique_id=1236628092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor2" unique_id=1185598089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor2/Screen" unique_id=554729565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor2" unique_id=1086872517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair3" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=1139414598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair3" unique_id=1522108767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair3" unique_id=1536937863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair3" unique_id=51623024]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair3/CSGBox3D2" unique_id=621722429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair3/CSGBox3D2" unique_id=2121992580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Chair3" unique_id=379565390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair3" unique_id=911581014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair3" unique_id=1836550324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair3" unique_id=1258619455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard3" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=1917552671]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3856974, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor3" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=39012943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Monitor3" unique_id=650548641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor3" unique_id=361645614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor3/Screen" unique_id=242726418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor3" unique_id=605587918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair4" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=2023594407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair4" unique_id=707250825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair4" unique_id=1248324573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair4" unique_id=853536393]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair4/CSGBox3D2" unique_id=2046865845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow4/Chair4/CSGBox3D2" unique_id=335767871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Chair4" unique_id=2007779437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair4" unique_id=1719281372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair4" unique_id=1700457523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow4/Chair4" unique_id=1424922119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard4" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=224856294]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9447308, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor4" type="CSGBox3D" parent="World/ChairMonKbRow4" unique_id=2128224390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow4/Monitor4" unique_id=382946786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor4" unique_id=322613070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor4/Screen" unique_id=1009821279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow4/Monitor4" unique_id=557684241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Table3" type="CSGBox3D" parent="World" unique_id=1528893766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79813, 0.61183107, -15.544788)
+use_collision = true
+size = Vector3(10.85627, 1.4141846, 4.114258)
+material = SubResource("StandardMaterial3D_fx72g")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Table3" unique_id=493543920]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.31176758, -0.10953325, 1.8903179)
+operation = 2
+radius = 0.61083984
+height = 12.130371
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Table3" unique_id=2131995667]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.35473633, -0.110000014, -1.9452386)
+operation = 2
+radius = 0.61083984
+height = 12.044434
+
+[node name="ChairMonKbRow5" type="Node3D" parent="World" unique_id=38951318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.102154, 0, -14.764871)
+
+[node name="Chair" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=1130179998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair" unique_id=606802479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair" unique_id=1314839888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair" unique_id=1172158236]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair/CSGBox3D2" unique_id=452404055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair/CSGBox3D2" unique_id=31315065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow5/Chair" unique_id=779123325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair" unique_id=1749705691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair" unique_id=1673047361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair" unique_id=1752803851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=1129483372]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.102154, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=274402044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow5/Monitor" unique_id=1969178997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor" unique_id=1759240772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor/Screen" unique_id=2036524414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor" unique_id=1912207069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Keyboard2" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=118310804]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4395704, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Chair3" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=1131788159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair3" unique_id=1556307192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair3" unique_id=1497522847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair3" unique_id=1812090124]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair3/CSGBox3D2" unique_id=695237902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair3/CSGBox3D2" unique_id=546813663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow5/Chair3" unique_id=889431410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair3" unique_id=1890111600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair3" unique_id=1367196056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair3" unique_id=1168434970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard3" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=1242845805]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3856974, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor3" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=884020944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow5/Monitor3" unique_id=1055348698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor3" unique_id=1707638100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor3/Screen" unique_id=1919524183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor3" unique_id=1693636289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair4" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=1603803167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair4" unique_id=455749656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair4" unique_id=1733162813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair4" unique_id=871680591]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair4/CSGBox3D2" unique_id=1023345153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow5/Chair4/CSGBox3D2" unique_id=676100232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow5/Chair4" unique_id=473235987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair4" unique_id=1847619782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair4" unique_id=1932236363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow5/Chair4" unique_id=644068136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard4" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=1723188855]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9447308, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor4" type="CSGBox3D" parent="World/ChairMonKbRow5" unique_id=1599672079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow5/Monitor4" unique_id=1806518358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor4" unique_id=587875838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor4/Screen" unique_id=41486369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow5/Monitor4" unique_id=1678989781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="ChairMonKbRow6" type="Node3D" parent="World" unique_id=562401128]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.102154, 0, -16.064903)
+
+[node name="Chair" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=233199095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair" unique_id=1497023703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair" unique_id=517174689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair" unique_id=1710374915]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair/CSGBox3D2" unique_id=1430999971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair/CSGBox3D2" unique_id=143084217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Chair" unique_id=2142820192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair" unique_id=118020584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair" unique_id=454934200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair" unique_id=1636771034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=1227747408]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.102154, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=136766250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.102154, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Monitor" unique_id=690662456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor" unique_id=89364513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor/Screen" unique_id=220215452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor" unique_id=1143800742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair2" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=663081941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair2" unique_id=224950911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair2" unique_id=1424746622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair2" unique_id=992952805]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair2/CSGBox3D2" unique_id=1160307678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair2/CSGBox3D2" unique_id=773940630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Chair2" unique_id=277432058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair2" unique_id=599382064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair2" unique_id=1083917744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair2" unique_id=2060967833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard2" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=1640783407]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.4395704, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor2" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=403090390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4395704, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Monitor2" unique_id=1813851209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor2" unique_id=797409269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor2/Screen" unique_id=8744251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor2" unique_id=440673035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair3" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=650699613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair3" unique_id=258519522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair3" unique_id=645193575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair3" unique_id=1782745689]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair3/CSGBox3D2" unique_id=673408221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair3/CSGBox3D2" unique_id=2036719349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Chair3" unique_id=1770493442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair3" unique_id=1288448534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair3" unique_id=1933888393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair3" unique_id=1420353158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard3" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=829545579]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.3856974, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor3" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=1908614094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3856974, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Monitor3" unique_id=962543160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor3" unique_id=1113411821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor3/Screen" unique_id=646011774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor3" unique_id=326714723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="Chair4" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=232297092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 0.2198872, 2.4058836)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair4" unique_id=1522015381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair4" unique_id=925150736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair4" unique_id=1982170059]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair4/CSGBox3D2" unique_id=60682998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/ChairMonKbRow6/Chair4/CSGBox3D2" unique_id=1240734859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Chair4" unique_id=1509261422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair4" unique_id=142220132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair4" unique_id=16405951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/ChairMonKbRow6/Chair4" unique_id=1546871744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="Keyboard4" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=340339515]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9447308, 1.3459637, 0.9133413)
+material_override = SubResource("StandardMaterial3D_lq7b3")
+size = Vector3(0.6055298, 0.01586914, 1.6708984)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Monitor4" type="CSGBox3D" parent="World/ChairMonKbRow6" unique_id=1685107305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9447308, 1.331596, 0.2668798)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/ChairMonKbRow6/Monitor4" unique_id=1101798417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor4" unique_id=590148278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor4/Screen" unique_id=2028538579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContent" type="CSGBox3D" parent="World/ChairMonKbRow6/Monitor4" unique_id=1904062014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
+size = Vector3(1.4313965, 0.74438477, 0.011169434)
+material = SubResource("StandardMaterial3D_npgjx")
+
+[node name="CorrectChair" type="Area3D" parent="World" unique_id=119727109 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5203443, 0.2198872, -12.222141)
+script = ExtResource("4_ibg6i")
+player_reference = NodePath("../../Player")
+
+[node name="CorrectChair" type="CSGBox3D" parent="World/CorrectChair" unique_id=1258318433]
+transform = Transform3D(0.97555757, 0, -0.21974404, 0, 1, 0, 0.21974404, 0, 0.97555757, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_nseq6")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/CorrectChair/CorrectChair" unique_id=527595302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/CorrectChair/CorrectChair" unique_id=2001807354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/CorrectChair/CorrectChair" unique_id=328964261]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_78vs3")
+size = Vector3(1, 0.033447266, 0.24194336)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="World/CorrectChair/CorrectChair/CSGBox3D2" unique_id=847504347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495707, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="World/CorrectChair/CorrectChair/CSGBox3D2" unique_id=917457522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4000814, -0.09496811, 0)
+radius = 0.07699266
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/CorrectChair/CorrectChair" unique_id=452317047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3735795, 0)
+radius = 0.08984375
+height = 0.74702835
+sides = 10
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/CorrectChair/CorrectChair" unique_id=669233779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7447993, 0)
+size = Vector3(1.1, 0.21223144, 1.1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/CorrectChair/CorrectChair" unique_id=1482071601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1764312, 0.5886378)
+size = Vector3(0.27539063, 1, 0.072265625)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/CorrectChair/CorrectChair" unique_id=63631052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5943663, 0.471246)
+size = Vector3(1.09375, 0.55615234, 0.23977661)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/CorrectChair" unique_id=701707792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5715332, 0)
+shape = SubResource("CylinderShape3D_yaxjg")
+
+[node name="CorrectMonitor" type="CSGBox3D" parent="World" unique_id=360486448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.653, 1.332, -14.495)
+size = Vector3(0.6113281, 0.021728516, 0.4658203)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/CorrectMonitor" unique_id=1242556692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46912384, -0.08198738)
+radius = 0.09423828
+height = 0.93019104
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen" type="CSGBox3D" parent="World/CorrectMonitor" unique_id=449190956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.008960247)
+size = Vector3(1.5712891, 0.80249023, 0.0703125)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="Screen2" type="CSGBox3D" parent="World/CorrectMonitor/Screen" unique_id=1131061661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178955)
+operation = 2
+size = Vector3(1.4313965, 0.74438477, 0.052612305)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="ScreenContentDisplay" type="MeshInstance3D" parent="World/CorrectMonitor" unique_id=1006738897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736424, 0.010027885)
+mesh = SubResource("BoxMesh_unldn")
+
+[node name="Player" parent="." unique_id=1015862513 instance=ExtResource("2_qdgac")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 5.295, 1.424, 5.197)
+
+[node name="Messages" parent="Player" index="4" unique_id=1087480721]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=625777413]
+
+[node name="RightHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1560762591]
+position = Vector2(669.5, 467.87656)
+scale = Vector2(0.5033335, 0.5033335)
+sprite_frames = SubResource("SpriteFrames_78vs3")
+animation = &"right_hand"
+
+[node name="LeftHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=618411639]
+position = Vector2(387.569, 434.54974)
+scale = Vector2(0.59046024, 0.5904602)
+sprite_frames = SubResource("SpriteFrames_78vs3")
+animation = &"left_hand"
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer" unique_id=1305288507]
+size = Vector2i(500, 300)
+
+[node name="Control" type="Control" parent="CanvasLayer/SubViewport" unique_id=1116378879]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 300.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SubViewport/Control" unique_id=1370652915]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageContent" type="TextureRect" parent="CanvasLayer/SubViewport/Control" unique_id=1537836351]
+layout_mode = 0
+offset_right = 165.0
+offset_bottom = 155.0
+texture = ExtResource("12_vonlc")
+expand_mode = 1
+
+[node name="ContentCover" type="ColorRect" parent="CanvasLayer/SubViewport/Control" unique_id=421527213]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 149.0
+offset_right = 103.0
+offset_bottom = 150.0
+
+[node name="Header" type="TextureRect" parent="CanvasLayer/SubViewport/Control" unique_id=1327729958]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 10.0
+texture = ExtResource("12_141s7")
+expand_mode = 1
+
+[editable path="Player"]

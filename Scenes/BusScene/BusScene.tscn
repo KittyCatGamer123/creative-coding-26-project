@@ -1029,6 +1029,7 @@ offset_bottom = 650.32764
 texture = ExtResource("22_wwtix")
 
 [node name="Title" type="Label" parent="CanvasLayer/Control" unique_id=1707516889]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1043,6 +1044,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HowTo" type="Label" parent="CanvasLayer/Control" unique_id=1815469325]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1057,6 +1059,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimingProgress" type="TextureProgressBar" parent="CanvasLayer/Control" unique_id=1396434985]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
