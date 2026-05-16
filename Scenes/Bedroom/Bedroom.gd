@@ -3,12 +3,16 @@ extends Node3D
 @export var player: Player
 @export var scene_animator: AnimationPlayer
 
-@export var outfit_select_preview: Character
+@export var outfit_select_preview: CharacterBody3D
 var outfit_init_pos: Vector3
 
 func _ready() -> void:
+	$CanvasLayer/TransitionImage.visible = false
 	outfit_init_pos = outfit_select_preview.position
 	floating_loop()
+	
+	scene_animator.play("EyeOpening")
+	scene_animator.stop()
 	
 	player.can_move = false
 	player.can_rotate = false
@@ -32,3 +36,17 @@ func floating_loop():
 	await get_tree().create_tween().tween_property(outfit_select_preview, "position", outfit_init_pos + Vector3(0, 0.1, 0), 3).set_ease(Tween.EASE_IN_OUT).finished
 	await get_tree().create_tween().tween_property(outfit_select_preview, "position", outfit_init_pos, 3).set_ease(Tween.EASE_IN_OUT).finished
 	floating_loop()
+
+func next_level():
+	var screenshot: Texture2D = get_viewport().get_texture()
+
+	var trans_img = $CanvasLayer/TransitionImage
+	var mat = trans_img.material
+
+	mat.set_shader_parameter("TextureMap", screenshot)
+	mat.set_shader_parameter("NumDivisions", 200)
+
+	trans_img.visible = true
+
+	await get_tree().create_tween().tween_property(mat, "shader_parameter/NumDivisions", 0, 1.0).finished
+	get_tree().change_scene_to_file("res://Scenes/BusScene/BusScene.tscn")

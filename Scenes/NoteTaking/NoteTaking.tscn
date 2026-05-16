@@ -18,8 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://cegaypqnyyomj" path="res://Entities/Character/Designs/Eyes/eye_smallpupil.png" id="10_nk0gy"]
 [ext_resource type="Texture2D" uid="uid://b8wfmqbx3vjn3" path="res://Entities/Character/Designs/Eyes/eye_eyebrows.png" id="11_nk0gy"]
 [ext_resource type="AudioStream" uid="uid://cqddofpbpixqt" path="res://Scenes/NoteTaking/Presenation/presentation_click.wav" id="15_8rb3r"]
-[ext_resource type="Texture2D" uid="uid://5467fq6qgask" path="res://Entities/AchievementPopup/AchievementSprite.jpg" id="18_xubon"]
-[ext_resource type="AudioStream" uid="uid://blchlapy36bsx" path="res://Audio/achievement.wav" id="19_j5b6s"]
+[ext_resource type="PackedScene" uid="uid://bd4qeulu726ux" path="res://Entities/AchievementPopup/AchievementPopup.tscn" id="19_xubon"]
+[ext_resource type="Texture2D" uid="uid://cm2uagtx8jbdc" path="res://Screenshots/notes_transition.png" id="20_j5b6s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_stk5s"]
 sky_top_color = Color(0.7, 0.86, 1, 1)
@@ -86,18 +86,31 @@ shadow_size = 3
 shadow_color = Color(0, 0, 0, 0.6901961)
 shadow_offset = Vector2(3, 2)
 
-[sub_resource type="LabelSettings" id="LabelSettings_xubon"]
-font = ExtResource("6_wr2d7")
-font_size = 30
-font_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
-outline_size = 2
-outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+[sub_resource type="Shader" id="Shader_i11jd"]
+code = "shader_type canvas_item;
+render_mode unshaded;
 
-[sub_resource type="LabelSettings" id="LabelSettings_j5b6s"]
-font = ExtResource("6_wr2d7")
-font_size = 20
-font_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
-outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+uniform sampler2D TextureMap;
+uniform int NumDivisions = 32;
+
+void fragment()
+{
+    // quantize the UV value to a stepped value
+    // based on number of divisions.
+    // the 0.5 added ensures we sample from 
+    // the centre of the \"pixel\"
+    vec2 st = (vec2(ivec2( UV * float(NumDivisions) ))+0.5)/float(NumDivisions);
+    // read the texture using the highest LOD to avoid 
+    // filtering problems on discontinuities
+    vec4 tex_col = textureLod( TextureMap, st, 0 );
+    // set the output
+    COLOR = tex_col;  
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pilfj"]
+shader = SubResource("Shader_i11jd")
+shader_parameter/TextureMap = ExtResource("20_j5b6s")
+shader_parameter/NumDivisions = 200
 
 [node name="NoteTaking" type="Node3D" unique_id=207981324 node_paths=PackedStringArray("lines", "player", "player_crosshair")]
 script = ExtResource("1_q2iya")
@@ -756,48 +769,33 @@ label_settings = SubResource("LabelSettings_r2mnw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Popup" type="TextureRect" parent="CanvasLayer" unique_id=85392461]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -489.0
-offset_top = -216.0
-offset_right = -40.0
-offset_bottom = -27.0
-grow_horizontal = 0
-texture = ExtResource("18_xubon")
-expand_mode = 1
+[node name="Popup" parent="CanvasLayer" unique_id=29645891 instance=ExtResource("19_xubon")]
 
-[node name="Title" type="Label" parent="CanvasLayer/Popup" unique_id=1091787531]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 31.0
-offset_right = 423.0
-offset_bottom = 81.0
+[node name="Title" parent="CanvasLayer/Popup" index="0" unique_id=811960690]
 text = "Dedicated Artwork"
-label_settings = SubResource("LabelSettings_xubon")
 
-[node name="Description" type="Label" parent="CanvasLayer/Popup" unique_id=257246372]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 87.0
-offset_right = 412.0
-offset_bottom = 155.0
-text = "Play the Note Taking game for 3 minutes straight."
-label_settings = SubResource("LabelSettings_j5b6s")
-autowrap_mode = 3
+[node name="Description" parent="CanvasLayer/Popup" index="1" unique_id=221997775]
+text = "Take notes for 3 minutes straight. I sure hope it was worth your time!"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Popup" unique_id=711154092]
-stream = ExtResource("19_j5b6s")
-volume_db = -15.0
+[node name="TransitionTexture" type="TextureRect" parent="CanvasLayer" unique_id=195877833]
+visible = false
+material = SubResource("ShaderMaterial_pilfj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_j5b6s")
 
 [node name="Timer" type="Timer" parent="." unique_id=2058596045]
 wait_time = 180.0
 
-[connection signal="timeout" from="Timer" to="." method="achievement_get"]
+[connection signal="PopupComplete" from="CanvasLayer/Popup" to="." method="on_popup_popup_complete"]
+[connection signal="timeout" from="Timer" to="." method="on_achievement_timer_timeout"]
 
 [editable path="Player"]
 [editable path="World/Character"]
 [editable path="World/Character2"]
 [editable path="World/Character4"]
 [editable path="World/Character3"]
+[editable path="CanvasLayer/Popup"]

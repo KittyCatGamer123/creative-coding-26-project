@@ -1,0 +1,376 @@
+[gd_scene format=3 uid="uid://i35kevl8echj"]
+
+[ext_resource type="Script" uid="uid://clnsb7gct54kl" path="res://Scenes/TitleScreen/TitleScreen.gd" id="1_11h48"]
+[ext_resource type="Texture2D" uid="uid://dnv0coil0dcim" path="res://Scenes/Bedroom/Materials/carpet.png" id="1_44kja"]
+[ext_resource type="Texture2D" uid="uid://b1e56fajg55rj" path="res://Scenes/Bedroom/Materials/mattress.jpg" id="2_tgnp7"]
+[ext_resource type="Texture2D" uid="uid://byvyqjjgyd8nu" path="res://Scenes/Bedroom/Materials/bed.jpg" id="3_11h48"]
+[ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="5_gkf3t"]
+[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="7_68rru"]
+[ext_resource type="Texture2D" uid="uid://kexnlqjjt2xp" path="res://Entities/Character/Designs/Outfits/Pijamas.png" id="8_of0b0"]
+[ext_resource type="Texture2D" uid="uid://8fjx2nvok72p" path="res://Entities/Character/Designs/Eyes/eye_wince.png" id="9_g8irc"]
+[ext_resource type="Texture2D" uid="uid://5467fq6qgask" path="res://Entities/AchievementPopup/AchievementSprite.jpg" id="9_tgnp7"]
+[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="10_11h48"]
+[ext_resource type="AudioStream" uid="uid://c2riiauc23vix" path="res://Audio/title_select.wav" id="12_1j46h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_viibf"]
+sky_top_color = Color(0.030800017, 0.5359201, 0.77, 1)
+sky_horizon_color = Color(0.552, 0.6049, 0.69, 1)
+ground_bottom_color = Color(0.533, 0.5915, 0.65, 1)
+ground_horizon_color = Color(0.6216, 0.70531994, 0.84, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_u4td1"]
+sky_material = SubResource("ProceduralSkyMaterial_viibf")
+
+[sub_resource type="Environment" id="Environment_c0qgo"]
+background_mode = 2
+sky = SubResource("Sky_u4td1")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcmpi"]
+albedo_texture = ExtResource("1_44kja")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wn6j"]
+albedo_color = Color(0.90166664, 1, 0.9, 1)
+albedo_texture = ExtResource("2_tgnp7")
+uv1_scale = Vector3(1, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utb67"]
+albedo_color = Color(0.63333344, 0.5, 1, 1)
+albedo_texture = ExtResource("3_11h48")
+uv1_scale = Vector3(6, 6, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51ueh"]
+albedo_color = Color(0.63333344, 0.5, 1, 1)
+albedo_texture = ExtResource("3_11h48")
+uv1_scale = Vector3(9, 2, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s55to"]
+load_path = "res://.godot/imported/painted.jpg-60906e5836712d03be2c64759dae7f35.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3wy0"]
+albedo_color = Color(0.92266667, 0.92, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_s55to")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktu1d"]
+albedo_color = Color(0.8566667, 0.8, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cw46c"]
+size = Vector3(0.2878952, 2.812378, 1.7868652)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuyx5"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.06
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scgti"]
+next_pass = SubResource("StandardMaterial3D_nuyx5")
+albedo_color = Color(0.84119993, 0.837, 0.9, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.06
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rt0ht"]
+albedo_color = Color(0.62, 0.44205996, 0.111600004, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uailb"]
+albedo_color = Color(0.064399995, 0.10028, 0.23, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5shcf"]
+albedo_texture = ExtResource("8_of0b0")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1j46h"]
+font = ExtResource("10_11h48")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.3137255)
+
+[sub_resource type="LabelSettings" id="LabelSettings_11h48"]
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.69803923)
+
+[node name="TitleScreen" type="Node3D" unique_id=746959880]
+script = ExtResource("1_11h48")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=797916546]
+environment = SubResource("Environment_c0qgo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2010038001]
+transform = Transform3D(-0.8660254, -0.43301275, 0.24999999, -0.34925765, 0.881684, 0.31725767, -0.3577976, 0.1874388, -0.9147937, -10.271363, 11.777811, -11.496918)
+sky_mode = 2
+
+[node name="World" type="Node3D" parent="." unique_id=1134864155]
+
+[node name="Ground" type="CSGBox3D" parent="World" unique_id=1090725231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0752583, 0, 1.1868896)
+material_override = SubResource("StandardMaterial3D_pcmpi")
+use_collision = true
+size = Vector3(8.730343, 0.001, 8.788574)
+
+[node name="Roof" type="CSGBox3D" parent="World" unique_id=471129253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8426561, 4.492761, 0.9705248)
+use_collision = true
+size = Vector3(9.181089, 0.11685467, 8.15271)
+
+[node name="Bed" type="CSGBox3D" parent="World" unique_id=145121955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.987365, 0.93162537, 3.3602114)
+use_collision = true
+size = Vector3(0.12548828, 1.8445435, 3.0703125)
+
+[node name="BedBeneath" type="CSGBox3D" parent="World/Bed" unique_id=948521351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4927368, -0.6817465, -0.0036621094)
+size = Vector3(4.8760986, 0.3022461, 3.074707)
+
+[node name="BedEnd" type="CSGBox3D" parent="World/Bed" unique_id=488414236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.980409, -0.39674377, 0)
+size = Vector3(0.12548828, 1.0510559, 3.0703125)
+
+[node name="Mattress" type="CSGBox3D" parent="World/Bed" unique_id=739712241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4829988, -0.3636632, -0.032043457)
+size = Vector3(4.8081207, 0.41088867, 2.9857178)
+material = SubResource("StandardMaterial3D_8wn6j")
+
+[node name="Duvet" type="CSGBox3D" parent="World/Bed/Mattress" unique_id=987264659]
+transform = Transform3D(0.9998477, 0, -0.017452406, 0, 1, 0, 0.017452406, 0, 0.9998477, -0.36090088, 0.2395469, -0.036732197)
+size = Vector3(4.1534424, 0.06274414, 3.0479736)
+material = SubResource("StandardMaterial3D_utb67")
+
+[node name="Side" type="CSGBox3D" parent="World/Bed/Mattress/Duvet" unique_id=1227119853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038300037, -0.16694921, -1.5198083)
+size = Vector3(4.0756836, 0.37353516, 0.013427734)
+material = SubResource("StandardMaterial3D_51ueh")
+
+[node name="Pillow" type="CSGBox3D" parent="World/Bed" unique_id=831836734]
+transform = Transform3D(0.9986295, 0, 0.05233596, 0, 1, 0, -0.05233596, 0, 0.9986295, -0.40049648, -0.048665643, -0.11025596)
+size = Vector3(0.6465149, 0.18035889, 2.303711)
+
+[node name="Cabnet" type="CSGBox3D" parent="World" unique_id=48850080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41815156, 1.7940979, 4.4918056)
+material_override = SubResource("StandardMaterial3D_o3wy0")
+use_collision = true
+size = Vector3(1.9423828, 3.588684, 1.0384521)
+
+[node name="Gap" type="CSGBox3D" parent="World/Cabnet" unique_id=936050384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1214274, -0.43237305)
+operation = 2
+size = Vector3(1.5166016, 0.927124, 0.72021484)
+
+[node name="Gap2" type="CSGBox3D" parent="World/Cabnet" unique_id=748317532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033356667, -0.43237305)
+operation = 2
+size = Vector3(1.5166016, 0.927124, 0.72021484)
+
+[node name="Gap3" type="CSGBox3D" parent="World/Cabnet" unique_id=677524680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0782537, -0.43237305)
+operation = 2
+size = Vector3(1.5166016, 0.927124, 0.72021484)
+
+[node name="Wall2" type="CSGBox3D" parent="World" unique_id=844732469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0181823, 2.2787426, 5.0548964)
+use_collision = true
+size = Vector3(8.855408, 4.602, 0.067)
+material = SubResource("StandardMaterial3D_ktu1d")
+
+[node name="DoorInteract" type="Area3D" parent="World" unique_id=325486634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3184643, 1.4388378, -1.1283357)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/DoorInteract" unique_id=1952462717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034030914, 0, 0.041259766)
+shape = SubResource("BoxShape3D_cw46c")
+
+[node name="Door" type="CSGBox3D" parent="World/DoorInteract" unique_id=1144786692]
+transform = Transform3D(0.9975641, 0, -0.06975647, 0, 1, 0, 0.06975647, 0, 0.9975641, 0, 0, 0)
+use_collision = true
+size = Vector3(0.048828125, 2.812378, 1.7043457)
+material = SubResource("StandardMaterial3D_scgti")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=326773015]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029046059, 0.8349669, -0.3871386)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=1466286052]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022666931, 0.8349669, 0.4423914)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=1067469438]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.022667408, -0.69760585, 0.44239128)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/DoorInteract/Door" unique_id=2041923342]
+transform = Transform3D(0.9999769, 0, -1.0952353e-06, 0, 1, 0, 1.0952353e-06, 0, 0.9999769, -0.029378414, -0.69760585, -0.3918718)
+operation = 2
+size = Vector3(0.048583984, 1, 0.52648926)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/DoorInteract/Door" unique_id=681734808]
+transform = Transform3D(-4.3709456e-08, -0.9999769, -3.2782555e-07, 0.9999933, -4.371139e-08, 0, 1.44329e-14, -1.0952353e-06, 0.9999877, 0.0026874542, 0.08732879, 0.69082654)
+radius = 0.099121094
+height = 0.095962524
+sides = 13
+material = SubResource("StandardMaterial3D_rt0ht")
+
+[node name="WallBack" type="CSGBox3D" parent="World" unique_id=395891990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3695555, 2.2787426, 1.0093)
+use_collision = true
+size = Vector3(0.067, 4.602, 8.063)
+material = SubResource("StandardMaterial3D_ktu1d")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/WallBack" unique_id=994296205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8399048, -2.068914)
+operation = 2
+size = Vector3(0.26660156, 2.812378, 1.7043457)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/WallBack" unique_id=1987182641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04319191, -0.81604004, -2.961061)
+size = Vector3(0.046875, 2.8752441, 0.083862305)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/WallBack" unique_id=1980213318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04319191, -0.81604004, -1.1777594)
+size = Vector3(0.046875, 2.8752441, 0.083862305)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/WallBack" unique_id=2080288988]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.04319191, 0.5986047, -2.0919366)
+size = Vector3(0.046875, 1.8127441, 0.083862305)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="World" unique_id=247976000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6647596, 1.8126662, -0.25833148)
+light_color = Color(0.98716664, 1, 0.89, 1)
+omni_range = 16.620691
+
+[node name="Bedside" type="CSGBox3D" parent="World" unique_id=150957588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.612486, 0.48901707, 1.152334)
+use_collision = true
+size = Vector3(0.75, 1, 0.75)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Bedside" unique_id=553133166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046848297, -0.42793736, 0)
+operation = 2
+size = Vector3(1, 0.16709864, 0.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Bedside" unique_id=1124091025]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.046848297, -0.42793736, 0)
+operation = 2
+size = Vector3(1, 0.16709864, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/Bedside" unique_id=501614699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3732586, 0.038477182, 0)
+operation = 2
+size = Vector3(0.03515625, 0.2574463, 0.6677246)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/Bedside" unique_id=2036944423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3732586, 0.33430392, 0)
+operation = 2
+size = Vector3(0.03515625, 0.2574463, 0.6677246)
+
+[node name="Clock" type="CSGBox3D" parent="World/Bedside" unique_id=35391045]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0.051566124, 0.62916917, 0.037455797)
+size = Vector3(0.16992188, 0.2265625, 0.5751953)
+material = SubResource("StandardMaterial3D_uailb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Bedside/Clock" unique_id=1434985097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060497284, -0.10630715, -0.0044796467)
+operation = 2
+size = Vector3(0.07080078, 0.023815429, 0.5229492)
+
+[node name="Label3D" type="Label3D" parent="World/Bedside/Clock" unique_id=1798888242]
+transform = Transform3D(-2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, -2.9802322e-08, -0.08803749, 0, 0.008728266)
+modulate = Color(1, 0.5, 0, 1)
+outline_modulate = Color(0.4, 0.07333334, 0, 1)
+text = "07:50"
+font = ExtResource("5_gkf3t")
+font_size = 20
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Bedside/Clock" unique_id=922899575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11225796, -0.0050190687, 0.026398897)
+light_color = Color(1, 0.5, 0, 1)
+light_energy = 0.1
+omni_range = 0.6
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2130556870]
+transform = Transform3D(-0.90556884, 0.13108481, -0.40343758, 0.06207819, 0.98176926, 0.17965351, 0.41963246, 0.13764393, -0.8971972, 3.7443018, 1.9105613, 0.5244796)
+current = true
+
+[node name="Character" parent="." unique_id=2103743369 instance=ExtResource("7_68rru")]
+transform = Transform3D(-0.0068590436, 0.99997646, -4.3499178e-08, -0.9728661, -0.006673098, -0.23127261, -0.23126717, -0.0015862666, 0.972889, 4.4214277, 1.1963156, 2.7339513)
+
+[node name="Outfit" parent="Character/CharacterBody" parent_id_path=PackedInt32Array(2103743369, 714721396) index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_5shcf")
+
+[node name="EyeLeft" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("9_g8irc")
+
+[node name="EyeRight" parent="Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("9_g8irc")
+
+[node name="Title" type="Label3D" parent="." unique_id=1611275426]
+transform = Transform3D(-0.9848077, 0, -0.1736483, 0, 1, 0, 0.1736483, 0, -0.9848077, 4.0573764, 2.2439206, 3.4514904)
+pixel_size = 0.01
+outline_modulate = Color(0.13975002, 0.043000013, 0.43, 1)
+text = "A Day in the Life of
+A Game Dev Student"
+font = ExtResource("5_gkf3t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=313354111]
+
+[node name="Play" type="Button" parent="CanvasLayer" unique_id=740176661]
+offset_left = 976.0
+offset_top = 518.0
+offset_right = 1184.0
+offset_bottom = 626.0
+pivot_offset = Vector2(104, 54)
+icon = ExtResource("9_tgnp7")
+
+[node name="Label" type="Label" parent="CanvasLayer/Play" unique_id=879449694]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wake Up"
+label_settings = SubResource("LabelSettings_1j46h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credit" type="Label" parent="CanvasLayer" unique_id=886993620]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -167.0
+offset_right = 1103.0
+offset_bottom = -24.0
+grow_vertical = 0
+text = "Small silly simulation game designed by Katrina Aster"
+label_settings = SubResource("LabelSettings_11h48")
+vertical_alignment = 2
+
+[node name="Overlay" type="ColorRect" parent="CanvasLayer" unique_id=1114480594]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=493199265]
+stream = ExtResource("12_1j46h")
+volume_db = -10.0
+
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="play_pressed"]
+
+[editable path="Character"]

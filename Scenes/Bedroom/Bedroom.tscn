@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="14_sat6f"]
 [ext_resource type="Script" uid="uid://bl47nwvcu6a5q" path="res://Scenes/Bedroom/OutfitGame.gd" id="15_ctefb"]
 [ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="16_ctefb"]
+[ext_resource type="Shader" uid="uid://b7olwl72ctm5c" path="res://Entities/TransitionShader.gdshader" id="18_nuyx5"]
+[ext_resource type="Texture2D" uid="uid://bonou3mva0n0g" path="res://Screenshots/bus_transition.png" id="19_nuyx5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ly1u"]
 sky_top_color = Color(0.030800017, 0.5359201, 0.77, 1)
@@ -146,7 +148,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 0.65, 1.0333333, 1.5666667, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -211), Vector2(0, -301), Vector2(0, -317), Vector2(0, -247), Vector2(0, -387), Vector2(0, -651)]
+"values": [Vector2(48, -211), Vector2(48, -301), Vector2(48, -317), Vector2(48, -247), Vector2(48, -387), Vector2(48, -651)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -320,6 +322,17 @@ outline_size = 6
 outline_color = Color(0.560625, 0.69, 0.1725, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 0.85882354)
+
+[sub_resource type="Gradient" id="Gradient_nuyx5"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_quuqj"]
+gradient = SubResource("Gradient_nuyx5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhwar"]
+shader = ExtResource("18_nuyx5")
+shader_parameter/TextureMap = SubResource("GradientTexture1D_quuqj")
+shader_parameter/NumDivisions = 150
 
 [node name="BedroomScene" type="Node3D" unique_id=1350736337 node_paths=PackedStringArray("player", "scene_animator", "outfit_select_preview")]
 script = ExtResource("1_i5tp7")
@@ -532,9 +545,10 @@ use_collision = true
 size = Vector3(8.855408, 4.602, 0.067)
 material = SubResource("StandardMaterial3D_ctefb")
 
-[node name="DoorInteract" type="Area3D" parent="World" unique_id=1148268418 node_paths=PackedStringArray("OutfitScene", "player_reference")]
+[node name="DoorInteract" type="Area3D" parent="World" unique_id=1148268418 node_paths=PackedStringArray("GameScene", "OutfitScene", "player_reference")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3184643, 1.4388378, -1.1283357)
 script = ExtResource("9_u4td1")
+GameScene = NodePath("../..")
 OutfitScene = NodePath("../../CanvasLayer/OutfitGame")
 interaction_inactive_colour = Color(0, 0, 0, 0)
 player_reference = NodePath("../../Player")
@@ -697,7 +711,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 211.0
-offset_bottom = 211.00488
+offset_bottom = 211.00476
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(576, 324)
@@ -831,6 +845,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("16_ctefb")
 text = "Finish"
+
+[node name="TransitionImage" type="TextureRect" parent="CanvasLayer" unique_id=861719508]
+material = SubResource("ShaderMaterial_mhwar")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_nuyx5")
+expand_mode = 1
 
 [connection signal="body_entered" from="World/Wardrobe" to="World/Wardrobe" method="_on_body_entered"]
 [connection signal="body_exited" from="World/Wardrobe" to="World/Wardrobe" method="_on_body_exited"]

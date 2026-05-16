@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://cf10o5l6r3ajn" path="res://Scenes/BusScene/timingfill.png" id="21_sjjjh"]
 [ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="22_8wqku"]
 [ext_resource type="Texture2D" uid="uid://cfaf7my3xbewq" path="res://Scenes/BusScene/hand_thanks.png" id="22_wwtix"]
+[ext_resource type="Shader" uid="uid://b7olwl72ctm5c" path="res://Entities/TransitionShader.gdshader" id="27_820qa"]
+[ext_resource type="Texture2D" uid="uid://bonou3mva0n0g" path="res://Screenshots/bus_transition.png" id="28_o7fbd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1dbm"]
 sky_top_color = Color(0.030800017, 0.5359201, 0.77, 1)
@@ -122,6 +124,11 @@ font_size = 20
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 0.6901961)
 shadow_offset = Vector2(3, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7fbd"]
+shader = ExtResource("27_820qa")
+shader_parameter/TextureMap = ExtResource("28_o7fbd")
+shader_parameter/NumDivisions = 200
 
 [node name="BusScene" type="Node3D" unique_id=1500278321 node_paths=PackedStringArray("player_ref", "bus_model", "gametitle", "timing_progress", "hand_ready_sprite", "hand_out_sprite", "hand_thanks_sprite")]
 script = ExtResource("1_p3f3u")
@@ -1044,7 +1051,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HowTo" type="Label" parent="CanvasLayer/Control" unique_id=1815469325]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1074,9 +1080,21 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(3, 1)
 max_value = 220.0
+step = 0.001
 texture_under = ExtResource("19_8dcag")
 texture_over = ExtResource("20_p3f3u")
 texture_progress = ExtResource("21_sjjjh")
+
+[node name="TransitionTexture" type="TextureRect" parent="CanvasLayer/Control" unique_id=1432258148]
+material = SubResource("ShaderMaterial_o7fbd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_o7fbd")
+expand_mode = 1
 
 [editable path="Bus/Character"]
 [editable path="Bus/Character2"]

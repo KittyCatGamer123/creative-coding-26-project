@@ -10,6 +10,8 @@ var slide_data = []
 @onready var slide_bulletp: Node3D = $World/Presenation/Bulletpoint
 @onready var slide_obj_order = [slide_title, slide_desc, slide_bulletp]
 
+@onready var achievement_popup: AchievementPopup = $CanvasLayer/Popup
+
 ## References
 @export_category("References")
 @onready var hand_pen: TextureRect = $CanvasLayer/Interface/HandPen
@@ -28,7 +30,7 @@ var offset := Vector2(2, 3)
 @onready var presentation_light: OmniLight3D = $World/Presenation/OmniLight3D
 @onready var presentation_sfx: AudioStreamPlayer3D = $World/Presenation/AudioStreamPlayer3D
 
-@onready var lecturer_char: Character = $World/Character
+@onready var lecturer_char = $World/Character
 
 func _ready() -> void:
 	slide_data = JSON.parse_string(FileAccess.open("res://Scenes/NoteTaking/Presenation/presentation_data.json", FileAccess.ModeFlags.READ).get_as_text())
@@ -39,6 +41,8 @@ func _ready() -> void:
 	lecturer_char.position = Vector3(5, 2.054, -13.7)
 	lecturer_char.rotation_degrees = Vector3(0, 162.1, 0)
 	
+	enter_transition()
+	await get_tree().create_timer(2).timeout
 	player.show_message(
 		"Lecturer", 
 		"Alright everyone, welcome back to Game Studies. Today we'll be covering an important topic.",
@@ -68,6 +72,11 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not note_taking_active:
+		return
+	
+	if game_complete and event.is_action_pressed("Interact"):
+		note_taking_active = false
+		next_level()
 		return
 	
 	if event is InputEventMouseMotion:
@@ -123,6 +132,7 @@ func presentation_loop():
 
 func presentation_end():
 	achievement_time.paused = true
+	mouse_down = false
 	await get_tree().create_timer(2).timeout
 	
 	note_taking_active = false
@@ -156,11 +166,27 @@ func presentation_end():
 	$CanvasLayer/Interface/Line2D.visible = true
 	game_complete = true
 
-func achievement_get() -> void:
+func on_achievement_timer_timeout() -> void:
 	game_complete = false
-	$CanvasLayer/Popup/AudioStreamPlayer.play()
-	await get_tree().create_tween().tween_property($CanvasLayer/Popup, "position", Vector2(711, 30), 1).finished
-	await get_tree().create_tween().tween_property($CanvasLayer/Popup, "position", Vector2(711, 24), 0.2).finished
-	await get_tree().create_timer(4).timeout
-	get_tree().create_tween().tween_property($CanvasLayer/Popup, "position", Vector2(711, -216), 1)
+	achievement_popup.achievement_get()
+
+func on_popup_popup_complete() -> void:
 	game_complete = true
+
+func enter_transition():
+	var trans_img = $CanvasLayer/TransitionTexture
+	var mat = trans_img.material
+	mat.set_shader_parameter("NumDivisions", 1)
+	trans_img.visible = true
+	await get_tree().create_tween().tween_property(mat, "shader_parameter/NumDivisions", 200, 1.0).finished
+	trans_img.visible = false
+
+func next_level():
+	var screenshot: Texture2D = get_viewport().get_texture()
+	var trans_img = $CanvasLayer/TransitionTexture
+	var mat = trans_img.material
+	mat.set_shader_parameter("TextureMap", screenshot)
+	mat.set_shader_parameter("NumDivisions", 200)
+	trans_img.visible = true
+	await get_tree().create_tween().tween_property(mat, "shader_parameter/NumDivisions", 0, 1.0).finished
+	get_tree().change_scene_to_file("res://Scenes/KeyboardSpamGame/KeyboardSpam.tscn")

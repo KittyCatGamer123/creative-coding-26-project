@@ -13,8 +13,33 @@
 [ext_resource type="Texture2D" uid="uid://n0o8jxwcwe1c" path="res://Scenes/KeyboardSpamGame/hand_left_ready.png" id="7_npgjx"]
 [ext_resource type="Texture2D" uid="uid://bnx77srupm45v" path="res://Scenes/KeyboardSpamGame/hand_right_down.png" id="8_lq7b3"]
 [ext_resource type="Texture2D" uid="uid://bpohs4heccqqf" path="res://Scenes/KeyboardSpamGame/hand_left_down.png" id="8_nseq6"]
+[ext_resource type="PackedScene" uid="uid://db7abapjxhodt" path="res://Entities/Character/Character.tscn" id="10_dthqn"]
+[ext_resource type="Script" uid="uid://b6dab3apdyxtb" path="res://Scenes/KeyboardSpamGame/LecturerChar.gd" id="10_vci6c"]
+[ext_resource type="Texture2D" uid="uid://c2q4tit5ploy0" path="res://icon.svg" id="11_yjckw"]
 [ext_resource type="Texture2D" uid="uid://c6tr8khv54aij" path="res://Scenes/KeyboardSpamGame/Document/Header.png" id="12_141s7"]
+[ext_resource type="Texture2D" uid="uid://cegaypqnyyomj" path="res://Entities/Character/Designs/Eyes/eye_smallpupil.png" id="12_vci6c"]
 [ext_resource type="Texture2D" uid="uid://dvrao0fhbxtjf" path="res://Scenes/KeyboardSpamGame/Document/page1.PNG" id="12_vonlc"]
+[ext_resource type="Texture2D" uid="uid://dgufdcrymm7fa" path="res://Entities/Character/Designs/Outfits/PeterHoodie.jpg" id="14_8ywug"]
+[ext_resource type="Script" uid="uid://d1jfhjtq50n7j" path="res://Scenes/KeyboardSpamGame/GriffinChar.gd" id="14_nvkk7"]
+[ext_resource type="Texture2D" uid="uid://hhamtpia6v67" path="res://Entities/Character/Designs/Eyes/eye_generic.png" id="15_tjqa4"]
+[ext_resource type="FontFile" uid="uid://dl58xut2cuxtd" path="res://Fonts/Terminus (TTF) 500.ttf" id="16_ewujk"]
+[ext_resource type="Script" uid="uid://ca5ryk1vk6yk3" path="res://Scenes/KeyboardSpamGame/MikeCharacter.gd" id="16_gujtp"]
+[ext_resource type="Texture2D" uid="uid://p0hy2fpr6o53" path="res://Entities/Character/Designs/Outfits/MichaelOutfit.jpg" id="16_xsfgv"]
+[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="17_xy56f"]
+[ext_resource type="Texture2D" uid="uid://b8wfmqbx3vjn3" path="res://Entities/Character/Designs/Eyes/eye_eyebrows.png" id="18_gujtp"]
+[ext_resource type="Texture2D" uid="uid://dutd42b00u7ls" path="res://Scenes/BusScene/timingback.png" id="18_of6uy"]
+[ext_resource type="Texture2D" uid="uid://37k7uitrt7i5" path="res://Scenes/BusScene/timingbar.png" id="19_e34nu"]
+[ext_resource type="Texture2D" uid="uid://cf10o5l6r3ajn" path="res://Scenes/BusScene/timingfill.png" id="20_dthqn"]
+[ext_resource type="Texture2D" uid="uid://cqjixei46jscd" path="res://Entities/Character/Designs/Outfits/RuanPlaid.png" id="20_t5hf2"]
+[ext_resource type="Script" uid="uid://cegmuopbk8i5p" path="res://Scenes/KeyboardSpamGame/RuaChar.gd" id="20_ub1i8"]
+[ext_resource type="PackedScene" uid="uid://bd4qeulu726ux" path="res://Entities/AchievementPopup/AchievementPopup.tscn" id="21_e34nu"]
+[ext_resource type="Texture2D" uid="uid://p1sj821yf4gw" path="res://Entities/Character/Designs/Outfits/EightBall.jpg" id="22_issmx"]
+[ext_resource type="Texture2D" uid="uid://chigyf5dapajw" path="res://Entities/Character/Designs/Eyes/eye_nerd.png" id="23_writp"]
+[ext_resource type="Texture2D" uid="uid://iw1y1ar7nayy" path="res://Entities/Character/Designs/Outfits/SamGeneral.jpg" id="24_writp"]
+[ext_resource type="Texture2D" uid="uid://bdwtrw67m62go" path="res://Entities/Character/Designs/Eyes/eye_tense.png" id="25_j2o0x"]
+[ext_resource type="Texture2D" uid="uid://c7lxswexwap7s" path="res://Scenes/KeyboardSpamGame/shrug_anim.png" id="32_paxvp"]
+[ext_resource type="Shader" uid="uid://b7olwl72ctm5c" path="res://Entities/TransitionShader.gdshader" id="39_q4jvq"]
+[ext_resource type="Texture2D" uid="uid://br8l8tnroo58i" path="res://Screenshots/keyboard_spam_transition.png" id="40_lvf2y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uol6i"]
 sky_top_color = Color(0.7, 0.86, 1, 1)
@@ -64,6 +89,17 @@ uv1_scale = Vector3(-1, 1, 1)
 emission_enabled = true
 emission = Color(0.39308554, 0.3930855, 0.39308548, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ywug"]
+albedo_texture = ExtResource("11_yjckw")
+uv1_scale = Vector3(2, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e34nu"]
+albedo_texture = ExtResource("1_48g7a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjckw"]
+emission_enabled = true
+emission = Color(0.63375676, 0.6337568, 0.63375676, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unldn"]
 render_priority = 1
 transparency = 1
@@ -99,6 +135,136 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_vonlc")
 size = Vector3(1.4313965, 0.74438477, 0.011169434)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4jvq"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.015
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvf2y"]
+next_pass = SubResource("StandardMaterial3D_q4jvq")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.015
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7dmxc"]
+material = SubResource("StandardMaterial3D_lvf2y")
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjqa4"]
+albedo_texture = ExtResource("14_8ywug")
+uv1_scale = Vector3(1, 3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejluw"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.015
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sr0vd"]
+next_pass = SubResource("StandardMaterial3D_ejluw")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.015
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pqds2"]
+material = SubResource("StandardMaterial3D_sr0vd")
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gujtp"]
+albedo_texture = ExtResource("16_xsfgv")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pel5"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.015
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37m5m"]
+next_pass = SubResource("StandardMaterial3D_1pel5")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.015
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7pge2"]
+material = SubResource("StandardMaterial3D_37m5m")
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ub1i8"]
+albedo_texture = ExtResource("20_t5hf2")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iln7u"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.015
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qbfm"]
+next_pass = SubResource("StandardMaterial3D_iln7u")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.015
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5oa6l"]
+material = SubResource("StandardMaterial3D_8qbfm")
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2o0x"]
+albedo_texture = ExtResource("22_issmx")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dmxc"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.015
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqds2"]
+next_pass = SubResource("StandardMaterial3D_7dmxc")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.015
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1pel5"]
+material = SubResource("StandardMaterial3D_pqds2")
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su836"]
+albedo_texture = ExtResource("24_writp")
+uv1_scale = Vector3(1, 2, 1)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_78vs3"]
 animations = [{
 "frames": [{
@@ -123,6 +289,80 @@ animations = [{
 "name": &"right_hand",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3kra"]
+font = ExtResource("16_ewujk")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.9888335, 0.32999998, 1, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.654902)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_of6uy"]
+line_spacing = 0.0
+font = ExtResource("17_xy56f")
+font_size = 20
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.6901961)
+shadow_offset = Vector2(3, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e34nu"]
+font = ExtResource("17_xy56f")
+font_size = 25
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.7254902)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dthqn"]
+font = ExtResource("16_ewujk")
+font_size = 80
+outline_size = 10
+outline_color = Color(1, 0.6166667, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.654902)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5hf2"]
+atlas = ExtResource("32_paxvp")
+region = Rect2(0, 0, 300, 169)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub1i8"]
+atlas = ExtResource("32_paxvp")
+region = Rect2(0, 169, 300, 169)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nddg"]
+atlas = ExtResource("32_paxvp")
+region = Rect2(0, 338, 300, 169)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_issmx"]
+atlas = ExtResource("32_paxvp")
+region = Rect2(0, 507, 300, 169)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvkk7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5hf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub1i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nddg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_issmx")
+}],
+"loop": false,
+"name": &"shrug",
+"speed": 15.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7dmxc"]
+shader = ExtResource("39_q4jvq")
+shader_parameter/TextureMap = ExtResource("40_lvf2y")
+shader_parameter/NumDivisions = 200
 
 [node name="KeyboardSpam" type="Node3D" unique_id=2135728304 node_paths=PackedStringArray("page_texture", "page_cover")]
 script = ExtResource("1_unldn")
@@ -196,7 +436,7 @@ size = Vector3(0.083984375, 0.0801239, 1.9899292)
 material = SubResource("StandardMaterial3D_ibg6i")
 
 [node name="Wall2" type="CSGBox3D" parent="World" unique_id=1830342290]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.548979, 2.900484, -8.420166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.936365, 2.900484, -8.420166)
 material_override = SubResource("StandardMaterial3D_yaxjg")
 use_collision = true
 size = Vector3(1, 5.6784973, 32.811035)
@@ -2062,9 +2302,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736436, 0.010028362)
 size = Vector3(1.4313965, 0.74438477, 0.011169434)
 material = SubResource("StandardMaterial3D_npgjx")
 
-[node name="CorrectChair" type="Area3D" parent="World" unique_id=119727109 node_paths=PackedStringArray("player_reference")]
+[node name="Character" parent="World" unique_id=2103743369 node_paths=PackedStringArray("game_scene", "player_reference") instance=ExtResource("10_dthqn")]
+transform = Transform3D(-0.97110933, 0, 0.23863523, 0, 1, 0, -0.23863523, 0, -0.97110933, 5.1425967, 1.4337081, -12.718667)
+script = ExtResource("10_vci6c")
+game_scene = NodePath("../..")
+player_reference = NodePath("../../Player")
+
+[node name="Outfit" parent="World/Character/CharacterBody" parent_id_path=PackedInt32Array(2103743369, 714721396) index="0" unique_id=1986631287]
+transform = Transform3D(0.007853895, 0, 0.99996907, 0, 1, 0, -0.99996907, 0, 0.007853895, 0, -0.27990854, 0)
+material_override = SubResource("StandardMaterial3D_8ywug")
+
+[node name="EyeLeft" parent="World/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("12_vci6c")
+
+[node name="EyeRight" parent="World/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("12_vci6c")
+
+[node name="LectureStand" type="CSGBox3D" parent="World" unique_id=1921842032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1860657, 0.5724764, -12.141641)
+use_collision = true
+size = Vector3(2.0734863, 1.3759155, 2.4404297)
+material = SubResource("StandardMaterial3D_e34nu")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/LectureStand" unique_id=703679359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08087158, 0.41812134, -0.62271976)
+operation = 2
+size = Vector3(1.3118896, 1.1361694, 1.6862793)
+material = SubResource("StandardMaterial3D_e34nu")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/LectureStand" unique_id=1192190614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.082336426, 0.692837, 0.7033634)
+size = Vector3(0.87927246, 0.01953125, 0.6134033)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/LectureStand" unique_id=775829842]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0.082336426, 1.0140452, 1.0893593)
+size = Vector3(0.87927246, 0.7052002, 0.02734375)
+material = SubResource("StandardMaterial3D_78vs3")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/LectureStand" unique_id=827886030]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0.082336426, 1.0140452, 1.0752182)
+operation = 2
+size = Vector3(0.7919922, 0.53344727, 0.001)
+material = SubResource("StandardMaterial3D_yjckw")
+
+[node name="LookatPos" type="Node3D" parent="World/LectureStand" unique_id=1684199989]
+
+[node name="CorrectChair" type="Area3D" parent="World" unique_id=119727109 node_paths=PackedStringArray("game_scene", "player_reference")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5203443, 0.2198872, -12.222141)
 script = ExtResource("4_ibg6i")
+game_scene = NodePath("../..")
 player_reference = NodePath("../../Player")
 
 [node name="CorrectChair" type="CSGBox3D" parent="World/CorrectChair" unique_id=1258318433]
@@ -2141,8 +2428,93 @@ material = SubResource("StandardMaterial3D_78vs3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78736424, 0.010027885)
 mesh = SubResource("BoxMesh_unldn")
 
+[node name="Character2" parent="World" unique_id=1530815474 node_paths=PackedStringArray("game_scene", "player_reference") instance=ExtResource("10_dthqn")]
+transform = Transform3D(-0.9936978, 0, 0.11209336, 0, 1, 0, -0.11209336, 0, -0.9936978, -2.801313, 1.5027596, -18.304876)
+script = ExtResource("14_nvkk7")
+game_scene = NodePath("../..")
+player_reference = NodePath("../../Player")
+
+[node name="CharacterBody" parent="World/Character2" index="1" unique_id=714721396]
+mesh = SubResource("CapsuleMesh_7dmxc")
+
+[node name="Outfit" parent="World/Character2/CharacterBody" index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_tjqa4")
+
+[node name="EyeLeft" parent="World/Character2/Head" parent_id_path=PackedInt32Array(1530815474, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("15_tjqa4")
+
+[node name="EyeRight" parent="World/Character2/Head" parent_id_path=PackedInt32Array(1530815474, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("15_tjqa4")
+
+[node name="LookAt" type="Node3D" parent="World/Character2" unique_id=343495495]
+
+[node name="Character3" parent="World" unique_id=458805341 node_paths=PackedStringArray("game_scene", "player_reference") instance=ExtResource("10_dthqn")]
+transform = Transform3D(-0.9936978, 0, 0.11209336, 0, 1, 0, -0.11209336, 0, -0.9936978, -5.5881214, 1.74517, -18.304876)
+script = ExtResource("16_gujtp")
+game_scene = NodePath("../..")
+player_reference = NodePath("../../Player")
+
+[node name="CharacterBody" parent="World/Character3" index="1" unique_id=714721396]
+mesh = SubResource("CapsuleMesh_pqds2")
+
+[node name="Outfit" parent="World/Character3/CharacterBody" index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_gujtp")
+
+[node name="EyeLeft" parent="World/Character3/Head" parent_id_path=PackedInt32Array(458805341, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("18_gujtp")
+
+[node name="EyeRight" parent="World/Character3/Head" parent_id_path=PackedInt32Array(458805341, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("18_gujtp")
+
+[node name="LookAt" type="Node3D" parent="World/Character3" unique_id=524173169]
+
+[node name="Character4" parent="World" unique_id=1421445782 node_paths=PackedStringArray("game_scene", "player_reference") instance=ExtResource("10_dthqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.408027, 1.74517, -12.627569)
+script = ExtResource("20_ub1i8")
+game_scene = NodePath("../..")
+message_options = Array[String](["What's up bro :3", "I'm so confused bro", "I'm so freaking awesome bro", "I bought another figurine bro", "Boys kissing bro", "Homestuck bro", "I freaking love bunnies bro", "Lock in bro"])
+player_reference = NodePath("../../Player")
+
+[node name="CharacterBody" parent="World/Character4" index="1" unique_id=714721396]
+mesh = SubResource("CapsuleMesh_7pge2")
+
+[node name="Outfit" parent="World/Character4/CharacterBody" index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_ub1i8")
+
+[node name="LookAt" type="Node3D" parent="World/Character4" unique_id=787186145]
+
+[node name="Character5" parent="World" unique_id=1111186709 instance=ExtResource("10_dthqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5881214, 1.74517, -3.0075102)
+
+[node name="CharacterBody" parent="World/Character5" index="1" unique_id=714721396]
+mesh = SubResource("CapsuleMesh_5oa6l")
+
+[node name="Outfit" parent="World/Character5/CharacterBody" index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_j2o0x")
+
+[node name="EyeLeft" parent="World/Character5/Head" parent_id_path=PackedInt32Array(1111186709, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("23_writp")
+
+[node name="EyeRight" parent="World/Character5/Head" parent_id_path=PackedInt32Array(1111186709, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("23_writp")
+
+[node name="Character6" parent="World" unique_id=352344378 instance=ExtResource("10_dthqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.065583, 1.74517, 5.8140116)
+
+[node name="CharacterBody" parent="World/Character6" index="1" unique_id=714721396]
+mesh = SubResource("CapsuleMesh_1pel5")
+
+[node name="Outfit" parent="World/Character6/CharacterBody" index="0" unique_id=1986631287]
+material_override = SubResource("StandardMaterial3D_su836")
+
+[node name="EyeLeft" parent="World/Character6/Head" parent_id_path=PackedInt32Array(352344378, 241136624) index="0" unique_id=344771616]
+texture = ExtResource("25_j2o0x")
+
+[node name="EyeRight" parent="World/Character6/Head" parent_id_path=PackedInt32Array(352344378, 241136624) index="1" unique_id=563669890]
+texture = ExtResource("25_j2o0x")
+
 [node name="Player" parent="." unique_id=1015862513 instance=ExtResource("2_qdgac")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 5.295, 1.424, 5.197)
+transform = Transform3D(0.5479721, 0, 0.8364966, 0, 1, 0, -0.8364966, 0, 0.5479721, 5.295, 1.424, 5.197)
 
 [node name="Messages" parent="Player" index="4" unique_id=1087480721]
 visible = false
@@ -2150,12 +2522,14 @@ visible = false
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=625777413]
 
 [node name="RightHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1560762591]
+visible = false
 position = Vector2(669.5, 467.87656)
 scale = Vector2(0.5033335, 0.5033335)
 sprite_frames = SubResource("SpriteFrames_78vs3")
 animation = &"right_hand"
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=618411639]
+visible = false
 position = Vector2(387.569, 434.54974)
 scale = Vector2(0.59046024, 0.5904602)
 sprite_frames = SubResource("SpriteFrames_78vs3")
@@ -2199,4 +2573,192 @@ offset_bottom = 10.0
 texture = ExtResource("12_141s7")
 expand_mode = 1
 
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=767083271]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_bottom = -553.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "WRITE YOUR ESSAY!"
+label_settings = SubResource("LabelSettings_o3kra")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowTo" type="Label" parent="CanvasLayer" unique_id=2008714669]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_bottom = -537.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hit the keys on your keyboard as fast as you can to write as many pages as you can!"
+label_settings = SubResource("LabelSettings_of6uy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimingProgress" type="TextureProgressBar" parent="CanvasLayer" unique_id=1827528688]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -517.5
+offset_top = -70.0
+offset_right = -218.5
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 1)
+max_value = 15.0
+step = 0.01
+value = 15.0
+texture_under = ExtResource("18_of6uy")
+texture_over = ExtResource("19_e34nu")
+texture_progress = ExtResource("20_dthqn")
+
+[node name="TimeLeft" type="Label" parent="CanvasLayer" unique_id=497822613]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -72.0
+offset_right = -82.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "15.0s"
+label_settings = SubResource("LabelSettings_e34nu")
+vertical_alignment = 1
+
+[node name="Countdown" type="Label" parent="CanvasLayer" unique_id=994018012]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.5
+offset_top = -25.5
+offset_right = 212.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_dthqn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoodJob" type="Label" parent="CanvasLayer" unique_id=606407220]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 265.0
+offset_bottom = -297.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GOOD JOB!"
+label_settings = SubResource("LabelSettings_o3kra")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=43706594]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 343.5
+offset_bottom = -251.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 1000
+(5 pages)"
+label_settings = SubResource("LabelSettings_of6uy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HowTo2" type="Label" parent="CanvasLayer" unique_id=835847894]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 614.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press E to get off the seat"
+label_settings = SubResource("LabelSettings_of6uy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpamTimer" type="Timer" parent="CanvasLayer" unique_id=450129456]
+wait_time = 15.0
+one_shot = true
+
+[node name="Popup" parent="CanvasLayer" unique_id=29645891 instance=ExtResource("21_e34nu")]
+
+[node name="Title" parent="CanvasLayer/Popup" index="0" unique_id=811960690]
+text = "40+ CPS"
+
+[node name="Description" parent="CanvasLayer/Popup" index="1" unique_id=221997775]
+text = "Complete 9 pages during the Essay Writing game. Senan would be proud!"
+
+[node name="ShrugLeft" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1437642339]
+visible = false
+position = Vector2(539, 410)
+scale = Vector2(2.9319527, 2.9319527)
+sprite_frames = SubResource("SpriteFrames_nvkk7")
+animation = &"shrug"
+frame = 3
+frame_progress = 1.0
+
+[node name="ShrugRight" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=602411143]
+visible = false
+position = Vector2(683, 410)
+scale = Vector2(2.9319527, 2.9319527)
+sprite_frames = SubResource("SpriteFrames_nvkk7")
+animation = &"shrug"
+frame = 3
+frame_progress = 1.0
+flip_h = true
+
+[node name="Popup2" parent="CanvasLayer" unique_id=569076980 instance=ExtResource("21_e34nu")]
+
+[node name="Title" parent="CanvasLayer/Popup2" index="0" unique_id=811960690]
+text = "The Social-ist"
+
+[node name="Description" parent="CanvasLayer/Popup2" index="1" unique_id=221997775]
+text = "Talk to every character in the game. You've earned a name for yourself!"
+
+[node name="TransitionTexture" type="TextureRect" parent="CanvasLayer" unique_id=408988711]
+visible = false
+material = SubResource("ShaderMaterial_7dmxc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_lvf2y")
+
+[connection signal="timeout" from="CanvasLayer/SpamTimer" to="." method="on_spam_timer_timeout"]
+[connection signal="PopupComplete" from="CanvasLayer/Popup" to="." method="ach_popup_complete"]
+[connection signal="PopupComplete" from="CanvasLayer/Popup2" to="." method="ach2_popup_complete"]
+
+[editable path="World/Character"]
+[editable path="World/Character2"]
+[editable path="World/Character3"]
+[editable path="World/Character4"]
+[editable path="World/Character5"]
+[editable path="World/Character6"]
 [editable path="Player"]
+[editable path="CanvasLayer/Popup"]
+[editable path="CanvasLayer/Popup2"]

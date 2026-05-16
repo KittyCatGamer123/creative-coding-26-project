@@ -5,7 +5,7 @@ This is a repository dedicated to the Computational Arts assignment I was to do 
 
 We were required to make this game in the Godot Engine, using both elements of 2D and 3D systems, and to design our assets and sounds by ourselves. All code was written in GDScript and was to be published on Itch.io and Git.
 
-**This project is still a work-in-progress. If you're reading this, hi!!! :D**
+In the future, I'd like to come back to this game and add the content I had to cut to fit the deadline of the game, including content such as a "Lunch Break" section, a boss fight mini-game, and polishing up the scenes such as nearby buildings and other enviornmental stuffs.
 
 ## Project Overview
 The experience follows a slightly exaggerated version of my daily routine as a game design student. The game is broken down into 5 experiences:

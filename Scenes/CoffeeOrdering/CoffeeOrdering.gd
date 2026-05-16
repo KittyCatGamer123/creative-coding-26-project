@@ -3,9 +3,11 @@ extends Node3D
 @onready var player: Player = $Player
 @onready var player_raycast: CollisionShape3D = $Player/Head/Camera3D/InteractionDetection/CollisionShape3D
 @onready var pointer: AnimatedSprite2D = $CanvasLayer/Hand
-@onready var server: Character = $World/Character
+@onready var server: CharacterBody3D = $World/Character
 @onready var screen_stand: CSGCylinder3D = $World/Stand
 @onready var interface_howto: Control = $CanvasLayer/Control
+@onready var wait_achievement_timer: Timer = $WaitAchievement
+@onready var wait_achievement_popup: AchievementPopup = $CanvasLayer/Popup
 
 func _ready() -> void:
 	player.can_move = false
@@ -23,7 +25,9 @@ func _ready() -> void:
 	
 	interface_howto.visible = false
 	
+	enter_transition()
 	await get_tree().create_timer(1).timeout
+	
 	get_tree().create_tween().tween_property(player, "position", Vector3(2.8, 1.251, -2.625), 2)
 	await get_tree().create_timer(1.5).timeout
 	get_tree().create_tween().tween_property(server, "position", Vector3(2.084, 1.251, -6.628), 1)
@@ -37,6 +41,7 @@ func _ready() -> void:
 	player.can_rotate = true
 	player.can_interact = true
 	interface_howto.visible = true
+	wait_achievement_timer.start()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
@@ -46,6 +51,7 @@ func _input(event: InputEvent) -> void:
 
 func player_selected(coffee_name: String):
 	interface_howto.visible = false
+	wait_achievement_timer.stop()
 	player.show_message("You", coffee_name + ", please.", 1.5)
 	get_tree().create_tween().tween_property(player.player_camera, "rotation", Vector3(0, 0, 0), 0.5)
 	get_tree().create_tween().tween_property(player.player_camera, "rotation", Vector3(0, 0, 0), 0.5)
@@ -68,3 +74,33 @@ func player_selected(coffee_name: String):
 	player.show_message("Server", "That'll be €1000 please.", 1.5)
 	await get_tree().create_timer(3).timeout
 	player.show_message("You", "What.", 3)
+	await get_tree().create_timer(3).timeout
+	next_level()
+
+func on_wait_achievement_timeout() -> void:
+	wait_achievement_popup.achievement_get()
+
+func enter_transition():
+	var trans_img = $CanvasLayer/TransitionTexture
+	var mat = trans_img.material
+	mat.set_shader_parameter("NumDivisions", 1)
+	trans_img.visible = true
+	await get_tree().create_tween().tween_property(mat, "shader_parameter/NumDivisions", 200, 1.0).finished
+	trans_img.visible = false
+
+func next_level():
+	var screenshot: Texture2D = get_viewport().get_texture()
+	var trans_img = $CanvasLayer/TransitionTexture
+	var mat = trans_img.material
+	mat.set_shader_parameter("TextureMap", screenshot)
+	mat.set_shader_parameter("NumDivisions", 200)
+	trans_img.visible = true
+	await get_tree().create_tween().tween_property(mat, "shader_parameter/NumDivisions", 0, 1.0).finished
+	get_tree().change_scene_to_file("res://Scenes/NoteTaking/NoteTaking.tscn")
+
+var point_ach = false
+
+func point_at_machine():
+	if not point_ach:
+		$CanvasLayer/Popup2.achievement_get()
+		point_ach = true

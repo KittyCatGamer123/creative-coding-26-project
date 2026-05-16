@@ -13,10 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://dchv0utoml0ov" path="res://Entities/Character/Designs/Eyes/eye_happy.png" id="8_qvtd4"]
 [ext_resource type="Texture2D" uid="uid://2yje1k6fvgq" path="res://Scenes/CoffeeOrdering/pipe.png" id="9_s1fdb"]
 [ext_resource type="Texture2D" uid="uid://dghi0nrk4vo1u" path="res://Scenes/CoffeeOrdering/coffeemachinetext.png" id="9_sx7uq"]
+[ext_resource type="Script" uid="uid://cwocn25rxqdw0" path="res://Scenes/CoffeeOrdering/Machine.gd" id="11_r0cvv"]
 [ext_resource type="Texture2D" uid="uid://c86x1reltt6kw" path="res://Scenes/Bedroom/Materials/painted.jpg" id="13_0wrc1"]
 [ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="14_001lw"]
 [ext_resource type="Texture2D" uid="uid://bfv25nfv4uucf" path="res://Scenes/CoffeeOrdering/cardpayment.png" id="14_jtq8l"]
 [ext_resource type="Script" uid="uid://di7cfhfghxlpg" path="res://Scenes/CoffeeOrdering/CoffeeOption.gd" id="14_lklem"]
+[ext_resource type="PackedScene" uid="uid://bd4qeulu726ux" path="res://Entities/AchievementPopup/AchievementPopup.tscn" id="16_ieowg"]
+[ext_resource type="Shader" uid="uid://b7olwl72ctm5c" path="res://Entities/TransitionShader.gdshader" id="19_nd22u"]
+[ext_resource type="Texture2D" uid="uid://o1603k3tfemw" path="res://Screenshots/cafe_transition.png" id="20_655ud"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u3xta"]
 sky_top_color = Color(0.7, 0.86, 1, 1)
@@ -79,6 +83,9 @@ metallic_specular = 1.0
 albedo_texture = ExtResource("9_s1fdb")
 metallic = 1.0
 uv1_scale = Vector3(2, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_655ud"]
+size = Vector3(2.284912, 1.4223633, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_001lw"]
 albedo_color = Color(0.96, 0.884, 0.7776, 1)
@@ -344,6 +351,11 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_655ud"]
+shader = ExtResource("19_nd22u")
+shader_parameter/TextureMap = ExtResource("20_655ud")
+shader_parameter/NumDivisions = 200
+
 [node name="CoffeeOrdering" type="Node3D" unique_id=224079871]
 script = ExtResource("1_u3xta")
 
@@ -425,7 +437,6 @@ font_size = 28
 
 [node name="Character" parent="World" unique_id=2103743369 instance=ExtResource("6_l8yy7")]
 transform = Transform3D(-0.8040745, 0, -0.59452784, 0, 1, 0, 0.59452784, 0, -0.8040745, 0.5991175, 1.251, -5.8078074)
-interaction_colour = Color(0, 0, 0, 1)
 
 [node name="Outfit" parent="World/Character/CharacterBody" parent_id_path=PackedInt32Array(2103743369, 714721396) index="0" unique_id=1986631287]
 material_override = SubResource("StandardMaterial3D_qvtd4")
@@ -436,56 +447,67 @@ texture = ExtResource("8_qvtd4")
 [node name="EyeRight" parent="World/Character/Head" parent_id_path=PackedInt32Array(2103743369, 241136624) index="1" unique_id=563669890]
 texture = ExtResource("8_qvtd4")
 
-[node name="Machine" type="CSGBox3D" parent="World" unique_id=120912384]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64941406, 1.631852, -4.4667654)
+[node name="CoffeeMachine" type="Area3D" parent="World" unique_id=672868200 node_paths=PackedStringArray("player_reference")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64941406, 2.3538513, -4.4667654)
+script = ExtResource("11_r0cvv")
+interaction_colour = Color(1, 1, 0, 0)
+interaction_inactive_colour = Color(0, 0, 0, 0)
+player_reference = NodePath("../../Player")
+
+[node name="Machine" type="CSGBox3D" parent="World/CoffeeMachine" unique_id=120912384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7219993, 0)
 size = Vector3(2.2988281, 0.099121094, 1)
 material = SubResource("StandardMaterial3D_s1fdb")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/Machine" unique_id=1497037191]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/CoffeeMachine/Machine" unique_id=1497037191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99594784, -0.06883359, -0.33820963)
 radius = 0.072265625
 height = 0.059132814
 material = SubResource("StandardMaterial3D_s1fdb")
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/Machine" unique_id=481583568]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/CoffeeMachine/Machine" unique_id=481583568]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0040482, -0.075399995, -0.33820963)
 radius = 0.072265625
 height = 0.059
 material = SubResource("StandardMaterial3D_s1fdb")
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="World/Machine" unique_id=1769608941]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="World/CoffeeMachine/Machine" unique_id=1769608941]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99594784, -0.075399995, 0.37950754)
 radius = 0.072265625
 height = 0.059
 material = SubResource("StandardMaterial3D_s1fdb")
 
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="World/Machine" unique_id=1015478947]
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="World/CoffeeMachine/Machine" unique_id=1015478947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0040482, -0.075399995, 0.37950754)
 radius = 0.072265625
 height = 0.059
 material = SubResource("StandardMaterial3D_s1fdb")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="World/Machine" unique_id=132672938]
+[node name="CSGBox3D" type="CSGBox3D" parent="World/CoffeeMachine/Machine" unique_id=132672938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38714612, 0.29730225)
 size = Vector3(2.296875, 0.78063965, 0.4053955)
 material = SubResource("StandardMaterial3D_kqtbr")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="World/Machine" unique_id=196048066]
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/CoffeeMachine/Machine" unique_id=196048066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0108122, 0.1239624)
 size = Vector3(2.305664, 0.49813843, 0.7381592)
 material = SubResource("StandardMaterial3D_sx7uq")
 
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="World/Machine" unique_id=1610603690]
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="World/CoffeeMachine/Machine" unique_id=1610603690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8853624, 0.6767527, -0.1761713)
 radius = 0.045410156
 height = 0.26965332
 material = SubResource("StandardMaterial3D_ro860")
 
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="World/Machine" unique_id=417979152]
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="World/CoffeeMachine/Machine" unique_id=417979152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94305325, 0.6767527, -0.1761713)
 radius = 0.045410156
 height = 0.26965332
 material = SubResource("StandardMaterial3D_ro860")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/CoffeeMachine" unique_id=1250791850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14233398, 0)
+shape = SubResource("BoxShape3D_655ud")
 
 [node name="Wall" type="CSGBox3D" parent="World" unique_id=308464111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9022217, 4.905959, -7.583822)
@@ -699,7 +721,6 @@ size = Vector3(3.7128906, 5.647217, 10.830322)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1467346592]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1698857465]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -742,5 +763,47 @@ scale = Vector2(2.800478, 2.8004782)
 sprite_frames = SubResource("SpriteFrames_k8142")
 animation = &"point"
 
+[node name="Popup" parent="CanvasLayer" unique_id=29645891 instance=ExtResource("16_ieowg")]
+
+[node name="Title" parent="CanvasLayer/Popup" index="0" unique_id=811960690]
+offset_right = 430.0
+text = "Can I get a uhhhhhhhhhhhhhhhhhhh"
+clip_text = true
+
+[node name="Description" parent="CanvasLayer/Popup" index="1" unique_id=221997775]
+offset_top = 79.0
+offset_bottom = 163.0
+text = "Spend a whole minute trying to decide a drink. The server is not paid enough for this, dude."
+
+[node name="Popup2" parent="CanvasLayer" unique_id=1393259538 instance=ExtResource("16_ieowg")]
+
+[node name="Title" parent="CanvasLayer/Popup2" index="0" unique_id=811960690]
+offset_right = 430.0
+text = "Certified Addict"
+clip_text = true
+
+[node name="Description" parent="CanvasLayer/Popup2" index="1" unique_id=221997775]
+offset_top = 79.0
+offset_bottom = 163.0
+text = "Select the Coffee Machine when asked which drink you'd like. I'll take your entire stock!!!!"
+
+[node name="TransitionTexture" type="TextureRect" parent="CanvasLayer" unique_id=596941491]
+visible = false
+material = SubResource("ShaderMaterial_655ud")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_655ud")
+
+[node name="WaitAchievement" type="Timer" parent="." unique_id=810080163]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="timeout" from="WaitAchievement" to="." method="on_wait_achievement_timeout"]
+
 [editable path="Player"]
 [editable path="World/Character"]
+[editable path="CanvasLayer/Popup"]
+[editable path="CanvasLayer/Popup2"]

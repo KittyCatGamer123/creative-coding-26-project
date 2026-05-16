@@ -27,6 +27,10 @@ func _ready():
 	messagebox.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+#func save_screenshot():
+	#var img = get_viewport().get_texture().get_image()
+	#img.save_png("")
+
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_WINDOW_FOCUS_IN:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -44,7 +48,6 @@ func _input(event: InputEvent) -> void:
 	if can_interact:
 		if event.is_action_pressed("Interact"):
 			raycast_interact()
-			
 
 func _physics_process(delta: float) -> void:
 	if (not is_on_floor()) and (motion_mode != MOTION_MODE_FLOATING):

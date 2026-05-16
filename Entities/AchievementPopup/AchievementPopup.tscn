@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bd4qeulu726ux"]
+
+[ext_resource type="Texture2D" uid="uid://5467fq6qgask" path="res://Entities/AchievementPopup/AchievementSprite.jpg" id="1_a1n2s"]
+[ext_resource type="FontFile" uid="uid://b4pm0w50eyxcv" path="res://Fonts/tahoma.ttf" id="2_sa6pf"]
+[ext_resource type="Script" uid="uid://lf52mp8t1rsu" path="res://Entities/AchievementPopup/Popup.gd" id="2_x2x30"]
+[ext_resource type="AudioStream" uid="uid://blchlapy36bsx" path="res://Audio/achievement.wav" id="3_x2x30"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xubon"]
+font = ExtResource("2_sa6pf")
+font_size = 30
+font_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+outline_size = 2
+outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5b6s"]
+font = ExtResource("2_sa6pf")
+font_size = 20
+font_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="Popup" type="TextureRect" unique_id=29645891]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -489.0
+offset_top = -216.0
+offset_right = -40.0
+offset_bottom = -27.0
+grow_horizontal = 0
+texture = ExtResource("1_a1n2s")
+expand_mode = 1
+script = ExtResource("2_x2x30")
+
+[node name="Title" type="Label" parent="." unique_id=811960690]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 31.0
+offset_right = 423.0
+offset_bottom = 81.0
+text = "Achievement"
+label_settings = SubResource("LabelSettings_xubon")
+
+[node name="Description" type="Label" parent="." unique_id=221997775]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 87.0
+offset_right = 412.0
+offset_bottom = 155.0
+text = "Achievement description"
+label_settings = SubResource("LabelSettings_j5b6s")
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2109659085]
+stream = ExtResource("3_x2x30")
+volume_db = -15.0

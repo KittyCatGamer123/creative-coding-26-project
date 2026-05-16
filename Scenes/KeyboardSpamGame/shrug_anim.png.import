@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbbxc6lxh5lfe"
-path="res://.godot/imported/1287707905897795605.webp-07828c7bca65486ebbb147842b437940.ctex"
+uid="uid://c7lxswexwap7s"
+path="res://.godot/imported/shrug_anim.png-15ca074513fd8cbb0202cc86658a3186.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Character/1287707905897795605.webp"
-dest_files=["res://.godot/imported/1287707905897795605.webp-07828c7bca65486ebbb147842b437940.ctex"]
+source_file="res://Scenes/KeyboardSpamGame/shrug_anim.png"
+dest_files=["res://.godot/imported/shrug_anim.png-15ca074513fd8cbb0202cc86658a3186.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends Interactable
 
+@export var GameScene: Node3D
 @export var OutfitScene: OutfitGame
-@export var Overlay: ColorRect
 
 func _ready() -> void:
 	body_mesh = $Door.material
@@ -12,7 +12,7 @@ func player_interaction():
 		player_reference.can_move = false
 		player_reference.can_rotate = false
 		player_reference.velocity = Vector3.ZERO
-		print("done")
+		GameScene.next_level()
 	else:
 		player_reference.show_message("You", "I can't go to college dressed like this...")
 
